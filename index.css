@@ -101,19 +101,19 @@
 .box-aside-column{
   display:flex;
   flex-direction: column;
-  width: 100%;
+  align-items: center;
+ 
+  
 }
 
   .title-text-aside-box{
     height: 60px;
+    width: 90%;
     display:flex;
     align-items: center;
     border: dimgrey;
     background-color: white;
-    justify-content: space-evenly;
-    border-color: #EBEFF2; 
-    border-width:0 0 1px;
-    border-style: solid; 
+    justify-content: space-between;
   }
   
   .title-text-aside{
@@ -128,16 +128,17 @@
   }
 
   .aside-main-bar{
-    width: 100%;
+    width: 90%;
     height: 354px;
-    border-color: #EBEFF2; 
-    border-width:0 0 1px;
-    border-style: solid; 
+ 
+
+ 
+    
   }
   .aside-main-bar-box
   {
     height: 100%;
-    width: 208px;
+    width: 100%;
   }
 
 
@@ -145,10 +146,10 @@
     height: 60px;
     width: 100%;
     background-color: white;
-    display:flex;
-    flex-direction:row;
-    justify-content: space-evenly;
-    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; 
   }
 
   .img-profile{
@@ -164,6 +165,7 @@ line-height: 17px;
 letter-spacing: 0.01em;
 text-align: left;
 
+
   }
 
   .aside-name{
@@ -178,12 +180,103 @@ text-align: left;
   }
 
 
-  .aside-list-text{
-    text-decoration: none;
+  .aside-list-text-box{
+   display:flex;
+  align-items: center;
+  
   }
 
-  .aside-email{
+  .aside-list-text-box-for-hard-icon{
+    display:flex;
+   align-items: center;
+   
+   }
 
+   .aside-setting-icon{
+    display:flex;
+    align-items: center;
+
+   }
+
+.aside-icon{
+  stroke: #C2CFE0;
+}
+
+.aside-icon-hard > path {
+  stroke:#C2CFE0;
+}
+
+.aside-icon-hard > rect{
+  fill:#C2CFE0;
+}
+
+.aside-list-text-box:hover > span {
+  color:#109CF1;
+}
+
+.aside-list-text-box:hover > span {
+  color:#109CF1;
+}
+
+.aside-list-text-box:hover > svg {
+  stroke:#109CF1;
+}
+
+.aside-list-text-box-for-hard-icon:hover > span {
+  color:#109CF1;
+}
+
+.aside-setting-icon:hover > span {
+  color:#109CF1;
+}
+
+.aside-list-text-box-for-hard-icon:hover > svg > rect {
+  fill:#109CF1;
+}
+
+.aside-list-text-box-for-hard-icon:hover > svg > path {
+  stroke:#109CF1;
+}
+
+.aside-setting-icon:hover > svg > path{
+  fill:#109CF1;
+}
+
+.aside-href{
+  text-decoration: none;
+}
+
+
+  .aside-list-text{
+    text-decoration: none;
+    color: rgb(39, 11, 11);
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0em;
+    list-style:none;
+    padding-left:6%;
+    color:grey;
+  }
+
+
+
+  
+  .aside-email{
+    font-family: Poppins;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    color:grey;
+    
   }
 
   .aside-list{
@@ -191,6 +284,7 @@ text-align: left;
     flex-direction:column;
     justify-content:space-evenly;
     height: 294px;
+    width: 100%;
    
   }
 
@@ -199,10 +293,11 @@ text-align: left;
     justify-content: space-between;
     flex-direction: column;
     height: 434px;
+    width: 90%;
   }
 
   .toggle-sidebar{
-    width: 110px;
+    width: 100%;
   }
 
   .open {
