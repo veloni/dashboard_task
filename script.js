@@ -51,6 +51,62 @@ toggleButton.onclick = function () {
 }
 
 
+
+//menuChangeBarTask
+
+
+
+const switchPeriod = document.querySelector('.js-switch-period');
+const menuSwitchPeriod = document.querySelectorAll('.js-menu-switch-period');
+let saveMonthTop;
+let saveYearTop;
+
+function AddDn() {
+  menuSwitchPeriod.forEach((item, index) => {
+    if (index > 0) {
+      item.classList.add('dn');
+    }
+  });
+}
+AddDn();
+
+switchPeriod.onclick = function () {
+  menuSwitchPeriod.forEach((item) => {
+    item.classList.remove('dn');
+
+  });
+}
+
+
+menuSwitchPeriod[0].onclick = function () {
+  menuSwitchPeriod[0].innerHTML = menuSwitchPeriod[0].textContent;
+  AddDn();
+}
+
+menuSwitchPeriod[1].onclick = function () {
+  let savePeriod;
+  savePeriod = menuSwitchPeriod[0].innerHTML ;
+  menuSwitchPeriod[0].innerHTML = menuSwitchPeriod[1].textContent;
+  menuSwitchPeriod[1].innerHTML = savePeriod;
+  AddDn();
+}
+
+menuSwitchPeriod[2].onclick = function () {
+  let savePeriod;
+  savePeriod = menuSwitchPeriod[0].innerHTML ;
+  menuSwitchPeriod[0].innerHTML = menuSwitchPeriod[2].textContent;
+  menuSwitchPeriod[2].innerHTML = savePeriod;
+  AddDn();
+}
+
+
+
+
+
+
+
+
+
 //Calendar
 const calendarNowMonth = document.querySelectorAll('.js-calendar-now-month');
 const calendarNowDay = document.querySelectorAll('.js-calendar-now-day');

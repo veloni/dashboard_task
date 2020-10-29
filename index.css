@@ -403,8 +403,12 @@ color:grey;
   }
 
 
+
+
+
+
   .first-text-bar-task{
-    font-family: Poppins;
+font-family: Poppins;
 font-size: 13px;
 font-style: normal;
 font-weight: 500;
@@ -415,15 +419,23 @@ text-align: left;
   }
 
   .two-text-bar-task{
-  font-family: Poppins;
+font-family: Poppins;
 font-size: 12px;
 font-style: normal;
 font-weight: 400;
 line-height: 18px;
 letter-spacing: 0.01em;
 text-align: left;
+display:flex;
+align-items: center;
+text-decoration: none;
 }
 
+
+
+.two-text-bar-task > span:nth-child(2){
+  color:#109CF1;
+}
 
   .box-calendar{
     width: 100%;
@@ -517,8 +529,79 @@ text-align: left;
   .container-box-task{
     width: 96%;
     height: 77%;
-    border: 4px solid red; 
   }
+  
+.container-ava-name{
+  display:flex;
+  align-items: center;
+  padding-top: 2.5%;
+
+}
+
+
+
+  .condition-task-header-text{
+    display:flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+
+  .condition-task-bottom-text{
+    display:flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+
+.text-condition-one{
+  font-family: Poppins;
+font-size: 15px;
+font-style: normal;
+font-weight: 500;
+line-height: 23px;
+letter-spacing: 0.01em;
+text-align: left;
+}
+
+.text-condition-two{
+  font-family: Poppins;
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+line-height: 18px;
+letter-spacing: 0.01em;
+text-align: right;
+color:grey;
+}
+
+.due-date{
+  font-family: Poppins;
+font-size: 13px;
+font-style: normal;
+font-weight: 400;
+line-height: 20px;
+letter-spacing: 0.01em;
+text-align: left;
+}
+
+.name-task-text{
+  font-family: Poppins;
+font-size: 13px;
+font-style: normal;
+font-weight: 400;
+line-height: 20px;
+letter-spacing: 0.01em;
+text-align: left;
+padding-left: 20px;
+
+}
+
+.button-task{
+width: 84px;
+height: 22px;
+}
+
 
   .bar-task-footer{
 
