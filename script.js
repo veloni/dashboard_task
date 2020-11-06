@@ -61,6 +61,9 @@ const menuSwitchPeriod = document.querySelectorAll('.js-menu-switch-period');
 let saveMonthTop;
 let saveYearTop;
 
+
+
+
 function AddDn() {
   menuSwitchPeriod.forEach((item, index) => {
     if (index > 0) {

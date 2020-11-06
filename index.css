@@ -374,14 +374,26 @@ color:grey;
     transition: width 1s ease-in-out;
     display:flex;
     align-items: center;
-    justify-content: space-evenly;
     flex-direction: column;
+
+
   }
 
+.bar-task-box-first{
+  width: 95%;
+}
+
+
+
   .bar-task-box{
-    width: 95%;
-    background-color:grey;
+    width: 90%;
+    height: 126px;
+    margin-top: 20px;
+
+
+
   }
+
 
 
 
@@ -526,7 +538,9 @@ text-align: left;
     align-items:center;
     height: 126px;
     width: 100%;
+    background-color:grey;
     /* Параметры границы */
+    
     
   }
 

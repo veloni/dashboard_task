@@ -1,6 +1,6 @@
 let task = {
     id: [
-       
+
         {
             nameUser: "Dima",
             dueDate: "12 september",
@@ -19,7 +19,45 @@ let task = {
 
         {
             nameUser: "Serega",
+            dueDate: "5 december",
+            nameTask: "Fix bag",
+            conditionTask: "completed",
+            typeTask: "event"
+        },
+        {
+            nameUser: "Serega",
+            dueDate: "5 december",
+            nameTask: "Fix bag",
+            conditionTask: "completed",
+            typeTask: "event"
+        },
+        {
+            nameUser: "Serega",
+            dueDate: "5 december",
+            nameTask: "Fix bag",
+            conditionTask: "completed",
+            typeTask: "event"
+        },
+        {
+            nameUser: "Serega",
+            dueDate: "5 december",
+            nameTask: "Fix bag",
+            conditionTask: "completed",
+            typeTask: "event"
+        },
+
+        {
+            nameUser: "Serega",
             dueDate: "5 may",
+            nameTask: "lern react",
+            conditionTask: "active",
+            typeTask: "Call"
+        },
+
+
+        {
+            nameUser: "Serega",
+            dueDate: "2 april",
             nameTask: "lern react",
             conditionTask: "active",
             typeTask: "Call"
@@ -63,55 +101,72 @@ let task = {
             typeTask: "Reminder"
         },
 
+        {
+
+            nameUser: "Egor",
+            dueDate: "1 september",
+            typeTaskdueDate: "21 january",
+            nameTask: "Hacaton",
+            conditionTask: "completed",
+            typeTask: "Reminder"
+        },
+
+
 
 
     ]
 };
 
-const nameTask = document.querySelectorAll('.js-text-condition-one')
-const nameUser = document.querySelectorAll('.js-name-task-text')
-const dueDate = document.querySelectorAll('.js-due-date')
-const typeTask = document.querySelectorAll('.js-text-condition-two')
-const conditionTask = document.querySelectorAll('.js-button-task')
 
 
-nameUser.forEach((item, index) => {
-    item.innerHTML = task.id[index].nameUser;
-});
+const anyFunction = (massive, name) => {
+    massive.forEach((item, index) => {
+        item.innerHTML = task.id[index][name];
+    });
+};
 
-nameTask.forEach((item, index) => {
-    item.innerHTML = task.id[index].nameTask;
-});
+const renderTasks = () => {
+    const nameTask = document.querySelectorAll('.js-text-condition-one')
+    const nameUser = document.querySelectorAll('.js-name-task-text')
+    const dueDate = document.querySelectorAll('.js-due-date')
+    const typeTask = document.querySelectorAll('.js-text-condition-two')
+    const conditionTask = document.querySelectorAll('.js-button-task')
 
-dueDate.forEach((item, index) => {
-    item.innerHTML = task.id[index].dueDate;
-});
-
-typeTask.forEach((item, index) => {
-    item.innerHTML = task.id[index].typeTask;
-});
-
-conditionTask.forEach((item, index) => {
-    item.innerHTML = task.id[index].conditionTask;
-
-    if (task.id[index].conditionTask == "ended") {
-        item.style.backgroundColor = 'red';
-        item.style.borderColor = 'red';
-    }
-
-    if (task.id[index].conditionTask == "completed") {
-        item.style.backgroundColor = 'green';
-        item.style.borderColor = 'green';
-    }
-
-    if (task.id[index].conditionTask == "active") {
-        item.style.backgroundColor = 'orange';
-        item.style.borderColor = 'orange';
-    }
+    const colors = {
+         activeColor : 'blue',
+    };
 
 
+    anyFunction(nameUser, 'nameUser');
+    anyFunction(nameTask, 'nameTask');
+    anyFunction(dueDate, 'dueDate');
+    anyFunction(typeTask, 'typeTask');
 
-});
+    conditionTask.forEach((item, index) => {
+        item.innerHTML = task.id[index].conditionTask;
+
+        if (task.id[index].conditionTask == "ended") {
+            item.style.backgroundColor = 'red';
+            item.style.borderColor = 'red';
+        }
+
+        if (task.id[index].conditionTask == "completed") {
+            item.style.backgroundColor = 'green';
+            item.style.borderColor = 'green';
+        }
+
+        if (task.id[index].conditionTask == "active") {
+            item.style.backgroundColor = colors.activeColor;
+            item.style.borderColor = colors.activeColor;
+        }
+
+
+
+    });
+}
+
+window.testFunction = renderTasks;
+renderTasks();
 
 //узнаём проценты тасков
 
@@ -121,7 +176,7 @@ let quantityEnded = 0;
 let quantityActive = 0;
 let lenghtJson;
 
-lenghtJson = task.id.length; // 7 
+lenghtJson = task.id.length; // 7
 
 task.id.forEach((item, index) => {
     conditionTaskMassive[index] = task.id[index].conditionTask;
@@ -225,32 +280,32 @@ function daysInMonth(month, year) {
 
 
 
-  
+
   function daysInYear(year) {
     var days = 0;
-    
+
     for(var month = 1; month <= 12; month++) {
       days += daysInMonth(month, year);
     }
 
     return days;
   }
-  
+
   let daysYears = daysInYear(2020);
   console.log(daysYears);
-  
+
   monthMassive = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
 
 
 function loadAllDate(){
-    for(i=0; i<=daysYears*2; i++){
+    for(i=0; i<daysYears*2; i++){
         daysInYearMassive.push(day);
         daysInYearMassive.push(month);
-      
+
         day += 1;
     if(day>daysInMonth(month,2020))
     {
-        
+
         month +=1;
         day = 1;
     }
@@ -273,7 +328,7 @@ let comparisonMassive = [];
 //console.log(daysInYearMassive);
 
 for(i = 0; i<=daysYears*2; i += 2){
-    
+
     comparisonMassive.push(daysInYearMassive[i]+' '+ daysInYearMassive[i+1]);
 
      }
@@ -295,20 +350,55 @@ for(i = 0; i<=daysYears; i++){
     {
         quantityDataMassive[i] = quantityDataMassive[i]+1;
     }
-    else 
+    else
     {
         quantityDataMassive[i] = 0;
     }
 }
 }
 
+const compareTwoFirstMassives = () => {
+    comparisonMassive.filter(function(item, i) {
+        daysDateMassive.forEach(function(elem, k) {
+            if (elem === item) {
+                quantityDataMassive[i] += 1;
+            }
+        });
+    });
+
+    console.log(quantityDataMassive);
+};
+
+compareTwoFirstMassives();
+
 //console.log(test);
 
-console.log(quantityDataMassive);
+/* console.log(quantityDataMassive);
 console.log(quantityDataMassive[126]);
 console.log(quantityDataMassive[255]);
-
-console.log();
-
+console.log(); */
 
 
+let canvasGraph = document.getElementById('js-graph');
+let drawGraph = canvasGraph.getContext('2d');
+
+
+
+drawGraph.lineWidth = 1;
+drawGraph.strokeStyle = "blue";
+   
+
+drawGraph.beginPath();
+for(let i = 0; i<365; i++)
+{
+
+drawGraph.moveTo(0+i, 50*quantityDataMassive[i]);
+drawGraph.lineTo(1+i, 50*quantityDataMassive[i+1]);
+
+drawGraph.stroke();
+}
+
+
+
+
+ 

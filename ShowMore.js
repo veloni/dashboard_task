@@ -1,12 +1,25 @@
+let loadDiv = document.querySelector('.js-my-elem');
 
-const loadDiv = document.getElementById("js-add-new-task");
-const mainDiv = document.getElementById("js-where-add-element");
+let newDiv = document.createElement("div");
 
-const newDiv = document.createElement("div");
+let div = loadDiv.cloneNode(true); 
 
-let div = loadDiv.cloneNode(true); //скопировали
+let showMore = document.querySelector('.js-show-more');
+
+showMore.onclick = () => {
+
+  showMore.before(newDiv);
+
+  newDiv.insertAdjacentHTML('beforeend', div.innerHTML);
+
+  newDiv.classList.add('bar-task-box');
+
+  window.testFunction();
+
+  newDiv = document.createElement("div");
+
+ div = loadDiv.cloneNode(true);
 
 
-mainDiv.appendChild(div);
-
-
+  
+};
