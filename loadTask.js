@@ -1,175 +1,102 @@
-let task = {
-    id: [
-
-        {
-            nameUser: "Dima",
-            dueDate: "12 september",
-            nameTask: "Fix bag",
-            conditionTask: "completed",
-            typeTask: "event"
-        },
-
-        {
-            nameUser: "Serega",
-            dueDate: "23 december",
-            nameTask: "Fix bag",
-            conditionTask: "completed",
-            typeTask: "event"
-        },
-
-        {
-            nameUser: "Serega",
-            dueDate: "5 december",
-            nameTask: "Fix bag",
-            conditionTask: "completed",
-            typeTask: "event"
-        },
-        {
-            nameUser: "Serega",
-            dueDate: "5 december",
-            nameTask: "Fix bag",
-            conditionTask: "completed",
-            typeTask: "event"
-        },
-        {
-            nameUser: "Serega",
-            dueDate: "5 december",
-            nameTask: "Fix bag",
-            conditionTask: "completed",
-            typeTask: "event"
-        },
-        {
-            nameUser: "Serega",
-            dueDate: "5 december",
-            nameTask: "Fix bag",
-            conditionTask: "completed",
-            typeTask: "event"
-        },
-
-        {
-            nameUser: "Serega",
-            dueDate: "5 may",
-            nameTask: "lern react",
-            conditionTask: "active",
-            typeTask: "Call"
-        },
-
-
-        {
-            nameUser: "Serega",
-            dueDate: "2 april",
-            nameTask: "lern react",
-            conditionTask: "active",
-            typeTask: "Call"
-        },
-
-        {
-            nameUser: "Serega",
-            dueDate: "5 may",
-            nameTask: "lern react",
-            conditionTask: "ended",
-            typeTask: "Call"
-        },
-
-
-        {
-            nameUser: "Serega",
-            dueDate: "5 may",
-            nameTask: "lern react",
-            conditionTask: "active",
-            typeTask: "Call"
-        },
-
-        {
-
-            nameUser: "Egor",
-            dueDate: "12 september",
-            typeTaskdueDate: "21 january",
-            nameTask: "Hacaton",
-            conditionTask: "completed",
-            typeTask: "Reminder"
-        },
-
-
-        {
-
-            nameUser: "Egor",
-            dueDate: "12 september",
-            typeTaskdueDate: "21 january",
-            nameTask: "Hacaton",
-            conditionTask: "completed",
-            typeTask: "Reminder"
-        },
-
-        {
-
-            nameUser: "Egor",
-            dueDate: "1 september",
-            typeTaskdueDate: "21 january",
-            nameTask: "Hacaton",
-            conditionTask: "completed",
-            typeTask: "Reminder"
-        },
-
-
-
-
-    ]
-};
-
+let task = window.taskList;
 
 
 const anyFunction = (massive, name) => {
+ 
     massive.forEach((item, index) => {
+
         item.innerHTML = task.id[index][name];
+
+
     });
 };
 
+
+
+
+
+
+
+const barTaskAddType = () => {
+    const barTaskBox = document.querySelectorAll('.js-box-task');
+    barTaskBox.forEach((item,index) => {
+        switch(task.id[index].conditionTask){
+            case 'ended':
+                item.classList.add('ended')
+                break;
+            case 'completed':
+                item.classList.add('completed')
+                break;
+            case 'active':
+                item.classList.add('active')
+                break;
+            default:
+                break;
+        }
+    });
+}
+
+
+window.testFunctionTwo = barTaskAddType;
+barTaskAddType();
+
+
+
+
+
+
 const renderTasks = () => {
+   
     const nameTask = document.querySelectorAll('.js-text-condition-one')
     const nameUser = document.querySelectorAll('.js-name-task-text')
     const dueDate = document.querySelectorAll('.js-due-date')
     const typeTask = document.querySelectorAll('.js-text-condition-two')
     const conditionTask = document.querySelectorAll('.js-button-task')
+  
 
     const colors = {
-         activeColor : 'blue',
+        activeColor: 'blue',
     };
-
 
     anyFunction(nameUser, 'nameUser');
     anyFunction(nameTask, 'nameTask');
     anyFunction(dueDate, 'dueDate');
     anyFunction(typeTask, 'typeTask');
 
+
+    // descomposition
     conditionTask.forEach((item, index) => {
         item.innerHTML = task.id[index].conditionTask;
-
-        if (task.id[index].conditionTask == "ended") {
-            item.style.backgroundColor = 'red';
-            item.style.borderColor = 'red';
+        switch (task.id[index].conditionTask) {
+            case 'ended':
+                item.style.backgroundColor = 'red';
+                item.style.borderColor = 'red';
+                break;
+            case 'completed':
+                item.style.backgroundColor = 'green';
+                item.style.borderColor = 'green';
+                break;
+            case 'active':
+                item.style.backgroundColor = colors.activeColor;
+                item.style.borderColor = colors.activeColor;
+                break;
+            default:
+                break;
         }
-
-        if (task.id[index].conditionTask == "completed") {
-            item.style.backgroundColor = 'green';
-            item.style.borderColor = 'green';
-        }
-
-        if (task.id[index].conditionTask == "active") {
-            item.style.backgroundColor = colors.activeColor;
-            item.style.borderColor = colors.activeColor;
-        }
-
-
-
     });
 }
 
 window.testFunction = renderTasks;
 renderTasks();
 
-//узнаём проценты тасков
 
+
+
+
+
+//узнаём проценты тасков
+// isolated
+// check and rework variables
 let conditionTaskMassive = [];
 let quantityCompleted = 0;
 let quantityEnded = 0;
@@ -178,13 +105,15 @@ let lenghtJson;
 
 lenghtJson = task.id.length; // 7
 
-task.id.forEach((item, index) => {
+const taskId = task.id;
+
+taskId.forEach((item, index) => {
     conditionTaskMassive[index] = task.id[index].conditionTask;
 });
 
 
 conditionTaskMassive.forEach((item) => {
-
+    // to switch
     if (item == "active") {
         quantityActive += 1;
     }
@@ -201,6 +130,7 @@ conditionTaskMassive.forEach((item) => {
 
 });
 
+// isolated
 quantityCompleted = quantityCompleted / lenghtJson * 100;
 quantityActive = quantityActive / lenghtJson * 100;
 quantityEnded = quantityEnded / lenghtJson * 100;
@@ -214,8 +144,8 @@ quantityEnded = quantityEnded / lenghtJson * 100;
 let canvas = document.getElementById('js-graph-circle');
 let obCanvas = canvas.getContext('2d');
 
-
-function ebabva() {
+// naming
+function DrawCircleRed() {
     obCanvas.arc(100, 80, 50, 0, quantityActive * 2 * 3.14 / 100, false);
     obCanvas.lineWidth = 5;
     obCanvas.strokeStyle = "red";
@@ -223,7 +153,8 @@ function ebabva() {
     obCanvas.beginPath();
 }
 
-function asdsa() {
+// colors to config
+function DrawCircleOrange() {
     obCanvas.strokeStyle = "orange";
     obCanvas.arc(100, 80, 50, quantityActive * 2 * 3.14 / 100, quantityActive * 2 * 3.14 / 100 + quantityEnded * 2 * 3.14 / 100, false);
     obCanvas.lineWidth = 3;
@@ -232,7 +163,7 @@ function asdsa() {
 
 }
 
-function asdsa1() {
+function DrawCircleGreen() {
     obCanvas.arc(100, 80, 50, quantityActive * 2 * 3.14 / 100 + quantityEnded * 2 * 3.14 / 100, 0, false);
     obCanvas.lineWidth = 2;
     obCanvas.strokeStyle = "green";
@@ -241,11 +172,13 @@ function asdsa1() {
 }
 
 
-ebabva()
-asdsa();
-asdsa1();
+DrawCircleRed();
+DrawCircleOrange();
+DrawCircleGreen();
 
-
+// isolated
+// variables
+// remove selection by id
 let Graph = document.getElementById('js-graph');
 let graphCanvas = canvas.getContext('2d');
 
@@ -254,8 +187,7 @@ graphCanvas.strokeStyle = "blue";
 
 graphCanvas.beginPath();
 
-
-startDate = new Date('Jan 1, 2020')
+startDate = new Date('Jan 1, 2020');
 
 maxDateMonth = new Date(startDate.getFullYear(), startDate.getMonth() + 1, 0).getDate();
 day = startDate.getDate();
@@ -265,21 +197,14 @@ console.log(maxDateMonth);
 console.log(day);
 console.log(month);
 
-
 let daysInYearMassive = [];
 let daysDateMassive = [];
-
-
-
 
 
 
 function daysInMonth(month, year) {
     return new Date(year, month, 0).getDate();
   }
-
-
-
 
   function daysInYear(year) {
     var days = 0;
@@ -294,25 +219,22 @@ function daysInMonth(month, year) {
   let daysYears = daysInYear(2020);
   console.log(daysYears);
 
-  monthMassive = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
+  // move to config
+  monthMassive = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
 
-
+// rewrite to declarative style
 function loadAllDate(){
-    for(i=0; i<daysYears*2; i++){
+    for(i=0;i<daysYears*2;i++){
         daysInYearMassive.push(day);
         daysInYearMassive.push(month);
 
         day += 1;
-    if(day>daysInMonth(month,2020))
-    {
-
-        month +=1;
-        day = 1;
-    }
+        if(day > daysInMonth(month, 2020)) {
+            month +=1;
+            day = 1;
+        }
     }
 }
-
-
 
 loadAllDate();
 
@@ -334,7 +256,7 @@ for(i = 0; i<=daysYears*2; i += 2){
      }
 
 for(i = 0; i<lenghtJson; i++){
-daysDateMassive[i] = task.id[i].dueDate;
+    daysDateMassive[i] = task.id[i].dueDate;
 }
 
 console.log(comparisonMassive);
@@ -359,7 +281,7 @@ for(i = 0; i<=daysYears; i++){
 
 const compareTwoFirstMassives = () => {
     comparisonMassive.filter(function(item, i) {
-        daysDateMassive.forEach(function(elem, k) {
+        daysDateMassive.forEach(function(elem) {
             if (elem === item) {
                 quantityDataMassive[i] += 1;
             }
@@ -386,7 +308,7 @@ let drawGraph = canvasGraph.getContext('2d');
 
 drawGraph.lineWidth = 1;
 drawGraph.strokeStyle = "blue";
-   
+
 
 drawGraph.beginPath();
 for(let i = 0; i<365; i++)
@@ -399,6 +321,3 @@ drawGraph.stroke();
 }
 
 
-
-
- 

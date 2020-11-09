@@ -12,14 +12,39 @@
 
 
 .line{
-  
+
   width: 100%;
   border: 0.5px solid #EFEFEF;
+}
+
+.line-two{
+  width: 100%;
+  border: 0.5px solid #EFEFEF;
+  margin-top: 15px;
 }
 
 .dn {
   display: none;
 }
+
+.open-aside-task{
+  display:none;
+}
+
+
+.task-button{
+  padding-left: 15px;
+  text-decoration: none;
+  flex-direction: column ;
+
+}
+
+.text-choise-filter{
+  text-decoration: none;
+  color:grey;
+}
+
+
 
 
 .main-section-generally{
@@ -49,9 +74,9 @@
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
-  border-color: #EBEFF2; 
+  border-color: #EBEFF2;
   border-width:0 0 1px;
-  border-style: solid; 
+  border-style: solid;
 }
 
 .header:focus{
@@ -66,9 +91,12 @@
 
 }
 
+
+
+
 .search{
     align-items: center;
-    display: flex;   
+    display: flex;
     height: 35px;
     border:none;
     background-image: url(icon/search-icon.png);
@@ -85,7 +113,7 @@
 }
 
 .main-box-header-body{
- 
+
 }
 
 .left-sidebar {
@@ -97,12 +125,12 @@
   left: 0;
   transition: width 1s ease-in-out;
   border: 2px;
-  border-color:black;
+  border-color: #C2CFE0;
   display:flex;
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 0 20px black;
+  box-shadow: 0 0 2px #C2CFE0;
   }
 
   .toggle-sidebar {
@@ -133,7 +161,7 @@
     background-color: white;
     justify-content: space-between;
   }
-  
+
   .title-text-aside{
     font-family: Open Sans;
     font-size: 18px;
@@ -169,8 +197,8 @@
     background-color: white;
     display: flex;
     flex-direction: row;
-    
-    align-items: center; 
+
+    align-items: center;
 
   }
 
@@ -201,13 +229,13 @@ padding-left: 10%;
   .aside-list-text-box{
    display:flex;
   align-items: center;
-  
+
   }
 
   .aside-list-text-box-for-hard-icon{
     display:flex;
    align-items: center;
-   
+
    }
 
    .aside-setting-icon{
@@ -287,7 +315,7 @@ padding-left: 10%;
 
 
 
-  
+
   .aside-email{
     font-family: Poppins;
     font-size: 11px;
@@ -297,7 +325,7 @@ padding-left: 10%;
     letter-spacing: 0.01em;
     text-align: left;
     color:grey;
-    
+
   }
 
   .aside-list{
@@ -306,7 +334,7 @@ padding-left: 10%;
     justify-content:space-evenly;
     height: 294px;
     width: 100%;
-   
+
   }
 
   .aside-bottom-block{
@@ -332,9 +360,9 @@ color:grey;
 
   .toggle-sidebar{
     width: 100%;
-    
-   
-   
+
+
+
   }
 
   .open {
@@ -492,7 +520,7 @@ text-align: left;
     line-height: 20px;
     letter-spacing: 0.01em;
     text-align: center;
-    
+
   }
 
   .number-calendar{
@@ -515,7 +543,7 @@ text-align: left;
     display:flex;
     align-items: center;
     background: #109CF1;
-    border-radius:100%;  
+    border-radius:100%;
   }
 
   .date-calendar:hover{
@@ -538,17 +566,15 @@ text-align: left;
     align-items:center;
     height: 126px;
     width: 100%;
-    background-color:grey;
-    /* Параметры границы */
-    
-    
+
+    box-shadow:0 0 4px #C2CFE0; 
   }
 
   .container-box-task{
     width: 96%;
     height: 77%;
   }
-  
+
 .container-ava-name{
   display:flex;
   align-items: center;
@@ -595,12 +621,12 @@ color:grey;
 
 .due-date{
   font-family: Poppins;
-font-size: 13px;
-font-style: normal;
-font-weight: 400;
-line-height: 20px;
-letter-spacing: 0.01em;
-text-align: left;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.01em;
+  text-align: left;
 }
 
 .name-task-text{
@@ -645,7 +671,7 @@ border: 3px solid;
   .bar-graph{
     width: 445px;
     height: 344px;
-    background-color: white; 
+    background-color: white;
     display: flex;
     justify-content: center;
   }
