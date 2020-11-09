@@ -20,15 +20,18 @@ buttonTextChoise.onclick = function () {
     }
     
 
+//test remove active
+const activeBox  = document.querySelectorAll('.active');
 
-const activeBox  = document.querySelector('.active');
+console.log(activeBox);
 
-
-activeTextChoise.onclick = function () {
+activeTextChoise.onclick = function raze(e) {
+  e.preventDefault();
+  const activeBox  = document.querySelectorAll('.active');
   activeBox.forEach((item) => {
-    console.log(yes);
     item.classList.add('dn');
   });
-
   }
+
+
   
