@@ -146,7 +146,7 @@ let obCanvas = canvas.getContext('2d');
 
 // naming
 function DrawCircleRed() {
-    obCanvas.arc(100, 80, 50, 0, quantityActive * 2 * 3.14 / 100, false);
+    obCanvas.arc(75, 80, 65, 0, quantityActive * 2 * 3.14 / 100, false);
     obCanvas.lineWidth = 5;
     obCanvas.strokeStyle = "red";
     obCanvas.stroke();
@@ -156,25 +156,33 @@ function DrawCircleRed() {
 // colors to config
 function DrawCircleOrange() {
     obCanvas.strokeStyle = "orange";
-    obCanvas.arc(100, 80, 50, quantityActive * 2 * 3.14 / 100, quantityActive * 2 * 3.14 / 100 + quantityEnded * 2 * 3.14 / 100, false);
-    obCanvas.lineWidth = 3;
+    obCanvas.arc(75, 80, 65, quantityActive * 2 * 3.14 / 100, quantityActive * 2 * 3.14 / 100 + quantityEnded * 2 * 3.14 / 100, false);
+    obCanvas.lineWidth = 5;
     obCanvas.stroke();
     obCanvas.beginPath();
 
 }
 
 function DrawCircleGreen() {
-    obCanvas.arc(100, 80, 50, quantityActive * 2 * 3.14 / 100 + quantityEnded * 2 * 3.14 / 100, 0, false);
-    obCanvas.lineWidth = 2;
+    obCanvas.arc(75, 80, 65, quantityActive * 2 * 3.14 / 100 + quantityEnded * 2 * 3.14 / 100, 0, false);
+    obCanvas.lineWidth = 5;
     obCanvas.strokeStyle = "green";
     obCanvas.stroke();
     obCanvas.beginPath();
 }
 
 
+function drawTextPercent(){
+    const percentCircleText = document.querySelector('.percent');
+    percentCircleText.innerHTML = Math.ceil(quantityCompleted) + '%';
+}
+
+
 DrawCircleRed();
 DrawCircleOrange();
 DrawCircleGreen();
+drawTextPercent();
+
 
 // isolated
 // variables
