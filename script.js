@@ -7,6 +7,7 @@ const mainSection = document.querySelector('.js-main-section');
 
 const asideItemText = document.querySelectorAll('.js-remove-aside');
 const asideBox = document.querySelectorAll('.js-aside-change-flex-remove');
+const search = document.querySelector('.js-search');
 
 const listener = () => {
   const toggleButton = document.querySelector('.js-toggle-sidebar');
@@ -46,10 +47,13 @@ const handleToggleButtonClick = () => {
   asideBox.forEach((item) => {
     item.style.justifyContent = 'left';
   });
-
+setTimeout(() => {
   asideItemText.forEach((item) => {
+   
     item.classList.remove('dn');
   });
+}, 500);
+
 };
 
 asideStyleHandler = (isOpened) => {
@@ -57,6 +61,7 @@ asideStyleHandler = (isOpened) => {
   const titleTextAside = document.querySelector('.js-title-text-aside-box');
   const titleTextAsideBox = document.querySelector('.js-title-aside-box');
 
+  search.style.marginLeft = isOpened ? '120px' : '300px';
   taskBar.style.width = isOpened ? '780px' : '635px';
   titleTextAside.innerHTML = isOpened ? 'SaaS' : 'SaaS Kit';
   mainSectionGenerallyBox.style.paddingLeft = isOpened ? '8%' : '20%';
@@ -70,7 +75,7 @@ listener();
 
 // isolate
 const switchPeriod = document.querySelector('.js-switch-period');
-const menuSwitchPeriod = document.querySelectorAll('.js-menu-switch-period');
+const menuSwitchPeriod = document.querySelectorAll('.js-menu-switch-period');;
 const boxSwitchMenu = document.querySelector('.box-switch-menu');
 const headerTask = document.querySelector('.box-text-header-bar-task');
 let saveMonthTop;
@@ -184,3 +189,6 @@ calendarNowDay.forEach((item, index) => {
   i++;
 
 });
+
+
+//scroll bar-task

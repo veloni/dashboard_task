@@ -15,8 +15,6 @@ const anyFunction = (massive, name) => {
 
 
 
-
-
 const barTaskAddType = () => {
     const barTaskBox = document.querySelectorAll('.js-box-task');
     barTaskBox.forEach((item,index) => {
@@ -122,7 +120,6 @@ conditionTaskMassive.forEach((item) => {
 
     }
 
-
 });
 
 // isolated
@@ -130,11 +127,9 @@ quantityCompleted = quantityCompleted / lenghtJson * 100;
 quantityActive = quantityActive / lenghtJson * 100;
 quantityEnded = quantityEnded / lenghtJson * 100;
 
-
 //console.log(quantityActive);
 //console.log(quantityCompleted);
 //console.log(quantityEnded);
-
 
 let canvas = document.getElementById('js-graph-circle');
 let obCanvas = canvas.getContext('2d');
@@ -155,7 +150,6 @@ function DrawCircleOrange() {
     obCanvas.lineWidth = 5;
     obCanvas.stroke();
     obCanvas.beginPath();
-
 }
 
 function DrawCircleGreen() {
@@ -172,12 +166,10 @@ function drawTextPercent(){
     percentCircleText.innerHTML = Math.ceil(quantityCompleted) + '%';
 }
 
-
 DrawCircleRed();
 DrawCircleOrange();
 DrawCircleGreen();
 drawTextPercent();
-
 
 // isolated
 // variables
@@ -202,16 +194,12 @@ let daysDateMassive = [];
 function daysInMonth(month, year) {
     return new Date(year, month, 0).getDate();
   }
-
-
-
   function daysInYear(year) {
     let days = 0;
 
     for(var month = 1; month <= 12; month++) {
       days += daysInMonth(month, year);
     }
-
     return days;
   }
 
@@ -250,10 +238,7 @@ loadAllDate();
 for(i = 0; i<=daysYears*2; i += 2){
    daysInYearMassive[i+1] = monthMassive[daysInYearMassive[i+1]];
 }
-
 let comparisonMassive = [];
-
-
 //console.log(daysInYearMassive);
 
 for(i = 0; i<=daysYears*2; i += 2){
