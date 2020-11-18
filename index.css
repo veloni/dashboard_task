@@ -1,4 +1,3 @@
-
 @font-face {
   font-family: 'Poppins';
   src: url("fonts/Poppins-Regular.ttf");
@@ -430,6 +429,7 @@ color:grey;
     flex-direction:column;
     justify-content: space-evenly;
     height: 100%;
+    margin-right:20px;
   }
 
   .bar-task{

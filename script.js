@@ -189,6 +189,3 @@ calendarNowDay.forEach((item, index) => {
   i++;
 
 });
-
-
-//scroll bar-task

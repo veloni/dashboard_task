@@ -10,7 +10,7 @@ window.taskList = {
       },
       {
           nameUser: "Serega",
-          dueDate: "23 december",
+          dueDate: "24 november",
           nameTask: "Fix bag",
           conditionTask: "active",
           typeTask: "event"
@@ -24,14 +24,14 @@ window.taskList = {
       },
       {
           nameUser: "Serega",
-          dueDate: "5 december",
+          dueDate: "20 november",
           nameTask: "Fix bag",
           conditionTask: "completed",
           typeTask: "event"
       },
       {
           nameUser: "Serega",
-          dueDate: "5 december",
+          dueDate: "20 november",
           nameTask: "Fix bag",
           conditionTask: "completed",
           typeTask: "event"
@@ -101,5 +101,37 @@ window.taskList = {
           conditionTask: "completed",
           typeTask: "Reminder"
       },
+      {
+        nameUser: "Egor",
+        dueDate: "18 november",
+        typeTaskdueDate: "18 november",
+        nameTask: "Hacaton",
+        conditionTask: "ended",
+        typeTask: "Reminder"
+    },
+    {
+        nameUser: "Egor",
+        dueDate: "19 november",
+        typeTaskdueDate: "14 november",
+        nameTask: "Hacaton",
+        conditionTask: "completed",
+        typeTask: "Reminder"
+    },
+    {
+        nameUser: "Egor",
+        dueDate: "19 november",
+        typeTaskdueDate: "25 november",
+        nameTask: "Hacaton",
+        conditionTask: "completed",
+        typeTask: "Reminder"
+    },
+    {
+        nameUser: "Egor",
+        dueDate: "17 november",
+        typeTaskdueDate: "23 november",
+        nameTask: "Hacaton",
+        conditionTask: "active",
+        typeTask: "Reminder"
+    },
     ],
   };
