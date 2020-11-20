@@ -81,66 +81,7 @@ const headerTask = document.querySelector('.box-text-header-bar-task');
 let saveMonthTop;
 let saveYearTop;
 
-// rework
-function AddDn() {
-  menuSwitchPeriod.forEach((item, index) => {
-    if (index > 0) {
-      item.classList.add('dn');
-    }
-  });
-}
-AddDn();//Если функция вызывается внутри клика не срабатывает
-
-// to listener
-switchPeriod.onclick = function () {
-  menuSwitchPeriod.forEach((item) => {
-    item.classList.remove('dn');
-
-  });
-  headerTask.style.height = '35px'; // magic
-  boxSwitchMenu.style.paddingTop = '35px'; 
-}
-
-// rework
-menuSwitchPeriod[0].onclick = function () {
-  menuSwitchPeriod[0].innerHTML = menuSwitchPeriod[0].textContent;
-  menuSwitchPeriod.forEach((item, index) => {
-    if (index > 0) {
-      item.classList.add('dn');
-    }
-  });
-  boxSwitchMenu.style.paddingTop = '0';
-  headerTask.style.height = 'none';
-}
-
-menuSwitchPeriod[1].onclick = function () {
-  const savePeriod = menuSwitchPeriod[0].innerHTML ;
-  menuSwitchPeriod[0].innerHTML = menuSwitchPeriod[1].textContent;
-  menuSwitchPeriod[1].innerHTML = savePeriod;
-  menuSwitchPeriod.forEach((item, index) => {
-    if (index > 0) {
-      item.classList.add('dn');
-    }
-  });
-  boxSwitchMenu.style.paddingTop = '0';
-  headerTask.style.height = 'none';
-}
-
-menuSwitchPeriod[2].onclick = function () {
-  const savePeriod = menuSwitchPeriod[0].innerHTML ;
-  menuSwitchPeriod[0].innerHTML = menuSwitchPeriod[2].textContent;
-  menuSwitchPeriod[2].innerHTML = savePeriod;
-  menuSwitchPeriod.forEach((item, index) => {
-    if (index > 0) {
-      item.classList.add('dn');
-    }
-  });
-  boxSwitchMenu.style.paddingTop = '0';
-  headerTask.style.height = 'none';
-}
-
 // Calendar
-
 // rework variables
 // isolated
 // decomposition

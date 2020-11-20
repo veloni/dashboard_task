@@ -24,7 +24,7 @@ window.taskList = {
       },
       {
           nameUser: "Serega",
-          dueDate: "20 november",
+          dueDate: "26 november",
           nameTask: "Fix bag",
           conditionTask: "completed",
           typeTask: "event"
@@ -51,8 +51,6 @@ window.taskList = {
           conditionTask: "active",
           typeTask: "Call"
       },
-  
-  
       {
           nameUser: "Serega",
           dueDate: "2 april",
@@ -60,26 +58,30 @@ window.taskList = {
           conditionTask: "active",
           typeTask: "Call"
       },
-  
       {
           nameUser: "Serega",
-          dueDate: "5 may",
+          dueDate: "30 november",
           nameTask: "lern react",
           conditionTask: "ended",
           typeTask: "Call"
       },
-  
-  
       {
           nameUser: "Serega",
-          dueDate: "5 may",
+          dueDate: "22 november",
           nameTask: "lern react",
           conditionTask: "active",
           typeTask: "Call"
       },
       {
           nameUser: "Egor",
-          dueDate: "12 september",
+          dueDate: "20 november",
+          nameTask: "Hacaton",
+          conditionTask: "completed",
+          typeTask: "Reminder"
+      },
+      {
+          nameUser: "Egor",
+          dueDate: "21 november",
           typeTaskdueDate: "21 january",
           nameTask: "Hacaton",
           conditionTask: "completed",
@@ -87,16 +89,8 @@ window.taskList = {
       },
       {
           nameUser: "Egor",
-          dueDate: "12 september",
-          typeTaskdueDate: "21 january",
-          nameTask: "Hacaton",
-          conditionTask: "completed",
-          typeTask: "Reminder"
-      },
-      {
-          nameUser: "Egor",
-          dueDate: "1 september",
-          typeTaskdueDate: "21 january",
+          dueDate: "22 november",
+          typeTaskdueDate: "22 november",
           nameTask: "Hacaton",
           conditionTask: "completed",
           typeTask: "Reminder"
@@ -111,7 +105,7 @@ window.taskList = {
     },
     {
         nameUser: "Egor",
-        dueDate: "19 november",
+        dueDate: "14 november",
         typeTaskdueDate: "14 november",
         nameTask: "Hacaton",
         conditionTask: "completed",
@@ -119,7 +113,7 @@ window.taskList = {
     },
     {
         nameUser: "Egor",
-        dueDate: "19 november",
+        dueDate: "4 november",
         typeTaskdueDate: "25 november",
         nameTask: "Hacaton",
         conditionTask: "completed",
