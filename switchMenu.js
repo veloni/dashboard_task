@@ -245,7 +245,6 @@ function DrawCircle() {
         obCanvas.beginPath();
     }
 
-
     function DrawTextPercent() {
         const percentCircleText = document.querySelector('.percent');
         percentCircleText.innerHTML = Math.ceil(quantityCompleted) + '%';
