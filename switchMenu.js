@@ -260,15 +260,6 @@ function DrawCircle() {
 DrawCircle();
 
 let completedTask = 0;
-
-
-
-
-
-
-
-
-
 const switchPeriodTaskOne = document.querySelector('.js-task-menu-change-week');
 const switchPeriodTaskTwo = document.querySelector('.js-task-menu-change-month');
 const switchPeriodTaskThree = document.querySelector('.js-task-menu-change-year');
