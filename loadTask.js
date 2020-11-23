@@ -1,3 +1,16 @@
+function removeIcon(){
+    const twoCircle = document.querySelectorAll('.js-two-circle');
+    const editDeleteIcon = document.querySelectorAll('.js-edit-delete-icon');
+
+
+}
+
+
+
+
+
+
+
 let task = window.taskList;
 
 const anyFunction = (massive, name) => {
@@ -173,4 +186,6 @@ compareTwoFirstMassives();
 console.log(quantityDataMassive[126]);
 console.log(quantityDataMassive[255]);
 console.log(); */
+
+
 

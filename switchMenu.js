@@ -4,6 +4,13 @@ const switchPeriodThree = document.querySelector('.js-menu-switch-period-three')
 const openSwitch = document.querySelector('.js-switch-period-two');
 let savePeriodTwo;
 
+function openSwitchMenu(){
+    switchPeriodOne.style.marginTop = '60%';
+}
+
+function closeSwitchMenu(){
+    switchPeriodOne.style.marginTop = '20%';
+}
 
 function AddDnTwo() {
     switchPeriodThree.classList.add('dn');
@@ -21,22 +28,20 @@ AddDnTwo();
 openSwitch.onclick = function () {
     switchPeriodTwo.classList.remove('dn');
     switchPeriodThree.classList.remove('dn');
+    openSwitchMenu();
 }
 
 switchPeriodOne.onclick = function () {
     switchPeriodTwo.classList.add('dn');
     switchPeriodThree.classList.add('dn');
-}
-
-switchPeriodOne.onclick = function () {
-    switchPeriodTwo.classList.add('dn');
-    switchPeriodThree.classList.add('dn');
+    closeSwitchMenu();
 }
 
 switchPeriodTwo.onclick = function () {
     savePeriodTwo = switchPeriodOne.textContent
     switchPeriodOne.innerHTML = switchPeriodTwo.textContent;
     switchPeriodTwo.innerHTML = savePeriodTwo;
+    closeSwitchMenu();
     changePeriod();
     DrawCircle();
     AddDnTwo();
@@ -46,6 +51,7 @@ switchPeriodThree.onclick = function () {
     savePeriodTwo = switchPeriodOne.textContent
     switchPeriodOne.innerHTML = switchPeriodThree.textContent;
     switchPeriodThree.innerHTML = savePeriodTwo;
+    closeSwitchMenu();
     changePeriod();
     DrawCircle();
     AddDnTwo();

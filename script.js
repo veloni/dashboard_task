@@ -36,7 +36,7 @@ const handleToggleButtonClick = () => {
 
 
     asideItemText.forEach((item) => {
-      item.classList.add('dn');
+      item.style.display = 'none';
     });
     return;
   }
@@ -46,26 +46,26 @@ const handleToggleButtonClick = () => {
   // decomposition
   asideBox.forEach((item) => {
     item.style.justifyContent = 'left';
+        item.classList.add('dn');
   });
 setTimeout(() => {
   asideItemText.forEach((item) => {
    
-    item.classList.remove('dn');
+    item.style.display = 'flex';
   });
 }, 500);
 
 };
 
 asideStyleHandler = (isOpened) => {
-  const taskBar = document.querySelector('.js-bar-task');
+ // const taskBar = document.querySelector('.js-bar-task');
   const titleTextAside = document.querySelector('.js-title-text-aside-box');
   const titleTextAsideBox = document.querySelector('.js-title-aside-box');
 
-  search.style.marginLeft = isOpened ? '120px' : '300px';
-  taskBar.style.width = isOpened ? '780px' : '635px';
+  search.style.marginLeft = isOpened ? '120px' : '365px';
   titleTextAside.innerHTML = isOpened ? 'SaaS' : 'SaaS Kit';
-  mainSectionGenerallyBox.style.paddingLeft = isOpened ? '8%' : '20%';
-  mainSection.style.width = isOpened ? '1280px' : '1120px';
+  mainSectionGenerallyBox.style.paddingLeft = isOpened ? '10%' : '22.5%';
+  mainSection.style.width = isOpened ? '95%' : '90%';
   titleTextAsideBox.style.justifyContent = isOpened ? 'center' : 'space-between';
 };
 
