@@ -14,6 +14,11 @@ body {
   background-color: #E5E5E5;
 }
 
+.translate60percent {
+  transform: translateY(60px);
+  background-color: white;
+}
+
 .line{
   width: 100%;
   border: 0.5px solid #EFEFEF;
@@ -54,9 +59,38 @@ body {
   display:flex;
 }
 
-.text-show{
-  padding-left:55%;
+.box-show-switch-menu{
+  display:flex;
+  align-items: center;
 }
+
+.box-switch-menu{
+  display:flex;
+
+}
+
+.text-show{
+  text-decoration: none;
+  font-family: Poppins;
+  font-size: 1.5vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  text-align: left;
+}
+
+.text-switch-menu{
+  text-decoration: none;
+  font-family: Poppins;
+  font-size: 1.4vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  text-align: left;
+}
+
 
 .circle-aside-bar{
  padding-right:25%;
@@ -402,10 +436,10 @@ color:grey;
     justify-content: space-between;
     transition: width 1s ease-in-out;
     width: 98%;
+    height:95%;
   }
 
   .main-section-box{
-    height: 90%;
     width: 65%;
     transition: padding-left 1s ease-in-out;
     display:flex;
@@ -689,16 +723,17 @@ border: 0.5vw solid;
   }
 
   .header-bar-graph{
-    height:15%;
+    height:4vw;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-bottom: 1px solid grey;
   }
 
   .text-header-bar-graph{
 font-family: Poppins;
-font-size: 15px;
+font-size: 1.5vw;
 font-style: normal;
 font-weight: 500;
 line-height: 23px;
@@ -723,22 +758,26 @@ letter-spacing: 0.01em;
 text-align: left;
 }
 
+.box-circle-percent{
+  position: relative;
+
+}
+
 
 .graph{
-  height: 100%;
-  width: 250px;
  display:flex;
+ align-items: center;
 }
 
 .canvas{
-  height: 100%;
+
 }
 
 .percent{
-  position: absolute;
-  padding-left:105px;
-  padding-top:115px;
-  font-family: Poppins;
+position: absolute;
+top:50%;
+left:50%;
+font-family: Poppins;
 font-size: 56px;
 font-style: normal;
 font-weight: 500;
@@ -749,9 +788,7 @@ color:green;
 }
 
 .circle-legend-box{
-  position: absolute;
-  padding-top:110px;
-  padding-left:310px;
+
 }
   .bar-circle-task{
     width: 100%;

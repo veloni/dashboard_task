@@ -285,6 +285,7 @@
         </div>
       </div>
       <div class="main-graph-circle-box">
+
         <div class="bar-circle-task">
           <div class="box-bar-graph">
             <div class="header-bar-graph">
@@ -293,42 +294,40 @@
               </span>
               <span class="text-show"> Show:&nbsp
               </span>
-              <div class="box-switch-menu">
-                <ul>
-                  <li class="menu-change-week">This week&nbsp </li>
-                  <li class="menu-change-month"> This month&nbsp </li>
-                  <li class="menu-change-year"> This year&nbsp </li>
+              <div class="">
+                <ul class="delete-gap">
+                  <li class="">This week&nbsp </li>
+                  <li class=""> This month&nbsp </li>
+                  <li class=""> This year&nbsp </li>
                 </ul>
               </div>
-              <svg class="js-switch-period-two" width="15" height="15" viewBox="0 0 7 3" fill="none"
+              <svg class="" width="15" height="15" viewBox="0 0 7 3" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path d="M3.5 3L0.468911 -9.41288e-08L6.53109 4.35844e-07L3.5 3Z" fill="#AEAEAE" />
               </svg>
             </div>
             <div class="line"></div>
             <div class="graph-two">
-              </canvas>
               <div class="circle-legend-box">
                 <ul class="circle-legend">
                   <li class="text-choise-filter-circle">
             </div>
           </div>
         </div>
-      </div>
-
-
+      </div> 
 
 
         <div class="bar-circle-task">
           <div class="box-bar-graph">
-            <div class="header-bar-graph">
+            <div class="header-bar-graph js-header-bar-graph">
               <span class="text-header-bar-graph">
                 Tasks
               </span>
-              <span class="text-show"> Show:&nbsp
+              <div class="box-show-switch-menu">
+              <span class="text-show"> Show:&nbsp&nbsp
               </span>
               <div class="box-switch-menu">
-                <ul>
+                <ul class="delete-gap text-switch-menu">
                   <li class="menu-change-week js-menu-switch-period-one">This week&nbsp </li>
                   <li class="menu-change-month js-menu-switch-period-two"> This month&nbsp </li>
                   <li class="menu-change-year js-menu-switch-period-three"> This year&nbsp </li>
@@ -339,11 +338,14 @@
                 <path d="M3.5 3L0.468911 -9.41288e-08L6.53109 4.35844e-07L3.5 3Z" fill="#AEAEAE" />
               </svg>
             </div>
-            <div class="line"></div>
+            </div>
+          
             <div class="graph">
+            <div class="box-circle-percent">
               <span class="percent">123 </span>
               <canvas class="canvas" id="js-graph-circle">
               </canvas>
+            </div>
               <div class="circle-legend-box">
                 <ul class="circle-legend">
                   <li class="text-choise-filter-circle">

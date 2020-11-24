@@ -2,14 +2,15 @@ const switchPeriodOne = document.querySelector('.js-menu-switch-period-one');
 const switchPeriodTwo = document.querySelector('.js-menu-switch-period-two');
 const switchPeriodThree = document.querySelector('.js-menu-switch-period-three');
 const openSwitch = document.querySelector('.js-switch-period-two');
+const headerBarGraph = document.querySelector('.js-header-bar-graph');
 let savePeriodTwo;
 
 function openSwitchMenu(){
-    switchPeriodOne.style.marginTop = '60%';
+  switchPeriodOne.classList.add('translate60percent');
 }
 
 function closeSwitchMenu(){
-    switchPeriodOne.style.marginTop = '20%';
+    switchPeriodOne.classList.remove('translate60percent');
 }
 
 function AddDnTwo() {
@@ -225,6 +226,11 @@ function DrawCircle() {
     let canvas = document.getElementById('js-graph-circle');
     let obCanvas = canvas.getContext('2d');
     // naming
+
+    canvas.width  = 200;
+    canvas.height = 200; 
+    canvas.style.width = '20vh';
+    canvas.style.height = '20%';
 
     function DrawCircleRed() {
         obCanvas.arc(75, 80, 65, 0, quantityActive * 2 * 3.14 / 100, false);
