@@ -98,7 +98,7 @@ body {
 
 .task-text-aside-bar{
   margin-top: 12px;
-  padding-left:12px;
+  padding-left:33%;
 }
 
 .text-choise-filter{
@@ -115,8 +115,16 @@ align-items: center;
 }
 
 .circle-icon{
-  width: 1vw;
-  height: 1vw;
+  width: 1.2vw;
+  height: 1.2vw;
+}
+
+
+.edit-delete-icon{
+  width: 5vw;
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .edit-delete-icon-value{
@@ -127,14 +135,23 @@ align-items: center;
 .text-choise-filter-circle{
   text-decoration: none;
   font-family: Poppins;
-  font-size: 15px;
+  font-size: 1.5vw;
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
   letter-spacing: 0.05em;
   text-align: left;
-  padding-top:10px;
   }
+
+.circle-legend-box{
+  display:flex;
+  height: 11vw;
+  width: 11vw;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
 
 .main-section-generally-box{
   height: 90%;
@@ -633,6 +650,7 @@ text-align: left;
   display:flex;
   align-items: center;
   justify-content: space-evenly;
+  width: 15vw;
 }
 
   .condition-task-header-text{
@@ -760,6 +778,10 @@ text-align: left;
 
 .box-circle-percent{
   position: relative;
+  width:22vw;
+  height: 22vw;
+  display:flex;
+  align-items: center;
 
 }
 
@@ -769,16 +791,11 @@ text-align: left;
  align-items: center;
 }
 
-.canvas{
-
-}
-
 .percent{
-position: absolute;
-top:50%;
-left:50%;
+position: relative;
+right:62%;
 font-family: Poppins;
-font-size: 56px;
+font-size: 3.5vw;
 font-style: normal;
 font-weight: 500;
 line-height: 84px;
@@ -787,9 +804,10 @@ text-align: center;
 color:green;
 }
 
-.circle-legend-box{
-
+.box-legend-text{
+  height: 3vw;
 }
+
   .bar-circle-task{
     width: 100%;
     height: 48%;
@@ -797,7 +815,11 @@ color:green;
   }
 
 .two-circle{
-  margin-bottom:2%;
+  width: 5vw;
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
   margin-right: 1vw;
+
 }
   

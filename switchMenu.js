@@ -227,14 +227,14 @@ function DrawCircle() {
     let obCanvas = canvas.getContext('2d');
     // naming
 
-    canvas.width  = 200;
-    canvas.height = 200; 
-    canvas.style.width = '20vh';
-    canvas.style.height = '20%';
+    canvas.width  = 500;
+    canvas.height = 500; 
+    canvas.style.width = '22vw';
+    canvas.style.height ='22vw';
 
     function DrawCircleRed() {
-        obCanvas.arc(75, 80, 65, 0, quantityActive * 2 * 3.14 / 100, false);
-        obCanvas.lineWidth = 5;
+        obCanvas.arc(250, 245, 195, 0, quantityActive * 2 * 3.14 / 100, false);
+        obCanvas.lineWidth = 8;
         obCanvas.strokeStyle = "red";
         obCanvas.stroke();
         obCanvas.beginPath();
@@ -243,15 +243,15 @@ function DrawCircle() {
     // colors to config
     function DrawCircleOrange() {
         obCanvas.strokeStyle = "orange";
-        obCanvas.arc(75, 80, 65, quantityActive * 2 * 3.14 / 100, quantityActive * 2 * 3.14 / 100 + quantityEnded * 2 * 3.14 / 100, false);
-        obCanvas.lineWidth = 5;
+        obCanvas.arc(250, 245, 195, quantityActive * 2 * 3.14 / 100, quantityActive * 2 * 3.14 / 100 + quantityEnded * 2 * 3.14 / 100, false);
+        obCanvas.lineWidth = 8;
         obCanvas.stroke();
         obCanvas.beginPath();
     }
 
     function DrawCircleGreen() {
-        obCanvas.arc(75, 80, 65, quantityActive * 2 * 3.14 / 100 + quantityEnded * 2 * 3.14 / 100, 0, false);
-        obCanvas.lineWidth = 5;
+        obCanvas.arc(250, 245, 195, quantityActive * 2 * 3.14 / 100 + quantityEnded * 2 * 3.14 / 100, 0, false);
+        obCanvas.lineWidth = 8;
         obCanvas.strokeStyle = "green";
         obCanvas.stroke();
         obCanvas.beginPath();
