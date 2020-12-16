@@ -28,24 +28,30 @@
             <div class="header-bar-task">
               <div class="box-text-header-bar-task">
                 <span class="first-text-bar-task js-first-tex-bar-task"></span>
-                <div class="two-text-bar-task">
-                  <span class="show-text-switch">
-                    Show:&nbsp&nbsp
-                  </span>
-                  <div class="box-switch-menu">
-                    <ul class="delete-gap">
-                      <li class="menu-change-week js-task-menu-change-week">This week&nbsp</li>
-                      <li class="menu-change-month js-task-menu-change-month">This month&nbsp</li>
-                      <li class="menu-change-year js-task-menu-change-year">This year&nbsp</li>
-                    </ul>
-                  </div>
-                  <svg class="js-switch-task-period" width="15" height="15" viewBox="0 0 7 3" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3.5 3L0.468911 -9.41288e-08L6.53109 4.35844e-07L3.5 3Z" fill="#AEAEAE" />
-                  </svg>
+                  <div class="box-text-switch-menu">
+                    <span class="text-show-switch-menu">
+                      Show:&nbsp
+                    </span>
+                    <div class="box-switch-menu js-box-switch-menu">
+                      <ul class="switch-menu text-switch-menu">
+                        <li class="menu-change-week js-task-menu-change-week"> This week&nbsp</li>
+                        <li class="menu-change-month js-task-menu-change-month">This month&nbsp</li>
+                        <li class="menu-change-year js-task-menu-change-year">This year&nbsp</li>
+                      </ul>
+                    </div>
                 </div>
+                <svg class="button-switch-period js-switch-task-period" width="15" height="15" viewBox="0 0 7 3" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.5 3L0.468911 -9.41288e-08L6.53109 4.35844e-07L3.5 3Z" fill="#AEAEAE" />
+               </svg>
               </div>
-              <meter class="skale-tasks" value="8" min="0" max="10"></meter>
+                <div class="skale-tasks">
+                    <div class="value-skale-tasks">
+
+                    </div>
+                </div>
+            
+
               <span class="date js-now-date">
               </span>
               <div class="box-calendar">
@@ -156,7 +162,9 @@
                           fill="#C2CFE0" />
                       </svg>
                     </div>
-                    <button class="button-task js-button-task"></button>
+                    <div class="button-task-box">
+                      <button class="button-task js-button-task"></button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -211,7 +219,9 @@
                           fill="#C2CFE0" />
                       </svg>
                     </div>
-                    <button class="button-task js-button-task"></button>
+                    <div class="button-task-box">
+                      <button class="button-task js-button-task"></button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -266,7 +276,9 @@
                           fill="#C2CFE0" />
                       </svg>
                     </div>
-                    <button class="button-task js-button-task"></button>
+                    <div class="button-task-box">
+                      <button class="button-task js-button-task"></button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -274,8 +286,8 @@
           </div>
           
       
-          <button class="js-show-more">
-            <span class="bar-task-fotter"></span>
+          <button class="button-show-more js-show-more">
+            <span class="bar-task-fotter">
             Show
             </span>
           </button>
@@ -358,7 +370,7 @@
                 <div class="box-legend-text">
                   <li class="text-choise-filter-circle">
                     <svg class="circle-icon" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <circle cx="4" cy="4" r="3" stroke="#008000" stroke-width="2" />
+                      <circle cx="4" cy="4" r="3" stroke="#2ED47A" stroke-width="2" />
                     </svg>
                     Completed
                   </li>
@@ -549,14 +561,17 @@
     </div>
 
   </aside>
-  <script src="search.js"></script>
-  <script src="taskList.js"></script>
-  <script src="loadTask.js"></script>
-  <script src="script.js"></script>
-  <script src="ShowMore.js"></script>
-  <script src="asideBarMenu.js"></script>
-  <script src="search.js"></script>
-  <script src="switchMenu.js"></script>
+
+  <script src="./js-script/taskList.js"></script>
+  <script src="./js-script/config.js"></script>
+  <script src="./js-script/loadCalendar.js"></script>
+  <script src="./js-script/loadTask.js"></script>
+  <script src="./js-script/fiterTasks.js"></script>
+  <script src="./js-script/asideMove.js"></script>
+  <script src="./js-script/showMore.js"></script>
+  <script src="./js-script/search.js"></script>
+  <script src="./js-script/switchMenu.js"></script>
+  <script src="./js-script/drawCircle.js"></script>
 </body>
 
 </html>
