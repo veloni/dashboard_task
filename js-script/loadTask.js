@@ -33,11 +33,11 @@ barTaskAddType();
 
 const renderTasks = () => {
 
-    const nameTask = document.querySelectorAll('.js-text-condition-one')
-    const nameUser = document.querySelectorAll('.js-name-task-text')
-    const dueDate = document.querySelectorAll('.js-due-date')
-    const typeTask = document.querySelectorAll('.js-text-condition-two')
-    const conditionTask = document.querySelectorAll('.js-button-task')
+    const nameTask = document.querySelectorAll('.js-text-condition-one');
+    const nameUser = document.querySelectorAll('.js-name-task-text');
+    const dueDate = document.querySelectorAll('.js-due-date');
+    const typeTask = document.querySelectorAll('.js-text-condition-two');
+    const conditionTask = document.querySelectorAll('.js-button-task');
   
     anyFunction(nameUser, 'nameUser');
     anyFunction(nameTask, 'nameTask');
@@ -143,3 +143,17 @@ const compareTwoFirstMassives = () => {
 };
 
 compareTwoFirstMassives();
+
+const deleteIcon = document.querySelectorAll('.js-delete-task');
+
+
+
+Array.from(deleteIcon).forEach(function(item) {
+    item.addEventListener('click', function() {
+      
+    });
+  });
+
+
+
+

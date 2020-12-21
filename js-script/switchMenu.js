@@ -3,6 +3,9 @@ const switchPeriodTwo = document.querySelector('.js-menu-switch-period-two');
 const switchPeriodThree = document.querySelector('.js-menu-switch-period-three');
 const openSwitch = document.querySelector('.js-switch-period-two');
 const headerBarGraph = document.querySelector('.js-header-bar-graph');
+
+
+
 let savePeriodTwo;
 
 function openSwitchMenu(){
@@ -18,7 +21,8 @@ function AddDnTwo() {
     switchPeriodTwo.classList.add('dn');
 }
 
-AddDnTwo();
+AddDnTwo(); 
+
 
 openSwitch.onclick = function () {
     switchPeriodTwo.classList.remove('dn');
@@ -216,17 +220,20 @@ const switchPeriodTaskOne = document.querySelector('.js-task-menu-change-week');
 const switchPeriodTaskTwo = document.querySelector('.js-task-menu-change-month');
 const switchPeriodTaskThree = document.querySelector('.js-task-menu-change-year');
 const openTaskSwitch = document.querySelector('.js-switch-task-period');
+const switchPeriodOpen = document.querySelector('.js-switch-task-period-open');
 let savePeriod;
 
 function AdDn() {
     switchPeriodTaskTwo.classList.add('dn');
     switchPeriodTaskThree.classList.add('dn');
+    switchPeriodOpen.classList.add('dn');
 }
 
 switchPeriodTaskOne.onclick = function () {
     switchPeriodTaskTwo.classList.add('dn');
     switchPeriodTaskThree.classList.add('dn');
-    switchPeriodTaskTwo.style.paddingTop
+    openTaskSwitch.classList.remove('dn');
+    switchPeriodOpen.classList.add('dn');
 }
 
 AdDn();
@@ -234,17 +241,21 @@ AdDn();
 openTaskSwitch.onclick = function () {
     switchPeriodTaskThree.classList.remove('dn');
     switchPeriodTaskTwo.classList.remove('dn');
+    switchPeriodOpen.classList.remove('dn');
+    openTaskSwitch.classList.add('dn');
 }
 
 switchPeriodOne.onclick = function () {
     switchPeriodTaskTwo.classList.add('dn');
     switchPeriodTaskThree.classList.add('dn');
+    openTaskSwitch.classList.remove('dn');
 }
 
 switchPeriodTaskTwo.onclick = function () {
     savePeriodTwo = switchPeriodTaskOne.textContent
     switchPeriodTaskOne.innerHTML = switchPeriodTaskTwo.textContent;
     switchPeriodTaskTwo.innerHTML = savePeriodTwo;
+    openTaskSwitch.classList.remove('dn');
     changePeriodTaskCompleted();
     renderTask();
     AdDn();
@@ -254,6 +265,7 @@ switchPeriodTaskThree.onclick = function () {
     savePeriodTwo = switchPeriodTaskOne.textContent
     switchPeriodTaskOne.innerHTML = switchPeriodTaskThree.textContent;
     switchPeriodTaskThree.innerHTML = savePeriodTwo;
+    openTaskSwitch.classList.remove('dn');
     changePeriodTaskCompleted();
     renderTask();
     AdDn();

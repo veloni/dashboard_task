@@ -57,13 +57,13 @@ body {
 
 .box-switch-menu{
   height: 100%;
-  width: 20%;
+  width: 15%;
 }
 
 .box-text-switch-menu{
   display:flex;
   flex-direction: row;
-  padding-left:2vw;
+  padding-left:1.5vw;
   width: 8vw;
 }
 
@@ -74,9 +74,9 @@ body {
 }
 
 .button-switch-period{
-  padding-left: 0.6vw;
-  height: 2vw;
-  width: 2vw;
+  padding-left: 1.1vw;
+  height: 3vw;
+  width: 3vw;
 }
 
 .switch-menu{
@@ -525,7 +525,7 @@ color:grey;
 
   .bar-task-box{
     width: 90%;
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
   .header-bar-task{
