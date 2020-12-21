@@ -144,16 +144,3 @@ const compareTwoFirstMassives = () => {
 
 compareTwoFirstMassives();
 
-const deleteIcon = document.querySelectorAll('.js-delete-task');
-
-
-
-Array.from(deleteIcon).forEach(function(item) {
-    item.addEventListener('click', function() {
-      
-    });
-  });
-
-
-
-

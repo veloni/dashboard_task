@@ -548,11 +548,14 @@ color:grey;
     background-color: #EBEFF2;
     border-radius:1vw 1vw 1vw 1vw;
   }
+
   .value-skale-tasks{
     background-color: #2ED47A;
     height: 100%;
+    transition: width 0.5s ease-in-out;
     border-radius:1vw 1vw 1vw 1vw;
   }
+
 
 .first-text-bar-task{
   font-family: Poppins;

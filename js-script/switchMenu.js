@@ -8,7 +8,7 @@ const headerBarGraph = document.querySelector('.js-header-bar-graph');
 
 let savePeriodTwo;
 
-function openSwitchMenu(){
+/* function openSwitchMenu(){
   switchPeriodOne.classList.add('translate60percent');
 }
 
@@ -55,7 +55,7 @@ switchPeriodThree.onclick = function () {
     DrawCircle();
     AddDnTwo();
 }
-
+ */
 //load Week Data
 
 let date = new Date();
