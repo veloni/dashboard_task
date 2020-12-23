@@ -12,4 +12,7 @@ const colors = {
     activeColor: '#FFB946',
     endedColor: '#DC143C',
     completedColor: '#2ED47A',
+    secondaryColor: '#109CF1',
+
+
 };

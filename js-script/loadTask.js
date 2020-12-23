@@ -31,6 +31,9 @@ const barTaskAddType = () => {
 window.testFunctionTwo = barTaskAddType;
 barTaskAddType();
 
+let circleOneEdit = document.querySelectorAll('.js-one-circle-task');
+let circleTwoEdit = document.querySelectorAll('.js-two-circle-task');
+
 const renderTasks = () => {
 
     const nameTask = document.querySelectorAll('.js-text-condition-one');
@@ -38,7 +41,7 @@ const renderTasks = () => {
     const dueDate = document.querySelectorAll('.js-due-date');
     const typeTask = document.querySelectorAll('.js-text-condition-two');
     const conditionTask = document.querySelectorAll('.js-button-task');
-  
+
     anyFunction(nameUser, 'nameUser');
     anyFunction(nameTask, 'nameTask');
     anyFunction(dueDate, 'dueDate');
@@ -66,7 +69,63 @@ const renderTasks = () => {
                 break;
         }
     });
-}
+
+
+
+    circleOneEdit.forEach((item,index) =>{
+
+        function addColorsCircle(colorOne, colorTwo){
+            
+            circleOneEdit[index].style.stroke = colorOne;
+            circleTwoEdit[index].style.stroke = colorTwo;
+
+            circleTwoEdit[index].style.strokeWidth = 2;
+            circleOneEdit[index].style.strokeWidth = 2;
+ 
+            switch (colorOne) {
+                case '#DC143C':
+                    circleOneEdit[index].classList.add('ended');
+                    break;
+                case '#2ED47A':
+                    circleOneEdit[index].classList.add('completed');
+                    break;
+                case '#FFB946':
+                    circleOneEdit[index].classList.add('active');
+                    break;
+                default:
+                    break;
+            }
+
+            switch (colorTwo) {
+                case '#DC143C':
+                    circleTwoEdit[index].classList.add('ended');
+                    break;
+                case '#2ED47A':
+                    circleTwoEdit[index].classList.add('completed');
+                    break;
+                case '#FFB946':
+                    circleTwoEdit[index].classList.add('active');
+                    break;
+                default:
+                    break;
+            }
+         }
+
+            switch (task.id[index].conditionTask) {
+                case 'ended':
+                    addColorsCircle(colors.activeColor, colors.completedColor);
+                    break;
+                case 'completed':
+                    addColorsCircle(colors.endedColor, colors.activeColor);
+                    break;
+                case 'active':
+                    addColorsCircle(colors.endedColor, colors.completedColor);
+                    break;
+                default:
+                    break;
+            }
+    });
+} 
 
 window.testFunction = renderTasks;
 renderTasks();
