@@ -2,45 +2,37 @@ const switchPeriodOne = document.querySelector('.js-menu-switch-period-one');
 const switchPeriodTwo = document.querySelector('.js-menu-switch-period-two');
 const switchPeriodThree = document.querySelector('.js-menu-switch-period-three');
 const openSwitch = document.querySelector('.js-switch-period-two');
+const iconOpenSwitch = document.querySelector('.js-switch-period-two-open');
 const headerBarGraph = document.querySelector('.js-header-bar-graph');
-
-
-
 let savePeriodTwo;
-
-/* function openSwitchMenu(){
-  switchPeriodOne.classList.add('translate60percent');
-}
-
-function closeSwitchMenu(){
-    switchPeriodOne.classList.remove('translate60percent');
-}
 
 function AddDnTwo() {
     switchPeriodThree.classList.add('dn');
     switchPeriodTwo.classList.add('dn');
+    iconOpenSwitch.classList.add('dn');
+    openSwitch.classList.remove('dn');
 }
 
 AddDnTwo(); 
 
-
 openSwitch.onclick = function () {
     switchPeriodTwo.classList.remove('dn');
     switchPeriodThree.classList.remove('dn');
-    openSwitchMenu();
+    iconOpenSwitch.classList.remove('dn');
+    openSwitch.classList.add('dn');
 }
 
 switchPeriodOne.onclick = function () {
     switchPeriodTwo.classList.add('dn');
     switchPeriodThree.classList.add('dn');
-    closeSwitchMenu();
+    iconOpenSwitch.classList.add('dn');
+    openSwitch.classList.remove('dn');
 }
 
 switchPeriodTwo.onclick = function () {
     savePeriodTwo = switchPeriodOne.textContent
     switchPeriodOne.innerHTML = switchPeriodTwo.textContent;
     switchPeriodTwo.innerHTML = savePeriodTwo;
-    closeSwitchMenu();
     changePeriod();
     DrawCircle();
     AddDnTwo();
@@ -50,13 +42,12 @@ switchPeriodThree.onclick = function () {
     savePeriodTwo = switchPeriodOne.textContent
     switchPeriodOne.innerHTML = switchPeriodThree.textContent;
     switchPeriodThree.innerHTML = savePeriodTwo;
-    closeSwitchMenu();
     changePeriod();
     DrawCircle();
     AddDnTwo();
 }
- */
-//load Week Data
+
+
 
 let date = new Date();
 let start = new Date(date.getFullYear(), 0, 0);
@@ -243,12 +234,6 @@ openTaskSwitch.onclick = function () {
     switchPeriodTaskTwo.classList.remove('dn');
     switchPeriodOpen.classList.remove('dn');
     openTaskSwitch.classList.add('dn');
-}
-
-switchPeriodOne.onclick = function () {
-    switchPeriodTaskTwo.classList.add('dn');
-    switchPeriodTaskThree.classList.add('dn');
-    openTaskSwitch.classList.remove('dn');
 }
 
 switchPeriodTaskTwo.onclick = function () {

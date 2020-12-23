@@ -10,7 +10,7 @@
   <input class="search js-search" type="search">
 
   <div class="notifications">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="3vw" height="3vw" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M19.5 18.2071V18.5H4.5V18.2071L6.35355 16.3536L6.5 16.2071V16V11C6.5 8.09437 8.02219 5.78092 10.6153 5.16653L11 5.07538V4.68V4C11 3.44614 11.4461 3 12 3C12.5539 3 13 3.44614 13 4V4.68V5.07506L13.3843 5.16644C15.9681 5.78076 17.5 8.10482 17.5 11V16V16.2071L17.6464 16.3536L19.5 18.2071ZM13.4135 20.5C13.2061 21.0806 12.6488 21.5 12 21.5C11.3443 21.5 10.7907 21.0813 10.5854 20.5H13.4135Z"
         fill="white" stroke="#C2CFE0" />
@@ -329,56 +329,69 @@
       <div class="main-graph-circle-box">
         <div class="bar-circle-task">
           <div class="box-bar-graph">
-            <div class="header-bar-graph">
+            <div class="header-bar-graph js-header-bar-graph">
               <span class="text-header-bar-graph">
                 Tasks
               </span>
-              <span class="text-show"> Show:&nbsp
-              </span>
-              <div class="">
-                <ul class="delete-gap">
-                  <li class="">This week&nbsp </li>
-                  <li class=""> This month&nbsp </li>
-                  <li class=""> This year&nbsp </li>
-                </ul>
+
+              <div class="box-text-circle-graph-switch-menu">
+                <span class="text-show-switch-menu">
+                   Show:&nbsp&nbsp
+                </span>
+                <div class="box-switch-menu">
+                  <ul class="switch-menu text-switch-menu">
+                    <li class="menu-change-week">This week&nbsp </li>
+                    <li class="menu-change-month"> This month&nbsp </li>
+                    <li class="menu-change-year"> This year&nbsp </li>
+                  </ul>
+                </div>
               </div>
-              <svg class="" width="15" height="15" viewBox="0 0 7 3" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3.5 3L0.468911 -9.41288e-08L6.53109 4.35844e-07L3.5 3Z" fill="#AEAEAE" />
+
+                <svg class="" width="2vw" height="2vw" viewBox="0 0 7 3" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.5 3L0.468911 -9.41288e-08L6.53109 4.35844e-07L3.5 3Z" fill="#AEAEAE" />
+                </svg>
+
+                <svg class="" width="2vw" height="2vw" viewBox="0 0 7 5"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.47594 1.00012L6.54291 3.96343L0.481174 4.03638L3.47594 1.00012Z" fill="#AEAEAE" />
               </svg>
-            </div>
-            <div class="line"></div>
-            <div class="graph-two">
-              <div class="circle-legend-box">
-                <ul class="circle-legend">
-                  <li class="text-choise-filter-circle">
-              </div>
             </div>
           </div>
         </div>
 
 
-        <div class="bar-circle-task">
+        <div class="bar-circle-task ">
           <div class="box-bar-graph">
             <div class="header-bar-graph js-header-bar-graph">
               <span class="text-header-bar-graph">
                 Tasks
               </span>
-              <div class="box-show-switch-menu">
-                <span class="text-show"> Show:&nbsp&nbsp
+
+              <div class="box-text-circle-graph-switch-menu">
+                <span class="text-show-switch-menu">
+                   Show:&nbsp&nbsp
                 </span>
                 <div class="box-switch-menu">
-                  <ul class="delete-gap text-switch-menu">
+                  <ul class="switch-menu text-switch-menu">
                     <li class="menu-change-week js-menu-switch-period-one">This week&nbsp </li>
                     <li class="menu-change-month js-menu-switch-period-two"> This month&nbsp </li>
                     <li class="menu-change-year js-menu-switch-period-three"> This year&nbsp </li>
                   </ul>
                 </div>
-                <svg class="js-switch-period-two" width="15" height="15" viewBox="0 0 7 3" fill="none"
+              </div>
+
+                <svg class="js-switch-period-two" width="2vw" height="2vw" viewBox="0 0 7 3" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <path d="M3.5 3L0.468911 -9.41288e-08L6.53109 4.35844e-07L3.5 3Z" fill="#AEAEAE" />
                 </svg>
-              </div>
+
+                <svg class="js-switch-period-two-open" width="2vw" height="2vw" viewBox="0 0 7 5"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.47594 1.00012L6.54291 3.96343L0.481174 4.03638L3.47594 1.00012Z" fill="#AEAEAE" />
+              </svg>
             </div>
+         
 
             <div class="graph">
               <div class="box-circle-percent">
@@ -576,7 +589,7 @@
                   fill="#C2CFE0" />
               </svg>
               <li class="aside-list-text js-remove-aside">Setting</li>
-              </ul>
+             
             </div>
           </a>
           <div class="aside-href" href="">

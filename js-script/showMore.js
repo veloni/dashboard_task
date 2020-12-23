@@ -71,17 +71,15 @@ showMore.onclick = () => {
 function deleteRender (){
   deleteButton.forEach(function(elem) {
     elem.onclick = function() {
+      if (confirm('Delete task?'))
+       {
         const myBox = this.closest('.js-box-task');
-        myBox.classList.add('dn');
+        myBox.classList.add('dn').confirm();
+       }
     };
   });
 }
   
-console.log(editIcon);
-
-
-
-
 function editRender() {
   let stateButton = true;
   Array.from(editButton).forEach(function(item,index) {
@@ -120,7 +118,7 @@ function editRender() {
             thisCircletwo.style.stroke = colorThree;
 
             thisEdicIcon.style.stroke = "none";
-            
+
             thisCircleOne.style.fill = "none";
             thisCircletwo.style.fill = "none";
             thisCircleOne.style.strokeWidth = 2;
@@ -143,24 +141,33 @@ function editRender() {
     
           if (item.classList.contains('ended')){
             reRenderCircle(colors.endedColor, colors.activeColor, colors.completedColor, 'ended');
-            removeClassCricle();
-            addClas('active','completed');
-            stateButton = false;
+            if (confirm('Edit task?'))
+              {
+              removeClassCricle();
+              addClas('active','completed');
+              }
+              stateButton = false;
             return;
           }
   
           if (item.classList.contains('completed')){
             reRenderCircle(colors.completedColor, colors.endedColor, colors.activeColor, 'completed', 'ended', 'active');
-            removeClassCricle();
-            addClas('ended','active');
+            if (confirm('Edit task?'))
+              {
+              removeClassCricle();
+              addClas('ended','active');
+              }
             stateButton = false;
             return;
           }
   
           if (item.classList.contains('active')){
             reRenderCircle(colors.activeColor, colors.endedColor, colors.completedColor, 'active', 'ended', 'completed');
-            removeClassCricle();
-            addClas('ended','completed');
+            if (confirm('Edit task?'))
+              {
+              removeClassCricle();
+              addClas('ended','completed');
+              }
             stateButton = false;
             return;
           } 

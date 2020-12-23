@@ -67,6 +67,13 @@ body {
   width: 8vw;
 }
 
+.box-text-circle-graph-switch-menu{
+  display:flex;
+  flex-direction: row;
+  padding-left:3vw;
+  width: 7vw;
+}
+
 .box-show-switch-menu{
   display:flex;
   align-items: center;
@@ -210,23 +217,25 @@ align-items: center;
 }
 
 .notifications{
-  width: 24px;
-  height: 24px;
+  width: 3vw;
+  height: 3vw;
   z-index: 2;
-  padding-right: 3%;
+  padding-right: 5vw;
 }
 
 .search{
-    height: 35px;
+    height: 4vw;
     border:none;
     background-image: url(icon/search-icon.png);
+    background-size: 1.5vw;
     background-repeat: no-repeat;
-    background-position: left 20px center;
+    background-position: left 1vw center;
     background-color: transparent;
-    width: 250px;
-    height:40px;
-    margin-left: 300px;
+    width: 20vw;
+    height:3vw;
+    margin-left: 22.3vw;
     transition: margin-left 1s ease-in-out;
+    outline-color: rgba(0,0,0,0.3);
 }
 
 .search:focus{
@@ -778,7 +787,7 @@ text-align: left;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #EFEFEF;
   }
 
 .text-header-bar-graph{
