@@ -141,33 +141,24 @@ function editRender() {
     
           if (item.classList.contains('ended')){
             reRenderCircle(colors.endedColor, colors.activeColor, colors.completedColor, 'ended');
-            if (confirm('Edit task?'))
-              {
-              removeClassCricle();
-              addClas('active','completed');
-              }
-              stateButton = false;
+            removeClassCricle();
+            addClas('active','completed');
+            stateButton = false;
             return;
           }
   
           if (item.classList.contains('completed')){
             reRenderCircle(colors.completedColor, colors.endedColor, colors.activeColor, 'completed', 'ended', 'active');
-            if (confirm('Edit task?'))
-              {
-              removeClassCricle();
-              addClas('ended','active');
-              }
+            removeClassCricle();
+            addClas('ended','active');
             stateButton = false;
             return;
           }
   
           if (item.classList.contains('active')){
             reRenderCircle(colors.activeColor, colors.endedColor, colors.completedColor, 'active', 'ended', 'completed');
-            if (confirm('Edit task?'))
-              {
-              removeClassCricle();
-              addClas('ended','completed');
-              }
+            removeClassCricle();
+            addClas('ended','completed');
             stateButton = false;
             return;
           } 

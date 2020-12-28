@@ -212,6 +212,7 @@ const switchPeriodTaskTwo = document.querySelector('.js-task-menu-change-month')
 const switchPeriodTaskThree = document.querySelector('.js-task-menu-change-year');
 const openTaskSwitch = document.querySelector('.js-switch-task-period');
 const switchPeriodOpen = document.querySelector('.js-switch-task-period-open');
+const switchMenu = document.querySelector('.switch-menu');
 let savePeriod;
 
 function AdDn() {

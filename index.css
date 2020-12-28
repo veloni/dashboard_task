@@ -30,6 +30,11 @@ body {
   margin-top: 15px;
 }
 
+.lineal-graph-react{
+  width: 100%;
+  height: 80%;
+}
+
 .dn{
   display: none;
 }
@@ -63,7 +68,8 @@ body {
 .box-text-switch-menu{
   display:flex;
   flex-direction: row;
-  padding-left:1.5vw;
+  align-items: center;
+  padding-left:0vw;
   width: 8vw;
 }
 
@@ -89,9 +95,9 @@ body {
 .switch-menu{
   display:flex;
   flex-direction: column;
+  align-items: center;
   width: 9vw;
   height: 2vw;
-  position: relative;
 }
 
 .text-show-switch-menu{
