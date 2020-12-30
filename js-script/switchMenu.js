@@ -315,13 +315,12 @@ loadCompleteTask(WeekData, AllTaskWeek);
 
 //lineal graph
 
-
 const switchPeriodLinealGraphOne = document.querySelector('.js-menu-change-week-lineal-graph');
 const switchPeriodLinealGraphTwo = document.querySelector('.js-menu-change-month-lineal-graph');
 const switchPeriodLinealGraphThree = document.querySelector('.js-menu-change-year-lineal-graph');
 const closeLinealGraphSwitch = document.querySelector('.js-button-close-lineal-graph');
 const openLinealGraphSwitch = document.querySelector('.js-button-open-lineal-graph');
-const savePeriodLinealGraph = 0;
+let savePeriodLinealGraph = 0;
 
 function addDnLinealGraph() {
     switchPeriodLinealGraphTwo.classList.add('dn');
@@ -331,24 +330,23 @@ function addDnLinealGraph() {
 
 addDnLinealGraph();
 
-function removeDnLinealGraph()  {
+closeLinealGraphSwitch.onclick = function () {
     openLinealGraphSwitch.classList.remove('dn');
     switchPeriodLinealGraphTwo.classList.remove('dn');
     switchPeriodLinealGraphThree.classList.remove('dn');
     closeLinealGraphSwitch.classList.add('dn');
 }
 
-closeLinealGraphSwitch.onclick = function () {
-    removeDnLinealGraph()
-}
-
+//Research
 
 let dateX = [];
 let dateY = [];
 
-
 //and for week
  const monthDataFromLinealGraph = (period) => {
+
+    dateX = [];
+    dateY = [];
 
     let monthDataLinealGraph = [];
     let calcDateX = [];
@@ -400,14 +398,15 @@ let dateY = [];
             item[i]=el[0];
             return el[1];
         })
-        dateX = calcTwo.flat();
-        dateY = calcThree.flat();
+
+    dateX = calcTwo.flat();
+    dateY = calcThree.flat();
     
     dateX.forEach(function (item,index)
     {
         dateX[index] = parseFloat(dateX[index]);
     })
-}; 
+    }; 
 
 const yearDataFromLinealGraph = () => {
     let yerLinealGraph = [];
@@ -425,7 +424,7 @@ const yearDataFromLinealGraph = () => {
     yerLinealGraphTwo.filter(function (item, i) {
         let saveCompletedTask = 0;
             yerLinealGraph.forEach(function (elem,index) {
-                if (elem === item)
+                if (item === elem)
                     {   
                         saveCompletedTask = saveCompletedTask + 1;
                     }
@@ -464,11 +463,10 @@ const yearDataFromLinealGraph = () => {
     }); 
    }); 
 
-dateY = monthForDateY;
-dateX = monthForDateX; 
+    dateY = monthForDateY;
+    dateX = monthForDateX; 
 }
 
-
-yearDataFromLinealGraph(); 
+//yearDataFromLinealGraph(); 
 //monthDataFromLinealGraph(monthDataSearch);
 //monthDataFromLinealGraph(WeekDataSearch);

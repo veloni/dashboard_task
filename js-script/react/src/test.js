@@ -1,12 +1,9 @@
 import React, { useEffect } from 'react';
-import { VictoryLine, VictoryChart, VictoryScatter, VictoryAxis, chartTheme } from 'victory';
+import { VictoryLine, VictoryChart, VictoryScatter, VictoryAxis } from 'victory';
 
 const Test = () => {
 
 var data = [];
-
-
-
 
 dateX.forEach(function(item, index){
   data[index] = {
@@ -18,20 +15,42 @@ dateX.forEach(function(item, index){
 
 console.log(data);
 
+
+const chartTheme = {
+  axis: {
+      style: {
+      ticks: {
+          size: 100,
+      },
+      grid: {
+      },
+      axis: {
+      },
+      tickLabels: {
+          fontSize: 100
+          },
+      Labels: {
+          },
+      },
+  },
+};
+
   return (
     
     <VictoryChart 
                             height={ 1500 } 
                             width={ 1500 }
-                         
+                            theme={ chartTheme }
                    >
                 <VictoryAxis 
                         tickValues={[]}
-                        width={400}
+                        width={500}
+           
                    ></VictoryAxis>
 
                 <VictoryAxis dependentAxis crossAxis
-                        tickValues={[]}
+                
+                        tickValues={[0,50,70]}
                 />
                    <VictoryLine 
                         interpolation="natural"
