@@ -40,7 +40,7 @@ showMore.onclick = () => {
 
     div = loadDiv.cloneNode(true);
 
-    test.scroll(0,heightScroll);
+    test.scroll(0, heightScroll);
 
     heightScroll += 160;
 
@@ -74,7 +74,7 @@ function deleteRender (){
       if (confirm('Delete task?'))
        {
         const myBox = this.closest('.js-box-task');
-        myBox.classList.add('dn').confirm();
+        myBox.classList.add('dn');
        }
     };
   });
@@ -101,8 +101,9 @@ function editRender() {
   function butonCircleEdit () {
     Array.from(allEditCircle).forEach(function(item) {
       item.addEventListener('click',  function() {
-        if (stateButton === true)
+        if (stateButton == true)
         {
+          console.log(stateButton);
           const thisBox = this.closest('.icon-button-box');
           const thisButtonTaskBox = thisBox.querySelector('.button-task-box > .button-task');
           const thisCircleOne = thisBox.querySelector('.two-circle > .js-button-circle > .js-one-circle-task');
@@ -113,12 +114,9 @@ function editRender() {
             thisButtonTaskBox.style.backgroundColor = colorOne;
             thisButtonTaskBox.style.borderColor = colorOne;
             thisButtonTaskBox.innerHTML = text;
-    
             thisCircleOne.style.stroke = colorTwo;
             thisCircletwo.style.stroke = colorThree;
-
             thisEdicIcon.style.stroke = "none";
-
             thisCircleOne.style.fill = "none";
             thisCircletwo.style.fill = "none";
             thisCircleOne.style.strokeWidth = 2;
@@ -140,7 +138,7 @@ function editRender() {
           }
     
           if (item.classList.contains('ended')){
-            reRenderCircle(colors.endedColor, colors.activeColor, colors.completedColor, 'ended');
+            reRenderCircle(colors.endedColor, colors.activeColor, colors.completedColor, 'ended', 'completed', 'active');
             removeClassCricle();
             addClas('active','completed');
             stateButton = false;

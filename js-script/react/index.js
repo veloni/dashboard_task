@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Test from './src/test';
 
-ReactDOM.render(<h1> hello</h1>, document.querySelector('.lineal-graph-react'));
-
+ReactDOM.render( <Test/>, document.querySelector('.lineal-graph-react'));

@@ -190,16 +190,16 @@ function filterData() {
 filterData();
 
 const compareTwoFirstMassives = () => {
-    ;
-
     comparisonMassive.filter(function(item, i) {
         daysDateMassive.forEach(function(elem) {
-            if (elem === item) {
+            if (elem == item) {
                 quantityDataMassive[i] += 1;
             }
         });
     });
 };
+
+
 
 compareTwoFirstMassives();
 

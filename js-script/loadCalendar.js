@@ -40,13 +40,19 @@ calendarNowDay.forEach((item, index) => {
     toggleMonth = index;
     calendarNowMonth.forEach((item, index) => {
       if (index >= toggleMonth) {
-        item.innerHTML = monthMassiveRecution[resultMonth];
+        if (monthMassiveRecution[resultMonth] === undefined)
+        {
+          item.innerHTML = 'Jan';
+        }
+        else
+        {
+          item.innerHTML = monthMassiveRecution[resultMonth];
+        }
       }
     });
   }
   item.innerHTML = innerHTML = nowDate + i;
   i++;
-
 });
 }
 

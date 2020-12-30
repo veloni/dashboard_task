@@ -91,26 +91,23 @@ giveValueWeekSearch();
 let AllTaskWeek = 0;
 
 function DateLoadWeek() {
-
     task.id.filter(function (item, index) {
         WeekDataSearch.forEach(function (elem) {
             if (item['dueDate'] == elem) {
                 WeekData.push(item['conditionTask']);
                 AllTaskWeek += 1;
             }
-        
         });
     });
 }
 
 DateLoadWeek();
 
-//LoadMonthData
-
 let indexMonth = [];
 
 function giveMonthIndex() {
     quantityDataMassive.forEach(function (item, index) {
+        nowDate = now.getDate();
         if (index > day - nowDate && index < day - nowDate + maxDateMonth && item != 0) {
             indexMonth.push(index);
             indexMonth.push(item);
@@ -132,11 +129,11 @@ function giveValueMonthSearch() {
         }
     });
 }
+
 giveValueMonthSearch();
 
 let MonthData = [];
 let allTaskMonth = 0;;
-
 
 function MonthLoadWeek() {
     task.id.filter(function (item, index) {
@@ -161,6 +158,19 @@ function loadDataYear() {
 }
 loadDataYear();
 
+let YearsDataSearch = [];
+
+function loadDataSeacrgYear() {
+    task.id.forEach(function (item) {
+        YearsDataSearch.push(item['dueDate']);
+    });
+}
+
+/* console.log(YearsDataSearch); */
+
+loadDataSeacrgYear();
+
+
 let quantityCompleted = 0;
 let quantityEnded = 0;
 let quantityActive = 0;
@@ -183,9 +193,19 @@ const loadInterest = (period, length) => {
                 break;
         }
     });
-    quantityCompleted = quantityCompleted / length * 100;
-    quantityActive = quantityActive / length * 100;
-    quantityEnded = quantityEnded / length * 100;
+    
+    if(length === 0)
+        {   
+            quantityCompleted = 0;
+            quantityActive = 0;
+            quantityEnded = 0;
+        }
+    else
+        {
+            quantityCompleted = quantityCompleted / length * 100;
+            quantityActive = quantityActive / length * 100;
+            quantityEnded = quantityEnded / length * 100;
+        }
 }
 
 function changePeriod(){
@@ -264,7 +284,7 @@ function renderTask(){
 
 const firtTextBarTask = document.querySelector('.js-first-tex-bar-task');
 const skaleTask = document.querySelector('.value-skale-tasks');
-let lengthTaskMeter;
+let lengthTaskMeter = 0;
 
 const loadCompleteTask = (period,lenght) => {
     completedTask = 0;
@@ -293,4 +313,162 @@ function changePeriodTaskCompleted(){
 
 loadCompleteTask(WeekData, AllTaskWeek);
 
+//lineal graph
 
+
+const switchPeriodLinealGraphOne = document.querySelector('.js-menu-change-week-lineal-graph');
+const switchPeriodLinealGraphTwo = document.querySelector('.js-menu-change-month-lineal-graph');
+const switchPeriodLinealGraphThree = document.querySelector('.js-menu-change-year-lineal-graph');
+const closeLinealGraphSwitch = document.querySelector('.js-button-close-lineal-graph');
+const openLinealGraphSwitch = document.querySelector('.js-button-open-lineal-graph');
+const savePeriodLinealGraph = 0;
+
+function addDnLinealGraph() {
+    switchPeriodLinealGraphTwo.classList.add('dn');
+    switchPeriodLinealGraphThree.classList.add('dn');
+    openLinealGraphSwitch.classList.add('dn');
+}
+
+addDnLinealGraph();
+
+function removeDnLinealGraph()  {
+    openLinealGraphSwitch.classList.remove('dn');
+    switchPeriodLinealGraphTwo.classList.remove('dn');
+    switchPeriodLinealGraphThree.classList.remove('dn');
+    closeLinealGraphSwitch.classList.add('dn');
+}
+
+closeLinealGraphSwitch.onclick = function () {
+    removeDnLinealGraph()
+}
+
+
+let dateX = [];
+let dateY = [];
+
+
+//and for week
+ const monthDataFromLinealGraph = (period) => {
+
+    let monthDataLinealGraph = [];
+    let calcDateX = [];
+    
+    task.id.filter(function (item, index) {
+        period.forEach(function (elem) {
+            if (item['dueDate'] === elem && item['conditionTask'] === 'completed' ) {
+                monthDataLinealGraph.push(elem);
+            }
+        });
+    });
+
+    monthDataLinealGraph.filter(function (item, index) {
+        let quanityCompleted = 0;
+                    monthDataLinealGraph.forEach(function (elem,index) {
+                        if (item === elem)
+                        {
+                            calcDateX.push(item);
+                            quanityCompleted += 1;
+                            delete monthDataLinealGraph[index];
+                        }
+                    });
+                    dateY.push(quanityCompleted);           
+    });
+
+    calcDateX.forEach(function(item, index){
+        if(calcDateX[index] == calcDateX[index-1])
+        {
+            delete calcDateX[index-1];
+        }
+
+    });
+
+    calcDateX.forEach(function(item, index){
+        dateX.push(item.match(/\d+/));
+    });
+
+    let calcOne  = dateY;
+    let calcTwo = dateX;
+
+    calcTwo.forEach(function (el, i, item)
+    {
+        item[i] = [item[i],calcOne[i]];
+    })
+
+   calcTwo.sort(function(a,b){return a[0] - b[0]});
+        let calcThree = calcTwo.map(function (el, i, item)
+        {
+            item[i]=el[0];
+            return el[1];
+        })
+        dateX = calcTwo.flat();
+        dateY = calcThree.flat();
+    
+    dateX.forEach(function (item,index)
+    {
+        dateX[index] = parseFloat(dateX[index]);
+    })
+}; 
+
+const yearDataFromLinealGraph = () => {
+    let yerLinealGraph = [];
+    let yerLinealGraphTwo = [];
+
+    task.id.forEach(function (item, index) {
+            if (item['conditionTask'] === 'completed') 
+            {
+                yerLinealGraph.push(item['dueDate']);
+            }
+    });
+
+    yerLinealGraphTwo = yerLinealGraph;
+
+    yerLinealGraphTwo.filter(function (item, i) {
+        let saveCompletedTask = 0;
+            yerLinealGraph.forEach(function (elem,index) {
+                if (elem === item)
+                    {   
+                        saveCompletedTask = saveCompletedTask + 1;
+                    }
+            dateY[i] = saveCompletedTask;
+            });  
+    });
+
+    let monthDataNumber = [];
+    let numberMonthDataNumber = [];
+
+    yerLinealGraphTwo.forEach( function(item, index){
+        monthDataNumber.push(item.replace(/[0-9]/g,'').trim());
+        numberMonthDataNumber.push(item.match(/\d+/));
+    }); 
+
+    let monthDataNumberValue = [];
+
+    monthDataNumber.forEach( function(item, index){
+        monthMassive.forEach( function(elem, i){
+            if (item === elem)
+            {
+                monthDataNumberValue.push(monthValue[i]);
+            }
+        }); 
+    }); 
+
+    let monthForDateX = [0,1,2,3,4,5,6,7,8,9,10,11];
+    let monthForDateY = [0,0,0,0,0,0,0,0,0,0,0,0];
+
+   monthDataNumber.forEach( function(item, index){
+    monthMassive.forEach( function(elem, i){
+        if (item === elem)
+        {
+            monthForDateY[i] = monthForDateY[i] + 1;
+        }
+    }); 
+   }); 
+
+dateY = monthForDateY;
+dateX = monthForDateX; 
+}
+
+
+yearDataFromLinealGraph(); 
+//monthDataFromLinealGraph(monthDataSearch);
+//monthDataFromLinealGraph(WeekDataSearch);

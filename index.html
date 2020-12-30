@@ -29,14 +29,14 @@
               <div class="box-text-header-bar-task">
                 <span class="first-text-bar-task js-first-tex-bar-task"></span>
                 <div class="box-text-switch-menu">
-                  <span class="text-show-switch-menu">
-                    Show:&nbsp
-                  </span>
                   <div class="box-switch-menu js-box-switch-menu">
+                    <span class="text-show-switch-menu">
+                      Show:&nbsp
+                    </span>
                     <ul class="switch-menu text-switch-menu">
-                      <li class="menu-change-week js-task-menu-change-week"> This week&nbsp</li>
-                      <li class="menu-change-month js-task-menu-change-month">This month&nbsp</li>
-                      <li class="menu-change-year js-task-menu-change-year">This year&nbsp</li>
+                      <li class="menu-change-week js-task-menu-change-week">This week</li>
+                      <li class="menu-change-month js-task-menu-change-month">This month</li>
+                      <li class="menu-change-year js-task-menu-change-year">This year</li>
                     </ul>
                   </div>
                 </div>
@@ -328,36 +328,34 @@
       </div>
       <div class="main-graph-circle-box">
         <div class="bar-circle-task">
-          <div class="box-bar-graph"> 
+          <div class="box-bar-graph">
             <div class="header-bar-graph js-header-bar-graph">
               <span class="text-header-bar-graph">
                 Tasks
               </span>
 
               <div class="box-text-circle-graph-switch-menu">
-                <span class="text-show-switch-menu">
-                   Show:&nbsp&nbsp
-                </span>
-                <div class="box-switch-menu">
-                  <ul class="switch-menu text-switch-menu">
-                    <li class="menu-change-week">This week&nbsp </li>
-                    <li class="menu-change-month"> This month&nbsp </li>
-                    <li class="menu-change-year"> This year&nbsp </li>
-                  </ul>
-                </div>
+                  <span class="text-show-switch-menu">
+                    Show:&nbsp&nbsp
+                 </span>
+                  <ul class="text-switch-menu">
+                    <li class="menu-change-week js-menu-change-week-lineal-graph">This week&nbsp </li>
+                    <li class="menu-change-month js-menu-change-month-lineal-graph"> This month&nbsp </li>
+                    <li class="menu-change-year js-menu-change-year-lineal-graph"> This year&nbsp </li>
+                  </ul>    
               </div>
 
-                <svg class="" width="2vw" height="2vw" viewBox="0 0 7 3" fill="none"
+                <svg class="js-button-close-lineal-graph" width="2vw" height="2vw" viewBox="0 0 7 3" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <path d="M3.5 3L0.468911 -9.41288e-08L6.53109 4.35844e-07L3.5 3Z" fill="#AEAEAE" />
                 </svg>
 
-                <svg class="" width="2vw" height="2vw" viewBox="0 0 7 5"
+                <svg class="js-button-open-lineal-graph" width="2vw" height="2vw" viewBox="0 0 7 5"
                 fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M3.47594 1.00012L6.54291 3.96343L0.481174 4.03638L3.47594 1.00012Z" fill="#AEAEAE" />
               </svg>
             </div>
-            
+
             <div class="lineal-graph-react">
 
             </div>
@@ -376,26 +374,25 @@
                 <span class="text-show-switch-menu">
                    Show:&nbsp&nbsp
                 </span>
-                <div class="box-switch-menu">
                   <ul class="switch-menu text-switch-menu">
                     <li class="menu-change-week js-menu-switch-period-one">This week&nbsp </li>
                     <li class="menu-change-month js-menu-switch-period-two"> This month&nbsp </li>
                     <li class="menu-change-year js-menu-switch-period-three"> This year&nbsp </li>
                   </ul>
                 </div>
-              </div>
+        
 
-                <svg class="js-switch-period-two" width="2vw" height="2vw" viewBox="0 0 7 3" fill="none"
+                <svg class="button-switch-period-circle js-switch-period-two" width="3vw" height="3vw" viewBox="0 0 7 3" fill="none"
                   xmlns="http://www.w3.org/2000/svg">
                   <path d="M3.5 3L0.468911 -9.41288e-08L6.53109 4.35844e-07L3.5 3Z" fill="#AEAEAE" />
                 </svg>
 
-                <svg class="js-switch-period-two-open" width="2vw" height="2vw" viewBox="0 0 7 5"
+                <svg class="button-switch-period-circle js-switch-period-two-open" width="3vw" height="3vw" viewBox="0 0 7 5"
                 fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M3.47594 1.00012L6.54291 3.96343L0.481174 4.03638L3.47594 1.00012Z" fill="#AEAEAE" />
               </svg>
             </div>
-         
+
 
             <div class="graph">
               <div class="box-circle-percent">
@@ -593,7 +590,7 @@
                   fill="#C2CFE0" />
               </svg>
               <li class="aside-list-text js-remove-aside">Setting</li>
-             
+
             </div>
           </a>
           <div class="aside-href" href="">
@@ -621,7 +618,9 @@
   <script src="./js-script/showMore.js"></script>
   <script src="./js-script/search.js"></script>
   <script src="./js-script/switchMenu.js"></script>
+  <script src="./js-script/linealGraph.js"></script>
   <script src="./js-script/drawCircle.js"></script>
+  <script src="./js-script/react/build/assets-react.js"></script>
 </body>
 
 </html>

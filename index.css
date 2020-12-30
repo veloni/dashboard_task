@@ -62,22 +62,30 @@ body {
 
 .box-switch-menu{
   height: 100%;
-  width: 15%;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  padding-left: 5vw;
+}
+
+.box-text-circle-graph-switch-menu{
+  width: auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding-left: 10vw;
+}
+
+.button-switch-period-circle{
+  padding-right: 1vw;
 }
 
 .box-text-switch-menu{
   display:flex;
   flex-direction: row;
   align-items: center;
-  padding-left:0vw;
+  justify-content: center;
   width: 8vw;
-}
-
-.box-text-circle-graph-switch-menu{
-  display:flex;
-  flex-direction: row;
-  padding-left:3vw;
-  width: 7vw;
 }
 
 .box-show-switch-menu{
@@ -552,7 +560,7 @@ color:grey;
   }
 
   .box-text-header-bar-task{
-    display:flex;
+    display:  flex;
     justify-content: space-between;
     align-items: center;
     margin-top:2vh;
@@ -561,7 +569,7 @@ color:grey;
   {
     height: 0.5vw;
     background-color: #EBEFF2;
-    border-radius:1vw 1vw 1vw 1vw;
+    border-radius: 1vw 1vw 1vw 1vw;
   }
 
   .value-skale-tasks{
@@ -580,13 +588,12 @@ color:grey;
   line-height: 20px;
   letter-spacing: 0.01em;
   text-align: left;
+  width: 45%;
   }
-
 
 .show-text-switch{
   margin-left:50px;
 }
-
 
 .two-text-bar-task > span:nth-child(2){
   color:#109CF1;
@@ -608,13 +615,13 @@ color:grey;
   }
 
 .date{
-font-family: Poppins;
-font-size: 1vw;
-font-style: normal;
-font-weight: 500;
-line-height: 23px;
-letter-spacing: 0.01em;
-text-align: left;
+  font-family: Poppins;
+  font-size: 1vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 23px;
+  letter-spacing: 0.01em;
+  text-align: left;
 }
 
   .month-calendar{

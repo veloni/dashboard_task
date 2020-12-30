@@ -8,6 +8,8 @@ function DrawCircle() {
     circleCanvas.style.width = '18vw';
     circleCanvas.style.height ='18vw';
 
+  
+
     function DrawCircleRed() {
         circle.arc(250, 245, 195, 0, quantityActive * 2 * 3.14 / 100, false);
         circle.lineWidth = 14;
