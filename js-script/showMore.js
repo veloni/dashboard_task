@@ -85,11 +85,9 @@ function editRender() {
   Array.from(editButton).forEach(function(item,index) {
       item.addEventListener('click', function() {
         stateButton = true;
-        circleTwoEdit[index].style.strokeWidth = 3;
-        circleOneEdit[index].style.strokeWidth = 3;
 
-        circleTwoEdit[index].style.fill = colors.secondaryColor;
-        circleOneEdit[index].style.fill = colors.secondaryColor;
+        circleTwoEdit[index].style.strokeWidth = 5;
+        circleOneEdit[index].style.strokeWidth = 5;
 
         editIcon[index+index].style.stroke = colors.secondaryColor;
         editIcon[index+index].style.strokeWidth = 2;
@@ -117,8 +115,6 @@ function editRender() {
             thisCircleOne.style.stroke = colorTwo;
             thisCircletwo.style.stroke = colorThree;
             thisEdicIcon.style.stroke = "none";
-            thisCircleOne.style.fill = "none";
-            thisCircletwo.style.fill = "none";
             thisCircleOne.style.strokeWidth = 2;
             thisCircletwo.style.strokeWidth = 2;
           }

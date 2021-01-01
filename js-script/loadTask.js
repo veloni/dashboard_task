@@ -130,7 +130,7 @@ const renderTasks = () => {
 window.testFunction = renderTasks;
 renderTasks();
 
-startDate = new Date('Jan 1, 2020');
+startDate = new Date('Jan 1, 2021');
 
 maxDateMonth = new Date(startDate.getFullYear(), startDate.getMonth() + 1, 0).getDate();
 day = startDate.getDate();
@@ -151,11 +151,11 @@ function daysInYear(year) {
     return days;
 }
 
-let daysYears = daysInYear(2020);
+let daysYears = daysInYear(2021);
 
 function loadAllDate(){
     [...Array(1+daysYears*2)].forEach((item,index) => { 
-        if(day <= daysInMonth(month, 2020)) 
+        if(day <= daysInMonth(month, 2021)) 
             {
                 daysInYearMassive.push(day);
                 daysInYearMassive.push(month);

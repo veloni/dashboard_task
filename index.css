@@ -62,30 +62,35 @@ body {
 
 .box-switch-menu{
   height: 100%;
+  width: 14vw;
+ display:flex;
+ flex-direction: row;
+}
+
+.switch-menu{
+  height: auto;
   width: auto;
-  display: flex;
-  justify-content: center;
-  padding-left: 5vw;
+  position: absolute;
 }
 
 .box-text-circle-graph-switch-menu{
-  width: auto;
-  display: flex;
-  justify-content: center;
-  position: relative;
+  height: 40%;
   padding-left: 10vw;
+  z-index:1;
 }
 
 .button-switch-period-circle{
   padding-right: 1vw;
+  align-items: center;
 }
 
 .box-text-switch-menu{
   display:flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: 8vw;
+  width: 30%;
+  height: 100%;
+  position: absoltue;
+
 }
 
 .box-show-switch-menu{
@@ -94,19 +99,27 @@ body {
   flex-direction: row;
 }
 
-.button-switch-period{
-  padding-left: 1.1vw;
-  height: 3vw;
-  width: 3vw;
+.menu-change-week{
+  align-items: center;
 }
 
-.switch-menu{
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  width: 9vw;
-  height: 2vw;
+.button-switch-period{
+
 }
+
+.switch-menu::before{
+
+}
+
+.button-switch-box{
+
+
+}
+
+
+
+
+
 
 .text-show-switch-menu{
   color: #6A707E;
@@ -117,6 +130,7 @@ body {
   line-height: 20px;
   letter-spacing: 0.01em;
   text-align: left;
+  padding-left:50px;
 }
 
 .text-show{
@@ -562,8 +576,7 @@ color:grey;
   .box-text-header-bar-task{
     display:  flex;
     justify-content: space-between;
-    align-items: center;
-    margin-top:2vh;
+  
   }
   .skale-tasks
   {
@@ -795,7 +808,7 @@ color:grey;
   }
 
 .header-bar-graph{
-  height:4vw;
+  height:6.5vw;
   width: 100%;
   display: flex;
   align-items: center;

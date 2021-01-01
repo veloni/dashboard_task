@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { VictoryLine, VictoryChart, VictoryScatter, VictoryAxis } from 'victory';
+import { VictoryLine, VictoryChart, VictoryAxis } from 'victory';
 
-const Test = () => {
+const graphLineal = () => {
 
 var data = [];
 
@@ -13,21 +13,51 @@ dateX.forEach(function(item, index){
   
 });
 
-console.log(data);
+//console.log(data);
+
+let maxNumberX = 0;
+let minNumberX = 0;
+let maxNumberY = 0;
+let minNumberY = 0;
+let labelX = [];
+
+if (dateX.length === 12)
+  {
+    maxNumberX = 12;
+    minNumberX = 0;
+    labelX = monthMassiveRecutionForLinealGraph;
+  }
+else
+{
+  maxNumberX = Math.max.apply(Math, dateX);
+  minNumberX = Math.min.apply(Math, dateX);
+}
+
+maxNumberY = Math.max.apply(Math, dateY);
+minNumberY = Math.min.apply(Math, dateY);
+
 
 
 const chartTheme = {
   axis: {
       style: {
       ticks: {
-          size: 100,
+        size: 15,
+        stroke: "white"
       },
       grid: {
+        stroke: "#C4C4C4"
       },
       axis: {
+        stroke: "#C4C4C4"
+      },
+      axisLabel: {
+   
       },
       tickLabels: {
-          fontSize: 100
+          fontSize: 40,
+          stroke: "#C4C4C4"
+         
           },
       Labels: {
           },
@@ -38,23 +68,26 @@ const chartTheme = {
   return (
     
     <VictoryChart 
-                            height={ 1500 } 
-                            width={ 1500 }
+                            height={ 1000 } 
+                            width={ 1250 }
                             theme={ chartTheme }
+
                    >
                 <VictoryAxis 
-                        tickValues={[]}
-                        width={500}
-           
+                        tickValues={labelX}
+                        domain={[minNumberX-minNumberX/1.5, maxNumberX+maxNumberX/50]}
+                      
                    ></VictoryAxis>
 
                 <VictoryAxis dependentAxis crossAxis
-                
-                        tickValues={[0,50,70]}
+                    tickValues={[]}
+
+                    domain={[minNumberY-minNumberY/1.5, maxNumberY+maxNumberY/50]}
+                    
                 />
                    <VictoryLine 
                         interpolation="natural"
-                        style={{data: { stroke: "#7F7FD5", strokeWidth: 4 } }}
+                        style={{data: { stroke: "#109CF1", strokeWidth: 5 } }}
                         data={data}
                    />
 
@@ -63,4 +96,4 @@ const chartTheme = {
   );
 };
 
-export default Test;
+export default graphLineal;

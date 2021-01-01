@@ -23,6 +23,22 @@ window.taskList = {
         typeTask: "fix task",
         },
         {
+            nameUser: "Alex",
+            dueDate: "2 january",
+            nameTask: "Fix bag",
+            conditionTask: "completed",
+            typeTask: "fix task",
+            },
+        {
+            
+                nameUser: "Alex",
+                dueDate: "6 january",
+                nameTask: "Fix bag",
+                conditionTask: "completed",
+                typeTask: "fix task",
+                },
+            {
+            
         nameUser: "Alex",
         dueDate: "26 april",
         nameTask: "Fix bag",
@@ -374,9 +390,9 @@ window.taskList = {
         },
         {
         nameUser: "Alex",
-        dueDate: "28 january",
+        dueDate: "1 january",
         nameTask: "Fix bag",
-        conditionTask: "ended",
+        conditionTask: "completed",
         typeTask: "fix task",
         },
         {
