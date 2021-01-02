@@ -31,9 +31,6 @@ const barTaskAddType = () => {
 window.testFunctionTwo = barTaskAddType;
 barTaskAddType();
 
-let circleOneEdit = document.querySelectorAll('.js-one-circle-task');
-let circleTwoEdit = document.querySelectorAll('.js-two-circle-task');
-
 const renderTasks = () => {
 
     const nameTask = document.querySelectorAll('.js-text-condition-one');
@@ -130,8 +127,10 @@ const renderTasks = () => {
 window.testFunction = renderTasks;
 renderTasks();
 
-startDate = new Date('Jan 1, 2021');
 
+const loadTask = () => {
+
+startDate = new Date('Jan 1, 2021');
 maxDateMonth = new Date(startDate.getFullYear(), startDate.getMonth() + 1, 0).getDate();
 day = startDate.getDate();
 month = startDate.getMonth();
@@ -171,9 +170,6 @@ function loadAllDate(){
 
 loadAllDate();
 
-let quantityDataMassive = [];
-let comparisonMassive = [];
-
 function filterData() {
     [...Array(daysYears*2)+1].forEach((item,index) => { 
         if (index % 2 ){
@@ -198,8 +194,7 @@ const compareTwoFirstMassives = () => {
         });
     });
 };
-
-
-
 compareTwoFirstMassives();
+}
 
+loadTask();

@@ -1,8 +1,14 @@
 
 let task = window.taskList;
 let lenghtJson;
+let now = new Date();
 lenghtJson = task.id.length;
 const taskId = task.id;
+let quantityDataMassive = [];
+let comparisonMassive = [];
+let circleOneEdit = document.querySelectorAll('.js-one-circle-task');
+let circleTwoEdit = document.querySelectorAll('.js-two-circle-task');
+const search = document.querySelector('.js-search');
 
 const monthMassive = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
 const monthMassiveRecution = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -19,3 +25,4 @@ const colors = {
 
 
 };
+

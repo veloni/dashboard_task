@@ -2,20 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Test from './src/test';
 
-
 function changePeriodLinealGraph(period){
-
     switch (period.trim()) {
-    case 'This month'.trim():
-        monthDataFromLinealGraph(monthDataSearch);
-        break;
-    case 'This week'.trim():
-        monthDataFromLinealGraph(WeekDataSearch);
-        break;
-    case 'This year'.trim():
-        yearDataFromLinealGraph();
-        break;
-        }
+        case 'This month'.trim():
+            monthDataFromLinealGraph(monthDataSearch);
+            break;
+        case 'This week'.trim():
+            monthDataFromLinealGraph(WeekDataSearch);
+            break;
+        case 'This year'.trim():
+            yearDataFromLinealGraph();
+            break;
+    }
 }
 
 
