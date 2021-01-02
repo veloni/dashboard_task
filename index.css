@@ -62,20 +62,43 @@ body {
 
 .box-switch-menu{
   height: 100%;
-  width: 14vw;
+  width: 25%;
  display:flex;
  flex-direction: row;
+ margin-left: 8vw;
+}
+
+.lineal-grah-button{
+  padding-right: 1vw;
 }
 
 .switch-menu{
   height: auto;
   width: auto;
   position: absolute;
+  padding-top: 20px;
+}
+
+.switch-menu > li{
+  padding-bottom: 1vw;
+}
+
+.switch-menu-circle{
+  height: auto;
+  width: auto;
+}
+
+.switch-menu-circle > li{
+  padding-bottom: 1vw;
+}
+
+.text-switch-menu > li{
+  padding-bottom: 1vw;
 }
 
 .box-text-circle-graph-switch-menu{
   height: 40%;
-  padding-left: 10vw;
+  padding-left: 17vw;
   z-index:1;
 }
 
@@ -86,11 +109,11 @@ body {
 
 .box-text-switch-menu{
   display:flex;
+  align-items: center;
   flex-direction: row;
   width: 30%;
   height: 100%;
   position: absoltue;
-
 }
 
 .box-show-switch-menu{
@@ -112,8 +135,11 @@ body {
 }
 
 .button-switch-box{
-
-
+  display: flex;
+  align-items: center;
+  height: 2vw;
+  width: 2vw;
+  padding-bottom: 1vw;
 }
 
 
@@ -557,12 +583,13 @@ color:grey;
 
 .bar-task-box-first{
   width: 95%;
-  height: 25vh;
+  height: 24vh;
 }
 
   .bar-task-box{
     width: 90%;
-    margin-top: 10px;
+    height: 17%;
+    margin-top: 1.5vw;
   }
 
   .header-bar-task{
@@ -576,6 +603,7 @@ color:grey;
   .box-text-header-bar-task{
     display:  flex;
     justify-content: space-between;
+    margin-top: 2vh;
   
   }
   .skale-tasks
@@ -614,7 +642,7 @@ color:grey;
 
   .box-calendar{
     width: 100%;
-    height: 60px;
+    height: 3vw;
     display:flex;
     flex-direction: row;
     justify-content: space-between;
@@ -808,13 +836,15 @@ color:grey;
   }
 
 .header-bar-graph{
-  height:6.5vw;
+  height: 3vw;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #EFEFEF;
   }
+
+
 
 .text-header-bar-graph{
   font-family: Poppins;
