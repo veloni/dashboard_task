@@ -60,8 +60,8 @@ body {
 .switch-menu{
   height: auto;
   width: auto;
-  position: absolute;
   padding-top: 20px;
+  position: absolute;
 }
 .switch-menu > li{
   padding-bottom: 1vw;
@@ -496,6 +496,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin-top: 2vh;
+  position: relative;
 }
 .skale-tasks {
   height: 0.5vw;

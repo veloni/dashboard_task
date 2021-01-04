@@ -6,7 +6,7 @@ let div = loadDiv.cloneNode(true);
 
 let showMore = document.querySelector('.js-show-more');
 
-const test = document.querySelector('.bar-task');
+let test = document.querySelector('.bar-task');
 
 let bartaskbox = document.querySelectorAll('.bar-task-box');
 
@@ -24,6 +24,8 @@ showMore.onclick = () => {
   
   if (bartaskbox.length < task.id.length)
   {
+    function renderTask() {
+
     showMore.before(newDiv);
 
     newDiv.insertAdjacentHTML('beforeend', div.innerHTML);
@@ -55,12 +57,13 @@ showMore.onclick = () => {
     allEditCircle  = document.querySelectorAll('.js-button-circle > .circle-icon'); 
 
     editIcon = document.querySelectorAll('.edit-delete-icon-value');
+    
+  }
 
-    renderTasks();
+  [...Array(10)].forEach(() => { 
+    renderTask();
+  });
 
-    deleteRender();
-
-    editRender();
   }
   else{
     alert('Tasks over');

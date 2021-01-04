@@ -3,10 +3,10 @@ function DrawCircle() {
     let circleCanvas = document.getElementById('js-graph-circle');
     let circle = circleCanvas.getContext('2d');
 
-    circleCanvas.width  = 500;
+    circleCanvas.width = 500;
     circleCanvas.height = 500;
     circleCanvas.style.width = '20vw';
-    circleCanvas.style.height ='20vw';
+    circleCanvas.style.height = '20vw';
 
     function DrawCircleRed() {
         circle.arc(250, 245, 195, 0, quantityActive * 2 * 3.14 / 100, false);
@@ -36,9 +36,8 @@ function DrawCircle() {
         circle.beginPath();
         circle.fillStyle = "#2ED47A";
         circle.font = "4em Poppins";
-        circle.fillText(Math.ceil(quantityCompleted)+ '%',205,270);
+        circle.fillText(Math.ceil(quantityCompleted) + '%', 205, 270);
     }
-   
 
     renderTask();
     DrawCircleRed();

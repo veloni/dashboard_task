@@ -1,98 +1,75 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState} from 'react';
 import { VictoryLine, VictoryChart, VictoryAxis } from 'victory';
 
 const graphLineal = () => {
 
-var data = [];
+  const [victoryData, setVictoryData] = useState(data);
+  const [victoryMinNumberX, setVictoryMinNumberX] = useState(minNumberX);
+  const [victoryMaxNumberX, setVictoryMaxNumberX] = useState(maxNumberX);
+  const [victoryMinNumberY, setVictoryMinNumberY] = useState(minNumberY);
+  const [victoryMaxNumberY, setVictoryMaxNumberY] = useState(maxNumberY);
 
-dateX.forEach(function(item, index){
-  data[index] = {
-    x: dateX[index],
-    y: dateY[index]
+  const getNewData = () =>{
+    setVictoryData(data);
+    setVictoryMinNumberX(minNumberX);
+    setVictoryMaxNumberX(maxNumberX);
+    setVictoryMinNumberY(minNumberY);
+    setVictoryMaxNumberY(maxNumberY);
   }
-  
-});
 
-//console.log(data);
-
-let maxNumberX = 0;
-let minNumberX = 0;
-let maxNumberY = 0;
-let minNumberY = 0;
-let labelX = [];
-
-if (dateX.length === 12)
-  {
-    maxNumberX = 12;
-    minNumberX = 0;
-    labelX = monthMassiveRecutionForLinealGraph;
-  }
-else
-{
-  maxNumberX = Math.max.apply(Math, dateX);
-  minNumberX = Math.min.apply(Math, dateX);
-}
-
-maxNumberY = Math.max.apply(Math, dateY);
-minNumberY = Math.min.apply(Math, dateY);
-
-
-
-const chartTheme = {
-  axis: {
-      style: {
-      ticks: {
-        size: 15,
-        stroke: "white"
-      },
-      grid: {
-        stroke: "#C4C4C4"
-      },
+  const chartTheme = {
       axis: {
-        stroke: "#C4C4C4"
-      },
-      axisLabel: {
-   
-      },
-      tickLabels: {
-          fontSize: 40,
-          stroke: "#C4C4C4"
-         
+          style: {
+              ticks: {
+                  size: 15,
+                  stroke: "white"
+              },
+              grid: {
+                  stroke: "#C4C4C4"
+              },
+              axis: {
+                  stroke: "#C4C4C4"
+              },
+              axisLabel: {
+              },
+              tickLabels: {
+                  fontSize: 40,
+                  stroke: "#C4C4C4"
+              },
+              Labels: {},
           },
-      Labels: {
-          },
       },
-  },
-};
+  };
 
   return (
-    
-    <VictoryChart 
-                            height={ 1000 } 
-                            width={ 1250 }
-                            theme={ chartTheme }
+    <div>
+      <button
+        className="dn js-trigger-charts"
+        onClick={() => getNewData()}
+      />
 
-                   >
-                <VictoryAxis 
-                        tickValues={labelX}
-                        domain={[minNumberX-minNumberX/1.5, maxNumberX+maxNumberX/50]}
-                      
-                   ></VictoryAxis>
+      <VictoryChart 
+        height={ 1000 } 
+        width={ 1250 }
+        theme={ chartTheme }
+      >
+          <VictoryAxis 
+            tickValues={labelX}
+            domain={[victoryMinNumberX-victoryMinNumberX/1.5, victoryMaxNumberX+victoryMaxNumberX/50]}
+          ></VictoryAxis>
 
-                <VictoryAxis dependentAxis crossAxis
-                    tickValues={[]}
-
-                    domain={[minNumberY-minNumberY/1.5, maxNumberY+maxNumberY/50]}
+          <VictoryAxis dependentAxis crossAxis
+            tickValues={[]}
+            domain={[victoryMinNumberY-victoryMinNumberY/1.5, victoryMaxNumberY+victoryMaxNumberY/50]}
+          />
                     
-                />
-                   <VictoryLine 
-                        interpolation="natural"
-                        style={{data: { stroke: "#109CF1", strokeWidth: 5 } }}
-                        data={data}
-                   />
-
-               </VictoryChart>
-   
+          <VictoryLine 
+            interpolation="natural"
+            style={{data: { stroke: "#109CF1", strokeWidth: 5 } }}
+            data={victoryData}
+          />
+      </VictoryChart>
+    </div>
   );
 };
 

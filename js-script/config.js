@@ -1,4 +1,3 @@
-
 let task = window.taskList;
 let lenghtJson;
 let now = new Date();
@@ -22,7 +21,5 @@ const colors = {
     endedColor: '#DC143C',
     completedColor: '#2ED47A',
     secondaryColor: '#109CF1',
-
-
 };
 
