@@ -50,7 +50,7 @@ const graphLineal = () => {
 
       <VictoryChart 
         height={ 1000 } 
-        width={ 1250 }
+        width={ 1750 }
         theme={ chartTheme }
       >
           <VictoryAxis 

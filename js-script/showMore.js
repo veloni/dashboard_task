@@ -57,6 +57,10 @@ showMore.onclick = () => {
     allEditCircle  = document.querySelectorAll('.js-button-circle > .circle-icon'); 
 
     editIcon = document.querySelectorAll('.edit-delete-icon-value');
+
+    editRender();
+    
+    deleteRender ();
     
   }
 
