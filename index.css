@@ -482,7 +482,7 @@ body {
 }
 .bar-task-box{
   width: 90%;
-  height: 17%;
+  height: 20%;
   margin-top: 1.5vw;
 }
 .header-bar-task{
@@ -591,10 +591,16 @@ body {
   display: flex;
   justify-content: space-around;
   align-items:center;
-  height: 15vh;
+  height: 14vh;
   width: 100%;
   box-shadow:0 0 4px #C2CFE0;
 }
+.box-task:hover{
+  background-color:#E5E5E5;
+  position: relative;
+  zoom: 1.2;
+}
+
 .container-box-task{
   width: 96%;
   height:14vh;
