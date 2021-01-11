@@ -47,8 +47,6 @@ switchPeriodThree.onclick = function() {
     AddDnTwo();
 }
 
-
-
 let date = new Date();
 let start = new Date(date.getFullYear(), 0, 0);
 let diff = date - start;
@@ -62,7 +60,7 @@ let WeekData = [];
 
 function giveWeekIndex() {
     quantityDataMassive.forEach(function(item, index) {
-        if (index > day - numberWeek && index < day - numberWeek + 8 && item != 0) {
+        if (index < day + numberWeek && item !== 0) { 
             indexWeek.push(index);
             indexWeek.push(item);
         }
@@ -169,7 +167,6 @@ function loadDataSeacrgYear() {
 /* console.log(YearsDataSearch); */
 
 loadDataSeacrgYear();
-
 
 let quantityCompleted = 0;
 let quantityEnded = 0;
@@ -334,8 +331,6 @@ closeLinealGraphSwitch.onclick = function() {
     closeLinealGraphSwitch.classList.add('dn');
 }
 
-
-
 //Research
 
 let dateX = [];
@@ -370,6 +365,8 @@ const monthDataFromLinealGraph = (period) => {
         });
     });
 
+    console.log(monthDataLinealGraph);
+
     monthDataLinealGraph.filter(function(item, index) {
         let quanityCompleted = 0;
         monthDataLinealGraph.forEach(function(elem, index) {
@@ -386,7 +383,6 @@ const monthDataFromLinealGraph = (period) => {
         if (calcDateX[index] == calcDateX[index - 1]) {
             delete calcDateX[index - 1];
         }
-
     });
 
     calcDateX.forEach(function(item, index) {
@@ -433,6 +429,7 @@ const monthDataFromLinealGraph = (period) => {
             y: dateY[index]
         }
     });
+   
 };
 
 const yearDataFromLinealGraph = () => {

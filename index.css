@@ -594,13 +594,12 @@ body {
   height: 14vh;
   width: 100%;
   box-shadow:0 0 4px #C2CFE0;
+  position: relative;
 }
 .box-task:hover{
   background-color:#E5E5E5;
-  position: relative;
-  zoom: 1.2;
+  transform: scale(1.1);
 }
-
 .container-box-task{
   width: 96%;
   height:14vh;
@@ -785,9 +784,9 @@ body {
   padding-bottom: 1vw;
   background: none;
   border: none;
-  outline:none;
+  outline: none;
 }
-.bar-task-fotter{
+.bar-task-footer{
   color: #109CF1;
   font-family: Poppins;
   font-size: 2vw;
@@ -797,3 +796,5 @@ body {
   letter-spacing: 0.01em;
   text-align: center;
 }
+
+

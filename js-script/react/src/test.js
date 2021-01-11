@@ -40,7 +40,7 @@ const graphLineal = () => {
           },
       },
   };
-
+  
   return (
     <div>
       <button
@@ -55,7 +55,7 @@ const graphLineal = () => {
       >
           <VictoryAxis 
             tickValues={labelX}
-            domain={[victoryMinNumberX-victoryMinNumberX/1.5, victoryMaxNumberX+victoryMaxNumberX/50]}
+            domain={[victoryMinNumberX, victoryMaxNumberX]}
           ></VictoryAxis>
 
           <VictoryAxis dependentAxis crossAxis
