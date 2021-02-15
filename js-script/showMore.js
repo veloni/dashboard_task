@@ -75,7 +75,7 @@ showMore.onclick = () => {
   }
 }
 
-function deleteRender (){
+const deleteRender = () => {
   deleteButton.forEach(function(elem) {
     elem.onclick = function() {
       if (confirm('Delete task?'))
@@ -87,7 +87,7 @@ function deleteRender (){
   });
 }
   
-function editRender() {
+const editRender = () => {
   let stateButton = true;
   Array.from(editButton).forEach(function(item,index) {
       item.addEventListener('click', function() {
@@ -103,19 +103,18 @@ function editRender() {
       });
   });
 
-  function butonCircleEdit () {
+  const butonCircleEdit = () => {
     Array.from(allEditCircle).forEach(function(item) {
       item.addEventListener('click',  function() {
         if (stateButton == true)
         {
-          console.log(stateButton);
           const thisBox = this.closest('.icon-button-box');
           const thisButtonTaskBox = thisBox.querySelector('.button-task-box > .button-task');
           const thisCircleOne = thisBox.querySelector('.two-circle > .js-button-circle > .js-one-circle-task');
           const thisCircletwo = thisBox.querySelector('.two-circle > .js-button-circle > .js-two-circle-task');
           const thisEdicIcon = thisBox.querySelector('.edit-delete-icon > .button-edit > .edit-icon');
 
-          function reRenderCircle(colorOne, colorTwo, colorThree, text){
+          const reRenderCircle = (colorOne, colorTwo, colorThree, text) =>{
             thisButtonTaskBox.style.backgroundColor = colorOne;
             thisButtonTaskBox.style.borderColor = colorOne;
             thisButtonTaskBox.innerHTML = text;
@@ -126,7 +125,7 @@ function editRender() {
             thisCircletwo.style.strokeWidth = 2;
           }
     
-          function removeClassCricle(){
+          const removeClassCricle = () => {
             thisCircleOne.classList.remove('ended');
             thisCircletwo.classList.remove('ended');
             thisCircleOne.classList.remove('active');
@@ -135,7 +134,7 @@ function editRender() {
             thisCircletwo.classList.remove('completed');
           }
 
-          function addClas(classOne, classTwo){
+          const addClass = (classOne, classTwo) => {
             thisCircleOne.classList.add(classOne);
             thisCircletwo.classList.add(classTwo);
           }
@@ -143,7 +142,7 @@ function editRender() {
           if (item.classList.contains('ended')){
             reRenderCircle(colors.endedColor, colors.activeColor, colors.completedColor, 'ended', 'completed', 'active');
             removeClassCricle();
-            addClas('active','completed');
+            addClass('active','completed');
             stateButton = false;
             return;
           }
@@ -151,7 +150,7 @@ function editRender() {
           if (item.classList.contains('completed')){
             reRenderCircle(colors.completedColor, colors.endedColor, colors.activeColor, 'completed', 'ended', 'active');
             removeClassCricle();
-            addClas('ended','active');
+            addClass('ended','active');
             stateButton = false;
             return;
           }
@@ -159,7 +158,7 @@ function editRender() {
           if (item.classList.contains('active')){
             reRenderCircle(colors.activeColor, colors.endedColor, colors.completedColor, 'active', 'ended', 'completed');
             removeClassCricle();
-            addClas('ended','completed');
+            addClass('ended','completed');
             stateButton = false;
             return;
           } 

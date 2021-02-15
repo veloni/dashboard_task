@@ -8,6 +8,12 @@ let comparisonMassive = [];
 let circleOneEdit = document.querySelectorAll('.js-one-circle-task');
 let circleTwoEdit = document.querySelectorAll('.js-two-circle-task');
 const search = document.querySelector('.js-search');
+let argumentCircle = 0;
+let canvasHeight = 500;
+let canvasWidth = 500;
+let firstLoadScript = false;
+let addWidthGrpahAsideMove = 0;
+let fontSizeGraph = 45;
 
 const monthMassive = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
 const monthMassiveRecution = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];

@@ -13,6 +13,29 @@ const asideMove = () => {
   };
 
   const handleToggleButtonClick = () => {
+
+    if (firstLoadScript) { 
+      argumentCircle = 0;
+      canvasHeight = "20vw";
+      canvasWidth = "20vw";
+      addWidthGrpahAsideMove = 0;
+      fontSizeGraph = 40;
+      window.globalRerender();
+     } 
+
+    if (!firstLoadScript){
+      argumentCircle = 1;
+      canvasHeight = "22.5vw";
+      canvasWidth = "22.5vw";
+      addWidthGrpahAsideMove = 80;
+      fontSizeGraph = 40;
+      window.globalRerender();
+    } 
+
+    firstLoadScript = !firstLoadScript;
+
+    DrawCircle(argumentCircle, canvasHeight, canvasWidth);
+    
     const sidebarClasses = sidebar.classList;
     const isOpened = sidebarClasses.contains('open');
 
@@ -47,18 +70,21 @@ const asideMove = () => {
   }, 500);
   };
 
-  asideStyleHandler = (isOpened) => {
+  const asideStyleHandler = (isOpened) => {
     const titleTextAside = document.querySelector('.js-title-text-aside-box');
     const titleTextAsideBox = document.querySelector('.js-title-aside-box');
 
-    search.style.marginLeft = isOpened ? '120px' : '365px';
+    search.style.marginLeft = isOpened ? '150px' : '365px';
     titleTextAside.innerHTML = isOpened ? 'SaaS' : 'SaaS Kit';
-    mainSectionGenerallyBox.style.paddingLeft = isOpened ? '10%' : '22.5%';
+    mainSectionGenerallyBox.style.paddingLeft = isOpened ? '11%' : '22.5%';
     mainSection.style.width = isOpened ? '95%' : '98%';
     titleTextAsideBox.style.justifyContent = isOpened ? 'center' : 'space-between';
   };
 
   listener();
+
 }
 
 asideMove();
+
+

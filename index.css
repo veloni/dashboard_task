@@ -108,6 +108,11 @@ body {
   width: 2vw;
   padding-bottom: 1vw;
 }
+
+.canvas{
+  display: flex;
+}
+
 .text-show-switch-menu{
   color: #6A707E;
   font-family: Poppins;

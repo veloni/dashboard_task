@@ -33,7 +33,7 @@ const graphLineal = () => {
               axisLabel: {
               },
               tickLabels: {
-                  fontSize: 40,
+                  fontSize: fontSizeGraph,
                   stroke: "#C4C4C4"
               },
               Labels: {},
@@ -49,8 +49,8 @@ const graphLineal = () => {
       />
 
       <VictoryChart 
-        height={ 1000 } 
-        width={ 1750 }
+        height={ 750 } 
+        width={ 1550 + addWidthGrpahAsideMove}
         theme={ chartTheme }
       >
           <VictoryAxis 
@@ -60,7 +60,7 @@ const graphLineal = () => {
 
           <VictoryAxis dependentAxis crossAxis
             tickValues={[]}
-            domain={[victoryMinNumberY-victoryMinNumberY/1.5, victoryMaxNumberY+victoryMaxNumberY/50]}
+            domain={[victoryMinNumberY-victoryMinNumberY, victoryMaxNumberY+victoryMaxNumberY/50]}
           />
                     
           <VictoryLine 

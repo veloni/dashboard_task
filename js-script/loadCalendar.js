@@ -1,4 +1,4 @@
-function loadCalendar() {
+const loadCalendar = () => {
 
   let nowMonth;
   let nowDate;

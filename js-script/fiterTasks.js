@@ -15,26 +15,26 @@ const filterTask = () => {
 
   buttonTextChoise.onclick = function raze(e) {
     e.preventDefault();
-  if(allTextChoise[1].classList.contains('dn')){
-    allTextChoise.forEach((item) => {
-      item.classList.remove('dn');
-      item.style.display = 'flex';
-    });
-  }
+
+    if (allTextChoise[1].classList.contains('dn')){
+      allTextChoise.forEach((item) => {
+        item.classList.remove('dn');
+        item.style.display = 'flex';
+      });
+    }
   else {
-    const barTaskBox = document.querySelectorAll('.bar-task-box');
-    allTextChoise.forEach((item) => {
-      item.classList.add('dn');
-      item.style.display = 'none';
-    });
-
-    barTaskBox.forEach((item) => {
-      item.classList.remove('dn');
-    });
+      const barTaskBox = document.querySelectorAll('.bar-task-box');
+      allTextChoise.forEach((item) => {
+        item.classList.add('dn');
+        item.style.display = 'none';
+      });
+      barTaskBox.forEach((item) => {
+        item.classList.remove('dn');
+      });
+    }
   }
-  }
 
-  const activeBox = document.querySelectorAll('.active');
+ /*  const activeBox = document.querySelectorAll('.active'); */
 
   activeTextChoise.onclick = function raze(e) {
     e.preventDefault();
@@ -60,6 +60,7 @@ const filterTask = () => {
     const activeBox = document.querySelectorAll('.active');
     const endedBox = document.querySelectorAll('.ended');
     const barTaskBox = document.querySelectorAll('.bar-task-box');
+    
     barTaskBox.forEach((item) => {
       item.classList.remove('dn');
     });

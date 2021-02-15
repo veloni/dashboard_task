@@ -1,6 +1,6 @@
-function removeIcon(){
-    const twoCircle = document.querySelectorAll('.js-two-circle');
-    const editDeleteIcon = document.querySelectorAll('.js-edit-delete-icon');
+const removeIcon = () => {
+    let twoCircle = document.querySelectorAll('.js-two-circle');
+    let editDeleteIcon = document.querySelectorAll('.js-edit-delete-icon');
 }
 
 const anyFunction = (massive, name) => {
@@ -10,7 +10,7 @@ const anyFunction = (massive, name) => {
 };
 
 const barTaskAddType = () => {
-    const barTaskBox = document.querySelectorAll('.js-box-task');
+    let barTaskBox = document.querySelectorAll('.js-box-task');
     barTaskBox.forEach((item,index) => {
         switch(task.id[index].conditionTask){
             case 'ended':
@@ -33,11 +33,11 @@ barTaskAddType();
 
 const renderTasks = () => {
 
-    const nameTask = document.querySelectorAll('.js-text-condition-one');
-    const nameUser = document.querySelectorAll('.js-name-task-text');
-    const dueDate = document.querySelectorAll('.js-due-date');
-    const typeTask = document.querySelectorAll('.js-text-condition-two');
-    const conditionTask = document.querySelectorAll('.js-button-task');
+    let nameTask = document.querySelectorAll('.js-text-condition-one');
+    let nameUser = document.querySelectorAll('.js-name-task-text');
+    let dueDate = document.querySelectorAll('.js-due-date');
+    let typeTask = document.querySelectorAll('.js-text-condition-two');
+    let conditionTask = document.querySelectorAll('.js-button-task');
 
     anyFunction(nameUser, 'nameUser');
     anyFunction(nameTask, 'nameTask');
@@ -69,9 +69,9 @@ const renderTasks = () => {
 
 
 
-    circleOneEdit.forEach((item,index) =>{
+    circleOneEdit.forEach((item,index) => {
 
-        function addColorsCircle(colorOne, colorTwo){
+        const addColorsCircle = (colorOne, colorTwo) => {
             
             circleOneEdit[index].style.stroke = colorOne;
             circleTwoEdit[index].style.stroke = colorTwo;
@@ -130,47 +130,47 @@ renderTasks();
 
 const loadTask = () => {
 
-startDate = new Date('Jan 1, 2021');
-maxDateMonth = new Date(startDate.getFullYear(), startDate.getMonth() + 1, 0).getDate();
-day = startDate.getDate();
-month = startDate.getMonth();
+    startDate = new Date('Jan 1, 2021');
+    maxDateMonth = new Date(startDate.getFullYear(), startDate.getMonth() + 1, 0).getDate();
+    day = startDate.getDate();
+    month = startDate.getMonth();
 
-let daysInYearMassive = [];
-let daysDateMassive = [];
+    let daysInYearMassive = [];
+    let daysDateMassive = [];
 
-function daysInMonth(month, year) {
-    return new Date(year, month, 0).getDate();
-  }
+    const daysInMonth = (month, year) => {
+        return new Date(year, month, 0).getDate();
+    }
 
-function daysInYear(year) {
-    let days = 0;
-    [...Array(12)].forEach((item,index) => { 
-            days += daysInMonth(index, year);
-    });
-    return days;
-}
+    const daysInYear = (year) => {
+        let days = 0;
+        [...Array(12)].forEach((item,index) => { 
+                days += daysInMonth(index, year);
+        });
+        return days;
+    }
 
-let daysYears = daysInYear(2021);
+    let daysYears = daysInYear(2021);
 
-function loadAllDate(){
-    [...Array(1+daysYears*2)].forEach((item,index) => { 
-        if(day <= daysInMonth(month, 2021)) 
-            {
-                daysInYearMassive.push(day);
-                daysInYearMassive.push(month);
-                day += 1;
-            }
-        else
-            {
-                day = 1;
-                month +=1;
-            }
-});
-}
+    const loadAllDate = () =>{
+        [...Array(1+daysYears*2)].forEach((item,index) => { 
+            if(day <= daysInMonth(month, 2021)) 
+                {
+                    daysInYearMassive.push(day);
+                    daysInYearMassive.push(month);
+                    day += 1;
+                }
+            else
+                {
+                    day = 1;
+                    month +=1;
+                }
+        });
+    }
 
 loadAllDate();
 
-function filterData() {
+const filterData = () => {
     [...Array(daysYears*2)+1].forEach((item,index) => { 
         if (index % 2 ){
         daysInYearMassive[index] = monthMassive[daysInYearMassive[index]];

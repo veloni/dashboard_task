@@ -6,7 +6,7 @@ const iconOpenSwitch = document.querySelector('.js-switch-period-two-open');
 const headerBarGraph = document.querySelector('.js-header-bar-graph');
 let savePeriodTwo;
 
-function AddDnTwo() {
+const AddDnTwo = () => {
     switchPeriodThree.classList.add('dn');
     switchPeriodTwo.classList.add('dn');
     iconOpenSwitch.classList.add('dn');
@@ -58,9 +58,9 @@ let indexWeek = [];
 let WeekDataSearch = [];
 let WeekData = [];
 
-function giveWeekIndex() {
+const giveWeekIndex = () => {
     quantityDataMassive.forEach(function(item, index) {
-        if (index < day + numberWeek && item !== 0) { 
+        if (index > day && index < day + 7 && item !== 0) { 
             indexWeek.push(index);
             indexWeek.push(item);
         }
@@ -68,7 +68,7 @@ function giveWeekIndex() {
 }
 giveWeekIndex();
 
-function giveValueWeekSearch() {
+const giveValueWeekSearch = () => {
     indexWeek.forEach(function(item, index) {
         if (index % 2 == 0) {
             let dateNumberYears = new Date(2020, 0, item);
@@ -84,11 +84,13 @@ function giveValueWeekSearch() {
         }
     });
 }
+
+console.log(WeekDataSearch);
 giveValueWeekSearch();
 
 let AllTaskWeek = 0;
 
-function DateLoadWeek() {
+const DateLoadWeek = () => {
     task.id.filter(function(item, index) {
         WeekDataSearch.forEach(function(elem) {
             if (item['dueDate'] == elem) {
@@ -99,11 +101,12 @@ function DateLoadWeek() {
     });
 }
 
+
 DateLoadWeek();
 
 let indexMonth = [];
 
-function giveMonthIndex() {
+const giveMonthIndex = () => {
     quantityDataMassive.forEach(function(item, index) {
         nowDate = now.getDate();
         if (index > day - nowDate && index < day - nowDate + maxDateMonth && item != 0) {
@@ -117,7 +120,7 @@ giveMonthIndex();
 
 let monthDataSearch = [];
 
-function giveValueMonthSearch() {
+const giveValueMonthSearch = () => {
     indexMonth.forEach(function(item, index) {
         if (index % 2 == 0) {
             let dateNumberYears = new Date(2020, 0, item);
@@ -133,7 +136,7 @@ giveValueMonthSearch();
 let MonthData = [];
 let allTaskMonth = 0;;
 
-function MonthLoadWeek() {
+const MonthLoadWeek = () => {
     task.id.filter(function(item, index) {
         monthDataSearch.forEach(function(elem) {
             if (item['dueDate'] == elem) {
@@ -149,7 +152,7 @@ MonthLoadWeek();
 
 let YearData = [];
 
-function loadDataYear() {
+const loadDataYear = () => {
     task.id.forEach(function(item) {
         YearData.push(item['conditionTask']);
     });
@@ -158,21 +161,20 @@ loadDataYear();
 
 let YearsDataSearch = [];
 
-function loadDataSeacrgYear() {
+const loadDataSearchYear = () => {
     task.id.forEach(function(item) {
         YearsDataSearch.push(item['dueDate']);
     });
 }
 
-/* console.log(YearsDataSearch); */
-
-loadDataSeacrgYear();
+loadDataSearchYear();
 
 let quantityCompleted = 0;
 let quantityEnded = 0;
 let quantityActive = 0;
 
 const loadInterest = (period, length) => {
+
     quantityCompleted = 0;
     quantityEnded = 0;
     quantityActive = 0;
@@ -202,7 +204,7 @@ const loadInterest = (period, length) => {
     }
 }
 
-function changePeriod() {
+const changePeriod = () => {
 
     switch (switchPeriodOne.textContent.trim()) {
         case 'This month'.trim():
@@ -229,7 +231,7 @@ const switchPeriodOpen = document.querySelector('.js-switch-task-period-open');
 const switchMenu = document.querySelector('.switch-menu');
 let savePeriod;
 
-function AdDn() {
+const AdDn = () => {
     switchPeriodTaskTwo.classList.add('dn');
     switchPeriodTaskThree.classList.add('dn');
     switchPeriodOpen.classList.add('dn');
@@ -290,7 +292,7 @@ const loadCompleteTask = (period, lenght) => {
     });
 }
 
-function changePeriodTaskCompleted() {
+const changePeriodTaskCompleted = () => {
 
     switch (switchPeriodTaskOne.textContent.trim()) {
         case 'This month'.trim():
@@ -316,7 +318,7 @@ const closeLinealGraphSwitch = document.querySelector('.js-button-close-lineal-g
 const openLinealGraphSwitch = document.querySelector('.js-button-open-lineal-graph');
 let savePeriodLinealGraph = 0;
 
-function addDnLinealGraph() {
+const addDnLinealGraph = () => {
     switchPeriodLinealGraphTwo.classList.add('dn');
     switchPeriodLinealGraphThree.classList.add('dn');
     openLinealGraphSwitch.classList.add('dn');
@@ -364,8 +366,6 @@ const monthDataFromLinealGraph = (period) => {
             }
         });
     });
-
-    console.log(monthDataLinealGraph);
 
     monthDataLinealGraph.filter(function(item, index) {
         let quanityCompleted = 0;
@@ -519,7 +519,7 @@ monthDataFromLinealGraph(WeekDataSearch);
 
 window.globalRerender(); 
 
-function changePeriodLinealGraph(period){
+const changePeriodLinealGraph = (period) =>{
     switch (period.trim()) {
         case 'This month'.trim():
             monthDataFromLinealGraph(monthDataSearch);
