@@ -8,10 +8,10 @@ const  DrawCircle = (addSize, height, width) => {
     circleCanvas.height = 500;
     circleCanvas.style.width = width;
     circleCanvas.style.height = height;
-    circleCanvas.style.marginBottom = "50px";
+    circleCanvas.style.marginBottom = "15%";
 
     const DrawCircleRed = () => {
-        circle.arc(250+addSize, 245+addSize, 195+addSize, 0, quantityActive * 2 * 3.14 / 100, false);
+        circle.arc(250 + addSize, 245 + addSize, 195 + addSize, 0, quantityActive * 2 * 3.14 / 100, false);
         circle.lineWidth = 14;
         circle.strokeStyle = colors.endedColor;
         circle.stroke();
@@ -19,7 +19,7 @@ const  DrawCircle = (addSize, height, width) => {
     }
 
     const DrawCircleOrange = () => {
-        circle.arc(250+addSize, 245+addSize, 195+addSize, quantityActive * 2 * 3.14 / 100, quantityActive * 2 * 3.14 / 100 + quantityEnded * 2 * 3.14 / 100, false);
+        circle.arc(250 + addSize, 245 + addSize, 195 + addSize, quantityActive * 2 * 3.14 / 100, quantityActive * 2 * 3.14 / 100 + quantityEnded * 2 * 3.14 / 100, false);
         circle.lineWidth = 14;
         circle.strokeStyle = colors.activeColor;
         circle.stroke();
@@ -27,7 +27,7 @@ const  DrawCircle = (addSize, height, width) => {
     }
 
     const DrawCircleGreen = () => {
-        circle.arc(250+addSize, 245+addSize, 195+addSize, quantityActive * 2 * 3.14 / 100 + quantityEnded * 2 * 3.14 / 100, 0, false);
+        circle.arc(250 + addSize, 245 + addSize, 195 + addSize, quantityActive * 2 * 3.14 / 100 + quantityEnded * 2 * 3.14 / 100, 0, false);
         circle.lineWidth = 14;
         circle.strokeStyle = colors.completedColor;
         circle.stroke();

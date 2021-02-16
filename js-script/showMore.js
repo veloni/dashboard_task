@@ -6,7 +6,7 @@ let div = loadDiv.cloneNode(true);
 
 let showMore = document.querySelector('.js-show-more');
 
-let test = document.querySelector('.bar-task');
+let barTaskScroll = document.querySelector('.bar-task');
 
 let bartaskbox = document.querySelectorAll('.bar-task-box');
 
@@ -34,15 +34,15 @@ showMore.onclick = () => {
 
     newDiv.classList.add('js-box-task');
 
-    window.testFunction();
+    window.barRenderTask();
 
-    window.testFunctionTwo();
+    window.barTaskFunction();
 
     newDiv = document.createElement("div");
 
     div = loadDiv.cloneNode(true);
 
-    test.scroll(0, heightScroll);
+    barTaskScroll.scroll(0, heightScroll);
 
     heightScroll += 160;
 
@@ -61,6 +61,8 @@ showMore.onclick = () => {
     editRender();
     
     deleteRender ();
+
+    findItems();
     
   }
 

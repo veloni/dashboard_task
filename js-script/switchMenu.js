@@ -29,12 +29,25 @@ switchPeriodOne.onclick = function() {
     openSwitch.classList.remove('dn');
 }
 
+const changeDataCircle = () =>{
+    if (!firstLoadScript) { 
+        argumentCircle = 0;
+        canvasHeight = "20vw";
+        canvasWidth = "20vw";
+       } else{
+        argumentCircle = 1;
+        canvasHeight = "21.5vw";
+        canvasWidth = "21.5vw";
+       }
+}
+
 switchPeriodTwo.onclick = function() {
     savePeriodTwo = switchPeriodOne.textContent
     switchPeriodOne.innerHTML = switchPeriodTwo.textContent;
     switchPeriodTwo.innerHTML = savePeriodTwo;
     changePeriod();
-    DrawCircle();
+    changeDataCircle();
+    DrawCircle(argumentCircle, canvasHeight, canvasWidth);
     AddDnTwo();
 }
 
@@ -43,24 +56,25 @@ switchPeriodThree.onclick = function() {
     switchPeriodOne.innerHTML = switchPeriodThree.textContent;
     switchPeriodThree.innerHTML = savePeriodTwo;
     changePeriod();
-    DrawCircle();
+    changeDataCircle();
+    DrawCircle(argumentCircle, canvasHeight, canvasWidth);
     AddDnTwo();
 }
 
-let date = new Date();
-let start = new Date(date.getFullYear(), 0, 0);
-let diff = date - start;
-let oneDay = 1000 * 60 * 60 * 24;
-let day = Math.floor(diff / oneDay);
-let numberWeek = date.getDay();
-let Month = date.getMonth();
+const date = new Date();
+const start = new Date(date.getFullYear(), 0, 0);
+const diff = date - start;
+const oneDay = 1000 * 60 * 60 * 24;
+const day = Math.floor(diff / oneDay);
+const numberWeek = date.getDay();
+const Month = date.getMonth();
 let indexWeek = [];
 let WeekDataSearch = [];
 let WeekData = [];
 
 const giveWeekIndex = () => {
     quantityDataMassive.forEach(function(item, index) {
-        if (index > day && index < day + 7 && item !== 0) { 
+        if (index >= day && index < day + 7 && item !== 0) { 
             indexWeek.push(index);
             indexWeek.push(item);
         }
@@ -71,12 +85,12 @@ giveWeekIndex();
 const giveValueWeekSearch = () => {
     indexWeek.forEach(function(item, index) {
         if (index % 2 == 0) {
-            let dateNumberYears = new Date(2020, 0, item);
-            let maxDateMonthTwo = new Date(dateNumberYears.getFullYear(), dateNumberYears.getMonth() + 1, 0).getDate();
-            let giveMonth = dateNumberYears.getMonth();
-            let giveDate = dateNumberYears.getDate();
+            const dateNumberYears = new Date(2021, 0, item);
+            const maxDateMonthTwo = new Date(dateNumberYears.getFullYear(), dateNumberYears.getMonth() + 1, 0).getDate();
+            const giveMonth = dateNumberYears.getMonth();
+            const giveDate = dateNumberYears.getDate();
 
-            if (giveDate > maxDateMonthTwo) {
+            if (giveDate >= maxDateMonthTwo) {
                 giveDate = 0;
                 giveMonth += 1;
             }
@@ -85,7 +99,6 @@ const giveValueWeekSearch = () => {
     });
 }
 
-console.log(WeekDataSearch);
 giveValueWeekSearch();
 
 let AllTaskWeek = 0;
@@ -123,9 +136,9 @@ let monthDataSearch = [];
 const giveValueMonthSearch = () => {
     indexMonth.forEach(function(item, index) {
         if (index % 2 == 0) {
-            let dateNumberYears = new Date(2020, 0, item);
-            let giveMonth = dateNumberYears.getMonth();
-            let giveDate = dateNumberYears.getDate();
+            const dateNumberYears = new Date(2020, 0, item);
+            const giveMonth = dateNumberYears.getMonth();
+            const giveDate = dateNumberYears.getDate();
             monthDataSearch.push(giveDate + 1 + ' ' + monthMassive[giveMonth]);
         }
     });
@@ -481,8 +494,8 @@ const yearDataFromLinealGraph = () => {
         });
     });
 
-    let monthForDateX = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
-    let monthForDateY = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+    const monthForDateX = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+    const monthForDateY = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
     monthDataNumber.forEach(function(item, index) {
         monthMassive.forEach(function(elem, i) {

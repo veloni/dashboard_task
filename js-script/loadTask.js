@@ -28,16 +28,16 @@ const barTaskAddType = () => {
     });
 }
 
-window.testFunctionTwo = barTaskAddType;
+window.barTaskFunction = barTaskAddType;
 barTaskAddType();
 
 const renderTasks = () => {
 
-    let nameTask = document.querySelectorAll('.js-text-condition-one');
-    let nameUser = document.querySelectorAll('.js-name-task-text');
-    let dueDate = document.querySelectorAll('.js-due-date');
-    let typeTask = document.querySelectorAll('.js-text-condition-two');
-    let conditionTask = document.querySelectorAll('.js-button-task');
+    const nameTask = document.querySelectorAll('.js-text-condition-one');
+    const nameUser = document.querySelectorAll('.js-name-task-text');
+    const dueDate = document.querySelectorAll('.js-due-date');
+    const typeTask = document.querySelectorAll('.js-text-condition-two');
+    const conditionTask = document.querySelectorAll('.js-button-task');
 
     anyFunction(nameUser, 'nameUser');
     anyFunction(nameTask, 'nameTask');
@@ -124,7 +124,7 @@ const renderTasks = () => {
     });
 } 
 
-window.testFunction = renderTasks;
+window.barRenderTask = renderTasks;
 renderTasks();
 
 

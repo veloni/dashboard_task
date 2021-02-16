@@ -108,9 +108,12 @@ body {
   width: 2vw;
   padding-bottom: 1vw;
 }
-
 .canvas{
   display: flex;
+}
+.find-text{
+  color: red;
+  zoom: 1.5;
 }
 
 .text-show-switch-menu{
@@ -226,6 +229,7 @@ body {
 }
 .search{
   height: 4vw;
+  outline: none;
   border:none;
   background-image: url(icon/search-icon.png);
   background-size: 1.5vw;
@@ -234,7 +238,8 @@ body {
   background-color: transparent;
   width: 20vw;
   height:3vw;
-  margin-left: 22.3vw;
+  margin-left: 22vw;
+  padding-left: 3vw;
   transition: margin-left 1s ease-in-out;
   outline-color: rgba(0,0,0,0.3);
 }
@@ -243,7 +248,7 @@ body {
 }
 .left-sidebar {
   height: 100%;
-  width: 50px;
+  width: 100px;
   background-color: white ;
   position: fixed;
   top: 0;

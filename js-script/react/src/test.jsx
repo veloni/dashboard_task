@@ -9,12 +9,30 @@ const graphLineal = () => {
   const [victoryMinNumberY, setVictoryMinNumberY] = useState(minNumberY);
   const [victoryMaxNumberY, setVictoryMaxNumberY] = useState(maxNumberY);
 
+  const [asideOpenState, setAsideOpenState] = useState(true);
+  const [fontSize, setFontSize] = useState(30);
+  const [addWidthGraph, setAddWidthGraph] = useState(1550);
+  const [addHeightGraph, setAddHeightGraph] = useState(750);
+
   const getNewData = () =>{
     setVictoryData(data);
     setVictoryMinNumberX(minNumberX);
     setVictoryMaxNumberX(maxNumberX);
     setVictoryMinNumberY(minNumberY);
     setVictoryMaxNumberY(maxNumberY);
+  }
+
+  const reRenderForAsideMove = () =>{
+    if (asideOpenState){
+      setAddWidthGraph(1700);
+      setFontSize(35);
+      setAddHeightGraph(800);
+    } else {
+      setAddWidthGraph(1550);
+      setFontSize(30);
+      setAddHeightGraph(750);
+    }
+    setAsideOpenState(!asideOpenState);
   }
 
   const chartTheme = {
@@ -33,7 +51,7 @@ const graphLineal = () => {
               axisLabel: {
               },
               tickLabels: {
-                  fontSize: fontSizeGraph,
+                  fontSize: fontSize,
                   stroke: "#C4C4C4"
               },
               Labels: {},
@@ -48,19 +66,24 @@ const graphLineal = () => {
         onClick={() => getNewData()}
       />
 
+      <button
+        className="dn js-trigger-aside"
+        onClick={() => reRenderForAsideMove()}
+      />
+
       <VictoryChart 
-        height={ 750 } 
-        width={ 1550 + addWidthGrpahAsideMove}
+        height={ addHeightGraph } 
+        width={ addWidthGraph}
         theme={ chartTheme }
       >
           <VictoryAxis 
             tickValues={labelX}
-            domain={[victoryMinNumberX, victoryMaxNumberX]}
+            domain={[victoryMinNumberX-victoryMinNumberX/100, victoryMaxNumberX + victoryMaxNumberX/100 ]}
           ></VictoryAxis>
 
           <VictoryAxis dependentAxis crossAxis
             tickValues={[]}
-            domain={[victoryMinNumberY-victoryMinNumberY, victoryMaxNumberY+victoryMaxNumberY/50]}
+            domain={[victoryMinNumberY-victoryMinNumberY, victoryMaxNumberY + victoryMaxNumberY/4]}
           />
                     
           <VictoryLine 

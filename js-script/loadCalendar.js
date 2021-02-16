@@ -1,20 +1,15 @@
 const loadCalendar = () => {
-
-  let nowMonth;
-  let nowDate;
-  let nowWeekday;
-  let toggleMonth;
   let i = 0;
 
   const calendarNowMonth = document.querySelectorAll('.js-calendar-now-month');
   const calendarNowDay = document.querySelectorAll('.js-calendar-now-day');
   const calendarNowDate = document.querySelector('.js-now-date')
 
-  nowYear = now.getFullYear();
-  nowMonth = now.getMonth();
-  nowDate = now.getDate();
-  nowWeekday = now.getDay();
-  maxDateMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+  const nowYear = now.getFullYear();
+  const nowMonth = now.getMonth();
+  const nowDate = now.getDate();
+  const nowWeekday = now.getDay();
+  const maxDateMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
 
   calendarNowDate.innerHTML = `${nowDate} ${monthMassive[nowMonth]}, ${weekdayMassive[nowWeekday]}`;
 
