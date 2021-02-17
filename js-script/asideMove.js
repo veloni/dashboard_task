@@ -14,6 +14,8 @@ const asideMove = () => {
 
   const handleToggleButtonClick = () => {
 
+    asideOpen = !asideOpen;
+
     if (firstLoadScript) { 
       document.querySelector('.js-trigger-aside').click();
       argumentCircle = 0;

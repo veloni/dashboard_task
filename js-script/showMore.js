@@ -63,8 +63,9 @@ showMore.onclick = () => {
     deleteRender ();
 
     findItems();
-    
   }
+
+
 
   [...Array(10)].forEach(() => { 
     renderTask();

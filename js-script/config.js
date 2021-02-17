@@ -11,6 +11,7 @@ let argumentCircle = 0;
 let canvasHeight = 500;
 let canvasWidth = 500;
 let firstLoadScript = false;
+let asideOpen = false;
 
 const monthMassive = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
 const monthMassiveRecution = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];

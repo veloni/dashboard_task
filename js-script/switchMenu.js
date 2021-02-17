@@ -71,7 +71,6 @@ const Month = date.getMonth();
 let indexWeek = [];
 let WeekDataSearch = [];
 let WeekData = [];
-
 const giveWeekIndex = () => {
     quantityDataMassive.forEach(function(item, index) {
         if (index >= day && index < day + 7 && item !== 0) { 
@@ -94,7 +93,7 @@ const giveValueWeekSearch = () => {
                 giveDate = 0;
                 giveMonth += 1;
             }
-            WeekDataSearch.push(giveDate + 1 + ' ' + monthMassive[giveMonth]);
+            WeekDataSearch.push(giveDate + 0 + ' ' + monthMassive[giveMonth]);
         }
     });
 }

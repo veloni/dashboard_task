@@ -1,7 +1,7 @@
 import React, { useEffect, useState} from 'react';
 import { VictoryLine, VictoryChart, VictoryAxis } from 'victory';
 
-const graphLineal = () => {
+const Graph = () => {
 
   const [victoryData, setVictoryData] = useState(data);
   const [victoryMinNumberX, setVictoryMinNumberX] = useState(minNumberX);
@@ -10,9 +10,10 @@ const graphLineal = () => {
   const [victoryMaxNumberY, setVictoryMaxNumberY] = useState(maxNumberY);
 
   const [asideOpenState, setAsideOpenState] = useState(true);
+  
   const [fontSize, setFontSize] = useState(30);
-  const [addWidthGraph, setAddWidthGraph] = useState(1550);
-  const [addHeightGraph, setAddHeightGraph] = useState(750);
+  const [addWidthGraph, setAddWidthGraph] = useState(window.innerWidth);
+  const [addHeightGraph, setAddHeightGraph] = useState(window.innerHeight);
 
   const getNewData = () =>{
     setVictoryData(data);
@@ -22,17 +23,30 @@ const graphLineal = () => {
     setVictoryMaxNumberY(maxNumberY);
   }
 
+  window.addEventListener(`resize`, event => {
+    if (asideOpen){
+      setAddWidthGraph(window.innerWidth + 150);
+      setFontSize(35);
+      setAddHeightGraph(window.innerHeight + 50);
+    } else {
+      setAddWidthGraph(window.innerWidth);
+      setFontSize(30);
+      setAddHeightGraph(window.innerHeight);
+    } 
+  }, false);
+  
   const reRenderForAsideMove = () =>{
     if (asideOpenState){
-      setAddWidthGraph(1700);
+      setAddWidthGraph(window.innerWidth + 150);
       setFontSize(35);
-      setAddHeightGraph(800);
+      setAddHeightGraph(window.innerHeight + 50);
     } else {
-      setAddWidthGraph(1550);
+      setAddWidthGraph(window.innerWidth);
       setFontSize(30);
-      setAddHeightGraph(750);
+      setAddHeightGraph(window.innerHeight);
     }
     setAsideOpenState(!asideOpenState);
+    return;
   }
 
   const chartTheme = {
@@ -96,4 +110,4 @@ const graphLineal = () => {
   );
 };
 
-export default graphLineal;
+export default Graph;

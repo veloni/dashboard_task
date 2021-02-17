@@ -3,16 +3,21 @@ const  DrawCircle = (addSize, height, width) => {
     const circleCanvas = document.getElementById('js-graph-circle');
     const circle = circleCanvas.getContext('2d');
 
-    circleCanvas.style.display = 'flex';
-    circleCanvas.width = 500;
-    circleCanvas.height = 500;
-    circleCanvas.style.width = width;
-    circleCanvas.style.height = height;
+    circleCanvas.width = 460;
+    circleCanvas.height = 460;
+    circleCanvas.style.width = window.innerWidth/6;
+    circleCanvas.style.height = window.innerHeight/3;
+
+    window.addEventListener(`resize`, event => {
+        circleCanvas.style.width = window.innerWidth/6;
+        circleCanvas.style.height = window.innerHeight/3;
+      }, false); 
+
     circleCanvas.style.marginBottom = "15%";
 
     const DrawCircleRed = () => {
         circle.arc(250 + addSize, 245 + addSize, 195 + addSize, 0, quantityActive * 2 * 3.14 / 100, false);
-        circle.lineWidth = 14;
+        circle.lineWidth = 20;
         circle.strokeStyle = colors.endedColor;
         circle.stroke();
         circle.beginPath();
@@ -20,7 +25,7 @@ const  DrawCircle = (addSize, height, width) => {
 
     const DrawCircleOrange = () => {
         circle.arc(250 + addSize, 245 + addSize, 195 + addSize, quantityActive * 2 * 3.14 / 100, quantityActive * 2 * 3.14 / 100 + quantityEnded * 2 * 3.14 / 100, false);
-        circle.lineWidth = 14;
+        circle.lineWidth = 20;
         circle.strokeStyle = colors.activeColor;
         circle.stroke();
         circle.beginPath();
@@ -28,7 +33,7 @@ const  DrawCircle = (addSize, height, width) => {
 
     const DrawCircleGreen = () => {
         circle.arc(250 + addSize, 245 + addSize, 195 + addSize, quantityActive * 2 * 3.14 / 100 + quantityEnded * 2 * 3.14 / 100, 0, false);
-        circle.lineWidth = 14;
+        circle.lineWidth = 20;
         circle.strokeStyle = colors.completedColor;
         circle.stroke();
         circle.beginPath();
