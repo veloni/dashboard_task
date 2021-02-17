@@ -8,8 +8,8 @@ let comparisonMassive = [];
 let circleOneEdit = document.querySelectorAll('.js-one-circle-task');
 let circleTwoEdit = document.querySelectorAll('.js-two-circle-task');
 let argumentCircle = 0;
-let canvasHeight = 500;
-let canvasWidth = 500;
+let canvasHeight = 0;
+let canvasWidth = 0;
 let firstLoadScript = false;
 let asideOpen = false;
 

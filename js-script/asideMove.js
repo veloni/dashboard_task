@@ -19,16 +19,16 @@ const asideMove = () => {
     if (firstLoadScript) { 
       document.querySelector('.js-trigger-aside').click();
       argumentCircle = 0;
-      canvasHeight = "20vw";
-      canvasWidth = "20vw";
+      canvasHeight = 0;
+      canvasWidth = 0;
       window.globalRerender();
      } 
 
     if (!firstLoadScript){
       document.querySelector('.js-trigger-aside').click();
-      argumentCircle = 1;
-      canvasHeight = "21.5vw";
-      canvasWidth = "21.5vw";
+      argumentCircle = 2;
+      canvasHeight = 20;
+      canvasWidth = 20;
       window.globalRerender();
     } 
 

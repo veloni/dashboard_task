@@ -2,15 +2,16 @@ const  DrawCircle = (addSize, height, width) => {
 
     const circleCanvas = document.getElementById('js-graph-circle');
     const circle = circleCanvas.getContext('2d');
-
+console.log(width);
+console.log(height);
     circleCanvas.width = 460;
     circleCanvas.height = 460;
-    circleCanvas.style.width = window.innerWidth/6;
-    circleCanvas.style.height = window.innerHeight/3;
+    circleCanvas.style.width = window.innerWidth/6 + height;
+    circleCanvas.style.height = window.innerHeight/3 + width;
 
     window.addEventListener(`resize`, event => {
-        circleCanvas.style.width = window.innerWidth/6;
-        circleCanvas.style.height = window.innerHeight/3;
+        circleCanvas.style.width = window.innerWidth/6 + height ;
+        circleCanvas.style.height = window.innerHeight/3 + width;
       }, false); 
 
     circleCanvas.style.marginBottom = "15%";
@@ -53,7 +54,7 @@ const  DrawCircle = (addSize, height, width) => {
     DrawTextPercent();
 }
 
-DrawCircle(0, "20vw", "20vw");
+DrawCircle(0, 0, 0);
 
 window.windowDrawCircle = DrawCircle(argumentCircle);
 
