@@ -5,7 +5,7 @@ const filterTask = () => {
   const endedTextChoise = document.querySelector('.js-text-choise-filter-ended');
   const allTextChoise = document.querySelectorAll('.text-choise-filter');
   
-  function AddDn() {
+  const AddDn = () => {
     allTextChoise.forEach((item) => {
       item.classList.add('dn');
     });
@@ -22,11 +22,10 @@ const filterTask = () => {
         item.style.display = 'flex';
       });
     }
-  else {
+    else {
       const barTaskBox = document.querySelectorAll('.bar-task-box');
       allTextChoise.forEach((item) => {
         item.classList.add('dn');
-        item.style.display = 'none';
       });
       barTaskBox.forEach((item) => {
         item.classList.remove('dn');

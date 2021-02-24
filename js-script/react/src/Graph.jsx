@@ -11,7 +11,7 @@ const Graph = () => {
 
   const [asideOpenState, setAsideOpenState] = useState(true);
   
-  const [fontSize, setFontSize] = useState(30);
+  const [fontSize, setFontSize] = useState(40);
   const [addWidthGraph, setAddWidthGraph] = useState(window.innerWidth);
   const [addHeightGraph, setAddHeightGraph] = useState(window.innerHeight);
 
@@ -26,11 +26,11 @@ const Graph = () => {
   window.addEventListener(`resize`, event => {
     if (asideOpen){
       setAddWidthGraph(window.innerWidth + 150);
-      setFontSize(35);
+      setFontSize(45);
       setAddHeightGraph(window.innerHeight + 50);
     } else {
       setAddWidthGraph(window.innerWidth);
-      setFontSize(30);
+      setFontSize(40);
       setAddHeightGraph(window.innerHeight);
     } 
   }, false);
@@ -38,11 +38,11 @@ const Graph = () => {
   const reRenderForAsideMove = () =>{
     if (asideOpenState){
       setAddWidthGraph(window.innerWidth + 150);
-      setFontSize(35);
+      setFontSize(45);
       setAddHeightGraph(window.innerHeight + 50);
     } else {
       setAddWidthGraph(window.innerWidth);
-      setFontSize(30);
+      setFontSize(40);
       setAddHeightGraph(window.innerHeight);
     }
     setAsideOpenState(!asideOpenState);

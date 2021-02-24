@@ -2,8 +2,8 @@ const  DrawCircle = (addSize, height, width) => {
 
     const circleCanvas = document.getElementById('js-graph-circle');
     const circle = circleCanvas.getContext('2d');
-console.log(width);
-console.log(height);
+/* console.log(width);
+console.log(height); */
     circleCanvas.width = 460;
     circleCanvas.height = 460;
     circleCanvas.style.width = window.innerWidth/6 + height;

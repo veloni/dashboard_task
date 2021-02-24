@@ -8,9 +8,9 @@ let showMore = document.querySelector('.js-show-more');
 
 let barTaskScroll = document.querySelector('.bar-task');
 
-let bartaskbox = document.querySelectorAll('.bar-task-box');
+let barTaskBox = document.querySelectorAll('.bar-task-box');
 
-let heightScroll = 155;
+let taskBoxForScroll;
 
 let deleteButton = document.querySelectorAll('.js-delete-task');
 
@@ -20,62 +20,44 @@ let allEditCircle  = document.querySelectorAll('.js-button-circle > .circle-icon
 
 let editIcon = document.querySelectorAll('.edit-delete-icon-value');
 
-showMore.onclick = () => {
-  
-  if (bartaskbox.length < task.id.length)
-  {
-    function renderTask() {
 
-    showMore.before(newDiv);
-
-    newDiv.insertAdjacentHTML('beforeend', div.innerHTML);
-
-    newDiv.classList.add('bar-task-box');
-
-    newDiv.classList.add('js-box-task');
-
-    window.barRenderTask();
-
-    window.barTaskFunction();
-
-    newDiv = document.createElement("div");
-
-    div = loadDiv.cloneNode(true);
-
-    barTaskScroll.scroll(0, heightScroll);
-
-    heightScroll += 160;
-
-    deleteButton = document.querySelectorAll('.js-delete-task');
-    
-    editButton = document.querySelectorAll('.button-edit');
-
-    circleOneEdit = document.querySelectorAll('.js-one-circle-task');
-
-    circleTwoEdit = document.querySelectorAll('.js-two-circle-task');
-
-    allEditCircle  = document.querySelectorAll('.js-button-circle > .circle-icon'); 
-
-    editIcon = document.querySelectorAll('.edit-delete-icon-value');
-
-    editRender();
-    
-    deleteRender ();
-
-    findItems();
-  }
-
-
-
-  [...Array(10)].forEach(() => { 
-    renderTask();
+const addListenerShowMore = () => { 
+  showMore.addEventListener('click', function() {
+    [...Array(10)].forEach(() => { 
+      clickShowMore();
+    });
+    taskBoxForScroll = document.querySelectorAll('.bar-task-box');
+    [].slice.call(taskBoxForScroll).pop().scrollIntoView();
+ 
   });
 
-  }
-  else{
-    alert('Tasks over');
-    return;
-  }
+}
+
+addListenerShowMore();
+
+const clickShowMore = () => {
+  taskBoxForScroll = document.querySelectorAll('.bar-task-box');
+  [].slice.call(taskBoxForScroll).pop().after(newDiv);
+  newDiv.insertAdjacentHTML('beforeend', div.innerHTML);
+  newDiv.classList.add('bar-task-box');
+  newDiv.classList.add('js-box-task');
+
+  window.barRenderTask();
+  window.barTaskFunction();
+  newDiv = document.createElement("div");
+  div = loadDiv.cloneNode(true);
+
+  deleteButton = document.querySelectorAll('.js-delete-task');
+  editButton = document.querySelectorAll('.button-edit');
+  circleOneEdit = document.querySelectorAll('.js-one-circle-task');
+  circleTwoEdit = document.querySelectorAll('.js-two-circle-task');
+  allEditCircle  = document.querySelectorAll('.js-button-circle > .circle-icon'); 
+  editIcon = document.querySelectorAll('.edit-delete-icon-value');
+
+  editRender();
+  deleteRender ();
+  findItems();
+
 }
 
 const deleteRender = () => {

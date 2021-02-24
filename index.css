@@ -478,6 +478,7 @@ body {
   flex-direction:center;
   align-items: center;
   justify-content: space-between;
+  flex-direction: column;
 }
 .main-graph-circle-box{
   display:flex;
@@ -496,6 +497,7 @@ body {
   flex-direction: column;
   overflow-y: auto;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  position: relative;
 }
 .bar-task-box-first{
   width: 95%;
@@ -816,6 +818,15 @@ body {
   line-height: 20px;
   letter-spacing: 0.01em;
   text-align: center;
+}
+.wrapper-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 5vw;
+  background-color: white;
+
 }
 
 
