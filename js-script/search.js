@@ -3,13 +3,8 @@ const search = document.querySelector('.js-search');
  search.onchange = () => {
     findItems();
 
-    if(search.value != false)
-    {
-        search.style.backgroundImage = 'none';
-    }
-    else{
-        search.style.backgroundImage = 'url(icon/search-icon.png)';
-    }
+    if(search.value != false){search.style.backgroundImage = 'none';}
+    else{search.style.backgroundImage = 'url(icon/search-icon.png)';}
 } 
 
 const findItems = () => {
@@ -22,6 +17,7 @@ const findItems = () => {
 const searchItems= (searchValue) => {
     if (searchValue === ""){ return; } 
     let findOrNo = true;
+    
     whereFind.forEach((item) => {
         if (item.innerText.includes(searchValue)){
             item.classList.add("find-text");

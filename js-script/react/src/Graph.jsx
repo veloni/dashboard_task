@@ -15,6 +15,7 @@ const Graph = () => {
   const [addWidthGraph, setAddWidthGraph] = useState(window.innerWidth);
   const [addHeightGraph, setAddHeightGraph] = useState(window.innerHeight);
 
+
   const getNewData = () =>{
     setVictoryData(data);
     setVictoryMinNumberX(minNumberX);

@@ -13,9 +13,7 @@ const loadCalendar = () => {
 
   calendarNowDate.innerHTML = `${nowDate} ${monthMassive[nowMonth]}, ${weekdayMassive[nowWeekday]}`;
 
-  calendarNowMonth.forEach((item) => {
-      item.innerHTML = monthMassiveRecution[nowMonth];
-  });
+  calendarNowMonth.forEach((item) => {item.innerHTML = monthMassiveRecution[nowMonth];});
 
   calendarNowDay.forEach((item, index) => {
       if (nowDate + i - 1 >= maxDateMonth) {
@@ -23,13 +21,11 @@ const loadCalendar = () => {
           nowDate = 1;
           i = 0;
           toggleMonth = index;
+
           calendarNowMonth.forEach((item, index) => {
               if (index >= toggleMonth) {
-                  if (monthMassiveRecution[resultMonth] === undefined) {
-                      item.innerHTML = 'Jan';
-                  } else {
-                      item.innerHTML = monthMassiveRecution[resultMonth];
-                  }
+                  if (monthMassiveRecution[resultMonth] === undefined) {item.innerHTML = 'Jan';} 
+                  else {item.innerHTML = monthMassiveRecution[resultMonth];}
               }
           });
       }

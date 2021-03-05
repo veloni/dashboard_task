@@ -7,6 +7,7 @@ const asideMove = () => {
 
   const listener = () => {
     const toggleButton = document.querySelector('.js-toggle-sidebar');
+
     toggleButton.onclick = function() {
       handleToggleButtonClick();
     };
@@ -46,13 +47,8 @@ const asideMove = () => {
 
     if (isOpened) {
       sidebarClasses.remove('open');
-
-      asideBox.forEach((item) => {
-        item.style.justifyContent = 'center';
-      });
-      asideItemText.forEach((item) => {
-        item.style.display = 'none';
-      });
+      asideBox.forEach((item) => {item.style.justifyContent = 'center';});
+      asideItemText.forEach((item) => {item.style.display = 'none';});
       return;
     }
 
@@ -60,14 +56,15 @@ const asideMove = () => {
 
     asideBox.forEach((item) => {
       item.style.justifyContent = 'left';
-          item.classList.add('dn');
+      item.classList.add('dn');
     });
 
   setTimeout(() => {
     asideItemText.forEach((item) => {
-      item.style.display = 'flex';
+    item.style.display = 'flex';
     });
-  }, 500);
+    }, 500);
+
   };
 
   const asideStyleHandler = (isOpened) => {
@@ -80,9 +77,7 @@ const asideMove = () => {
     mainSection.style.width = isOpened ? '95%' : '98%';
     titleTextAsideBox.style.justifyContent = isOpened ? 'center' : 'space-between';
   };
-
   listener();
-
 }
 
 asideMove();

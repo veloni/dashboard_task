@@ -6,12 +6,9 @@ const filterTask = () => {
   const allTextChoise = document.querySelectorAll('.text-choise-filter');
   
   const AddDn = () => {
-    allTextChoise.forEach((item) => {
-      item.classList.add('dn');
-    });
+    allTextChoise.forEach((item) => {item.classList.add('dn');});
   }
   AddDn();
-
 
   buttonTextChoise.onclick = function raze(e) {
     e.preventDefault();
@@ -24,16 +21,11 @@ const filterTask = () => {
     }
     else {
       const barTaskBox = document.querySelectorAll('.bar-task-box');
-      allTextChoise.forEach((item) => {
-        item.classList.add('dn');
-      });
-      barTaskBox.forEach((item) => {
-        item.classList.remove('dn');
-      });
+
+      allTextChoise.forEach((item) => {item.classList.add('dn');});
+      barTaskBox.forEach((item) => {item.classList.remove('dn');});
     }
   }
-
- /*  const activeBox = document.querySelectorAll('.active'); */
 
   activeTextChoise.onclick = function raze(e) {
     e.preventDefault();
@@ -41,17 +33,9 @@ const filterTask = () => {
     const endedBox = document.querySelectorAll('.ended');
     const barTaskBox = document.querySelectorAll('.bar-task-box');
   
-    barTaskBox.forEach((item) => {
-      item.classList.remove('dn');
-    });
-
-    completedBox.forEach((item) => {
-      item.classList.add('dn');
-    });
-
-    endedBox.forEach((item) => {
-      item.classList.add('dn');
-    });
+    barTaskBox.forEach((item) => {item.classList.remove('dn');});
+    completedBox.forEach((item) => {item.classList.add('dn');});
+    endedBox.forEach((item) => {item.classList.add('dn');});
   }
 
   completedTextChoise.onclick = function raze(e) {
@@ -60,17 +44,9 @@ const filterTask = () => {
     const endedBox = document.querySelectorAll('.ended');
     const barTaskBox = document.querySelectorAll('.bar-task-box');
     
-    barTaskBox.forEach((item) => {
-      item.classList.remove('dn');
-    });
-
-    activeBox.forEach((item) => {
-      item.classList.add('dn');
-    });
-
-    endedBox.forEach((item) => {
-      item.classList.add('dn');
-    });
+    barTaskBox.forEach((item) => {item.classList.remove('dn');});
+    activeBox.forEach((item) => {item.classList.add('dn');});
+    endedBox.forEach((item) => {item.classList.add('dn');});
   }
 
   endedTextChoise.onclick = function raze(e) {
@@ -79,15 +55,9 @@ const filterTask = () => {
     const completeddBox = document.querySelectorAll('.completed');
     const barTaskBox = document.querySelectorAll('.bar-task-box');
 
-    barTaskBox.forEach((item) => {
-      item.classList.remove('dn');
-    });
-    activeBox.forEach((item) => {
-      item.classList.add('dn');
-    });
-    completeddBox.forEach((item) => {
-      item.classList.add('dn');
-    });
+    barTaskBox.forEach((item) => {item.classList.remove('dn');});
+    activeBox.forEach((item) => {item.classList.add('dn');});
+    completeddBox.forEach((item) => {item.classList.add('dn');});
   }
 }
 

@@ -1,12 +1,5 @@
-const removeIcon = () => {
-    let twoCircle = document.querySelectorAll('.js-two-circle');
-    let editDeleteIcon = document.querySelectorAll('.js-edit-delete-icon');
-}
-
 const anyFunction = (massive, name) => {
-    massive.forEach((item, index) => {
-        item.innerHTML = task.id[index][name];
-    });
+    massive.forEach((item, index) => {item.innerHTML = task.id[index][name];});
 };
 
 const barTaskAddType = () => {
@@ -38,7 +31,6 @@ const renderTasks = () => {
     const dueDate = document.querySelectorAll('.js-due-date');
     const typeTask = document.querySelectorAll('.js-text-condition-two');
     const conditionTask = document.querySelectorAll('.js-button-task');
-
     anyFunction(nameUser, 'nameUser');
     anyFunction(nameTask, 'nameTask');
     anyFunction(dueDate, 'dueDate');
@@ -47,7 +39,7 @@ const renderTasks = () => {
     conditionTask.forEach((item, index) => {
         item.innerHTML = task.id[index].conditionTask;
     
-        function addColors(color){
+        const addColors = (color) => {
             item.style.backgroundColor = color;
             item.style.borderColor = color;
         }
@@ -67,69 +59,43 @@ const renderTasks = () => {
         }
     });
 
-
-
     circleOneEdit.forEach((item,index) => {
-
-        const addColorsCircle = (colorOne, colorTwo) => {
-            
-            circleOneEdit[index].style.stroke = colorOne;
-            circleTwoEdit[index].style.stroke = colorTwo;
-
-            circleTwoEdit[index].style.strokeWidth = 2;
+        const addWidthCircle = () => {
             circleOneEdit[index].style.strokeWidth = 2;
- 
-            switch (colorOne) {
-                case '#DC143C':
-                    circleOneEdit[index].classList.add('ended');
-                    break;
-                case '#2ED47A':
-                    circleOneEdit[index].classList.add('completed');
-                    break;
-                case '#FFB946':
-                    circleOneEdit[index].classList.add('active');
-                    break;
-                default:
-                    break;
-            }
-
-            switch (colorTwo) {
-                case '#DC143C':
-                    circleTwoEdit[index].classList.add('ended');
-                    break;
-                case '#2ED47A':
-                    circleTwoEdit[index].classList.add('completed');
-                    break;
-                case '#FFB946':
-                    circleTwoEdit[index].classList.add('active');
-                    break;
-                default:
-                    break;
-            }
-         }
-
-            switch (task.id[index].conditionTask) {
-                case 'ended':
-                    addColorsCircle(colors.activeColor, colors.completedColor);
-                    break;
-                case 'completed':
-                    addColorsCircle(colors.endedColor, colors.activeColor);
-                    break;
-                case 'active':
-                    addColorsCircle(colors.endedColor, colors.completedColor);
-                    break;
-                default:
-                    break;
-            }
+            circleTwoEdit[index].style.strokeWidth = 2; 
+        }
+        switch (task.id[index].conditionTask) {
+            case 'ended':
+                circleOneEdit[index].classList.add('active');
+                circleTwoEdit[index].classList.add('completed');
+                circleOneEdit[index].style.stroke = colors.activeColor;
+                circleTwoEdit[index].style.stroke = colors.completedColor;
+                addWidthCircle();
+                break;
+            case 'completed':
+                circleOneEdit[index].classList.add('ended');
+                circleTwoEdit[index].classList.add('active');
+                circleOneEdit[index].style.stroke = colors.endedColor;
+                circleTwoEdit[index].style.stroke = colors.activeColor;
+                addWidthCircle();
+                break;
+            case 'active':
+                circleOneEdit[index].classList.add('ended');
+                circleTwoEdit[index].classList.add('completed');
+                circleOneEdit[index].style.stroke = colors.endedColor;
+                circleTwoEdit[index].style.stroke = colors.completedColor;
+                addWidthCircle();
+                break;
+            default:
+                break;
+        }
     });
 } 
 
 window.barRenderTask = renderTasks;
 renderTasks();
 
-
 const loadTask = () => {
-
     startDate = new Date('Jan 1, 2021');
     maxDateMonth = new Date(startDate.getFullYear(), startDate.getMonth() + 1, 0).getDate();
     day = startDate.getDate();
@@ -138,10 +104,8 @@ const loadTask = () => {
     let daysInYearMassive = [];
     let daysDateMassive = [];
 
-    const daysInMonth = (month, year) => {
-        return new Date(year, month, 0).getDate();
-    }
-
+    const daysInMonth = (month, year) => {return new Date(year, month, 0).getDate();}
+    
     const daysInYear = (year) => {
         let days = 0;
         [...Array(12)].forEach((item,index) => { 

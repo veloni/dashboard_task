@@ -34,11 +34,11 @@ const changeDataCircle = () =>{
         argumentCircle = 0;
         canvasHeight = "20vw";
         canvasWidth = "20vw";
-       } else{
+    } else{
         argumentCircle = 1;
         canvasHeight = "21.5vw";
         canvasWidth = "21.5vw";
-       }
+    }
 }
 
 switchPeriodTwo.onclick = function() {
@@ -47,7 +47,7 @@ switchPeriodTwo.onclick = function() {
     switchPeriodTwo.innerHTML = savePeriodTwo;
     changePeriod();
     changeDataCircle();
-    DrawCircle(argumentCircle, canvasHeight, canvasWidth);
+    DrawCircle(0, 0, 0);
     AddDnTwo();
 }
 
@@ -57,7 +57,7 @@ switchPeriodThree.onclick = function() {
     switchPeriodThree.innerHTML = savePeriodTwo;
     changePeriod();
     changeDataCircle();
-    DrawCircle(argumentCircle, canvasHeight, canvasWidth);
+    DrawCircle(0, 0, 0);
     AddDnTwo();
 }
 
@@ -113,7 +113,6 @@ const DateLoadWeek = () => {
     });
 }
 
-
 DateLoadWeek();
 
 let indexMonth = [];
@@ -165,18 +164,14 @@ MonthLoadWeek();
 let YearData = [];
 
 const loadDataYear = () => {
-    task.id.forEach(function(item) {
-        YearData.push(item['conditionTask']);
-    });
+    task.id.forEach(function(item) {YearData.push(item['conditionTask']);});
 }
 loadDataYear();
 
 let YearsDataSearch = [];
 
 const loadDataSearchYear = () => {
-    task.id.forEach(function(item) {
-        YearsDataSearch.push(item['dueDate']);
-    });
+    task.id.forEach(function(item) {YearsDataSearch.push(item['dueDate']);});
 }
 
 loadDataSearchYear();
@@ -232,7 +227,6 @@ const changePeriod = () => {
 }
 
 loadInterest(WeekData, WeekData.length);
-
 
 let completedTask = 0;
 const switchPeriodTaskOne = document.querySelector('.js-task-menu-change-week');
@@ -296,6 +290,7 @@ let lengthTaskMeter = 0;
 
 const loadCompleteTask = (period, lenght) => {
     completedTask = 0;
+
     period.forEach((item) => {
         if (item == 'completed') {
             completedTask += 1;
@@ -358,7 +353,6 @@ let labelX = [];
 
 //and for week
 const monthDataFromLinealGraph = (period) => {
-
     data = [];
     dateX = [];
     dateY = [];
@@ -379,7 +373,7 @@ const monthDataFromLinealGraph = (period) => {
         });
     });
 
-    monthDataLinealGraph.filter(function(item, index) {
+    monthDataLinealGraph.filter(function(item) {
         let quanityCompleted = 0;
         monthDataLinealGraph.forEach(function(elem, index) {
             if (item === elem) {
@@ -397,7 +391,7 @@ const monthDataFromLinealGraph = (period) => {
         }
     });
 
-    calcDateX.forEach(function(item, index) {
+    calcDateX.forEach(function(item) {
         dateX.push(item.match(/\d+/));
     });
 
@@ -568,4 +562,4 @@ switchPeriodLinealGraphThree.onclick = function () {
 
 //yearDataFromLinealGraph(); 
 //monthDataFromLinealGraph(monthDataSearch);
-//monthDataFromLinealGraph(WeekDataSearch);
+monthDataFromLinealGraph(WeekDataSearch);
