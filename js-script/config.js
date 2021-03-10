@@ -21,9 +21,9 @@ const weekdayMassive = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 
 const monthValue = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 const colors = {
-    activeColor: '#FFB946',
-    endedColor: '#DC143C',
-    completedColor: '#2ED47A',
-    secondaryColor: '#109CF1',
+	activeColor: '#FFB946',
+	endedColor: '#DC143C',
+	completedColor: '#2ED47A',
+	secondaryColor: '#109CF1',
 };
 

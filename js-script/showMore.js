@@ -15,6 +15,7 @@ const addListenerShowMore = () => {
     [...Array(10)].forEach(() => { 
       clickShowMore();
     });
+
     taskBoxForScroll = document.querySelectorAll('.bar-task-box');
     [].slice.call(taskBoxForScroll).pop().scrollIntoView();
   });
@@ -24,7 +25,9 @@ addListenerShowMore();
 
 const clickShowMore = () => {
   taskBoxForScroll = document.querySelectorAll('.bar-task-box');
+
   [].slice.call(taskBoxForScroll).pop().after(newDiv);
+
   newDiv.insertAdjacentHTML('beforeend', div.innerHTML);
   newDiv.classList.add('bar-task-box');
   newDiv.classList.add('js-box-task');
@@ -49,11 +52,10 @@ const clickShowMore = () => {
 const deleteRender = () => {
   deleteButton.forEach(function(elem) {
     elem.onclick = function() {
-      if (confirm('Delete task?'))
-       {
+      if (confirm('Delete task?')) {
         const myBox = this.closest('.js-box-task');
         myBox.classList.add('dn');
-       }
+      }
     };
   });
 }
@@ -79,9 +81,7 @@ const editRender = () => {
 const butonCircleEdit = () => {
   Array.from(allEditCircle).forEach(function(item) {
     item.addEventListener('click',  function() {
-      if (stateButton === true)
-      {
-        
+      if (stateButton === true) {
         const thisBox = this.closest('.icon-button-box');
         const thisButtonTaskBox = thisBox.querySelector('.button-task-box > .button-task');
         const thisCircleOne = thisBox.querySelector('.two-circle > .js-button-circle > .js-one-circle-task');

@@ -365,7 +365,7 @@ const monthDataFromLinealGraph = (period) => {
     let monthDataLinealGraph = [];
     let calcDateX = [];
 
-    task.id.filter(function(item, index) {
+    task.id.filter(function(item) {
         period.forEach(function(elem) {
             if (item['dueDate'] === elem && item['conditionTask'] === 'completed') {
                 monthDataLinealGraph.push(elem);
@@ -398,13 +398,10 @@ const monthDataFromLinealGraph = (period) => {
     let calcOne = dateY;
     let calcTwo = dateX;
 
-    calcTwo.forEach(function(el, i, item) {
-        item[i] = [item[i], calcOne[i]];
-    })
+    calcTwo.forEach(function(el, i, item) {item[i] = [item[i], calcOne[i]];})
 
-    calcTwo.sort(function(a, b) {
-        return a[0] - b[0]
-    });
+    calcTwo.sort(function(a, b) {return a[0] - b[0]});
+    
     let calcThree = calcTwo.map(function(el, i, item) {
         item[i] = el[0];
         return el[1];

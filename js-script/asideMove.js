@@ -4,17 +4,13 @@ const asideMove = () => {
   const mainSection = document.querySelector('.js-main-section');
   const asideItemText = document.querySelectorAll('.js-remove-aside');
   const asideBox = document.querySelectorAll('.js-aside-change-flex-remove');
-
-  const listener = () => {
-    const toggleButton = document.querySelector('.js-toggle-sidebar');
-
-    toggleButton.onclick = function() {
-      handleToggleButtonClick();
-    };
+  const toggleButton = document.querySelector('.js-toggle-sidebar');
+  
+  toggleButton.onclick = function() {
+    handleToggleButtonClick();
   };
 
   const handleToggleButtonClick = () => {
-
     asideOpen = !asideOpen;
 
     if (firstLoadScript) { 
@@ -25,7 +21,7 @@ const asideMove = () => {
       window.globalRerender();
      } 
 
-    if (!firstLoadScript){
+    if (!firstLoadScript) {
       document.querySelector('.js-trigger-aside').click();
       argumentCircle = 2;
       canvasHeight = 20;
@@ -47,8 +43,8 @@ const asideMove = () => {
 
     if (isOpened) {
       sidebarClasses.remove('open');
-      asideBox.forEach((item) => {item.style.justifyContent = 'center';});
-      asideItemText.forEach((item) => {item.style.display = 'none';});
+      asideBox.forEach((item) => item.style.justifyContent = 'center');
+      asideItemText.forEach((item) => item.style.display = 'none');
       return;
     }
 
@@ -59,12 +55,9 @@ const asideMove = () => {
       item.classList.add('dn');
     });
 
-  setTimeout(() => {
-    asideItemText.forEach((item) => {
-    item.style.display = 'flex';
-    });
+    setTimeout(() => {
+      asideItemText.forEach((item) => item.style.display = 'flex');
     }, 500);
-
   };
 
   const asideStyleHandler = (isOpened) => {
@@ -77,7 +70,7 @@ const asideMove = () => {
     mainSection.style.width = isOpened ? '95%' : '98%';
     titleTextAsideBox.style.justifyContent = isOpened ? 'center' : 'space-between';
   };
-  listener();
+
 }
 
 asideMove();
