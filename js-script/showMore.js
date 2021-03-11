@@ -112,8 +112,7 @@ const butonCircleEdit = () => {
           thisCircleOne.classList.add(classOne);
           thisCircleTwo.classList.add(classTwo);
         }
-
-  
+        
         if (item.classList.contains('ended')){
           reRenderCircle(colors.endedColor, colors.activeColor, colors.completedColor, 'ended');
           removeClassCricle();

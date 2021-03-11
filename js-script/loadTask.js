@@ -6,7 +6,7 @@ const barTaskAddType = () => {
 	let barTaskBox = document.querySelectorAll('.js-box-task');
 
 	barTaskBox.forEach((item,index) => {
-		switch(task.id[index].conditionTask){
+		switch(task.id[index].conditionTask) {
 			case 'ended':
 				item.classList.add('ended')
 				break;
@@ -58,30 +58,38 @@ const renderTasks = () => {
 	circleOneEdit.forEach((item,index) => {
 		switch (task.id[index].conditionTask) {
 			case 'ended':
-				circleOneEdit[index].classList.add('active');
-				circleTwoEdit[index].classList.add('completed');
-				circleOneEdit[index].style.stroke = colors.activeColor;
-				circleTwoEdit[index].style.stroke = colors.completedColor;
+				circleEditType(index, circleOneEdit, 'active');
+				circleEditType(index, circleTwoEdit, 'completed');
+				circleEditColor(index, circleOneEdit, colors.activeColor);
+				circleEditColor(index, circleTwoEdit, colors.completedColor);
 				addWidthCircle(index);
 				break;
 			case 'completed':
-				circleOneEdit[index].classList.add('ended');
-				circleTwoEdit[index].classList.add('active');
-				circleOneEdit[index].style.stroke = colors.endedColor;
-				circleTwoEdit[index].style.stroke = colors.activeColor;
+				circleEditType(index, circleOneEdit, 'ended');
+				circleEditType(index, circleTwoEdit, 'active');
+				circleEditColor(index, circleOneEdit, colors.endedColor);
+				circleEditColor(index, circleTwoEdit, colors.activeColor);
 				addWidthCircle(index);
 				break;
 			case 'active':
-				circleOneEdit[index].classList.add('ended');
-				circleTwoEdit[index].classList.add('completed');
-				circleOneEdit[index].style.stroke = colors.endedColor;
-				circleTwoEdit[index].style.stroke = colors.completedColor;
+				circleEditType(index, circleOneEdit, 'ended');
+				circleEditType(index, circleTwoEdit, 'completed');
+				circleEditColor(index, circleOneEdit, colors.endedColor);
+				circleEditColor(index, circleTwoEdit, colors.completedColor);
 				addWidthCircle(index);
 				break;
 			default:
 			break;
 		}
 	});
+}
+
+const circleEditType = (index, circle, type) => {
+	circle[index].classList.add(type);
+}
+
+const circleEditColor = (index, circle, color) => {
+	circle[index].style.stroke = color;
 }
 
 const addColors = (item, color) => {
@@ -144,6 +152,7 @@ const loadTask = () => {
 			if (elem === item) {quantityDataMassive[i] += 1;}
 		});
 	});
+
 }
 
 loadTask();

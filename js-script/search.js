@@ -15,7 +15,8 @@ const findItems = () => {
 }
 
 const searchItems= (searchValue) => {
-    if (searchValue === ""){ return; } 
+    if (searchValue === ''){ return; } 
+    
     let findOrNo = true;
 
     whereFind.forEach((item) => {
@@ -25,6 +26,8 @@ const searchItems= (searchValue) => {
             item.scrollIntoView();
         }
     });
+
     if (findOrNo) {statusSearch.classList.add('dont-find'); return;}
+
     statusSearch.classList.remove('dont-find');
 }

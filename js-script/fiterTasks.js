@@ -19,7 +19,11 @@ const filterTask = () => {
     else {
       const barTaskBox = document.querySelectorAll('.bar-task-box');
 
-      allTextChoise.forEach((item) => item.classList.add('dn'));
+      allTextChoise.forEach((item) => { 
+        item.classList.add('dn')
+        item.style.display = 'none';
+      });
+
       barTaskBox.forEach((item) => item.classList.remove('dn'));
     }
   }
