@@ -4,14 +4,14 @@ const loadCalendar = () => {
 	const calendarNowDay = document.querySelectorAll('.js-calendar-now-day');
 	const calendarNowDate = document.querySelector('.js-now-date')
 
-	let nowMonth = now.getMonth();
-	let nowDate = now.getDate();
-	let nowWeekday = now.getDay();
-	let maxDateMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+	let nowMonth = _now.getMonth();
+	let nowDate = _now.getDate();
+	let nowWeekday = _now.getDay();
+	let maxDateMonth = new Date(_now.getFullYear(), _now.getMonth() + 1, 0).getDate();
 
-	calendarNowDate.innerHTML = `${nowDate} ${monthMassive[nowMonth]}, ${weekdayMassive[nowWeekday]}`;
+	calendarNowDate.innerHTML = `${nowDate} ${_monthMassive[nowMonth]}, ${_weekdayMassive[nowWeekday]}`;
 
-	calendarNowMonth.forEach((item) => item.innerHTML = monthMassiveRecution[nowMonth]);
+	calendarNowMonth.forEach((item) => item.innerHTML = _monthMassiveRecution[nowMonth]);
 
 	calendarNowDay.forEach((item, index) => {
 		if (nowDate + i - 1 >= maxDateMonth) {
@@ -22,8 +22,8 @@ const loadCalendar = () => {
 
 			calendarNowMonth.forEach((item, index) => {
 				if (index >= toggleMonth) {
-					if (monthMassiveRecution[resultMonth] === undefined) {item.innerHTML = 'Jan';} 
-					item.innerHTML = monthMassiveRecution[resultMonth];
+					if (_monthMassiveRecution[resultMonth] === undefined) {item.innerHTML = 'Jan';} 
+					item.innerHTML = _monthMassiveRecution[resultMonth];
 				}
 			});
 		}

@@ -1,26 +1,28 @@
-let task = window.taskList;
-let lenghtJson;
-let now = new Date();
-lenghtJson = task.id.length;
-const taskId = task.id;
-let quantityDataMassive = [];
-let comparisonMassive = [];
-let circleOneEdit = document.querySelectorAll('.js-one-circle-task');
-let circleTwoEdit = document.querySelectorAll('.js-two-circle-task');
-let argumentCircle = 0;
-let canvasHeight = 0;
-let canvasWidth = 0;
-let firstLoadScript = false;
-let asideOpen = false;
+let _task = window.taskList;
+let _lenghtJson;
+let _now = new Date();
+_lenghtJson = _task.id.length;
+/* const taskId = task.id; */
+let _quantityDataMassive = [];
+let _comparisonMassive = [];
+let _circleOneEdit = document.querySelectorAll('.js-one-circle-task');
+let _circleTwoEdit = document.querySelectorAll('.js-two-circle-task');
+let _argumentCircle = 0;
+let _canvasHeight = 0;
+let _canvasWidth = 0;
+let _firstLoadScript = false;
+let _asideOpen = false;
+let _tasksFilterOpen = false;
+let _statusFilterTask;
 
-const monthMassive = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
-const monthMassiveRecution = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-const monthMassiveRecutionForLinealGraph = ["Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const _monthMassive = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
+const _monthMassiveRecution = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const _monthMassiveRecutionForLinealGraph = ["Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
-const weekdayMassive = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-const monthValue = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+const _weekdayMassive = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const _monthValue = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-const colors = {
+const _colors = {
 	activeColor: '#FFB946',
 	endedColor: '#DC143C',
 	completedColor: '#2ED47A',

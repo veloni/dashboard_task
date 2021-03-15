@@ -22,7 +22,7 @@ const Graph = () => {
   };
 
   window.addEventListener(`resize`, event => {
-    if (asideOpen) {
+    if (_asideOpen) {
       setAddWidthGraph(window.innerWidth + 150);
       setFontSize(45);
       setAddHeightGraph(window.innerHeight + 50);
@@ -60,8 +60,6 @@ const Graph = () => {
         axis: {
           stroke: "#C4C4C4"
         },
-        axisLabel: {
-        },
         tickLabels: {
           fontSize: fontSize,
           stroke: "#C4C4C4"
@@ -84,7 +82,7 @@ const Graph = () => {
       <VictoryChart 
         height={addHeightGraph} 
         width={addWidthGraph}
-        theme={chartTheme }
+        theme={chartTheme}
       >
         <VictoryAxis 
           tickValues={labelX}

@@ -17,7 +17,7 @@ const DrawCircle = (addSize, height, width) => {
 	const DrawCircleEnded = () => {
 		circle.arc(250 + addSize, 245 + addSize, 195 + addSize, 0, quantityActive * 2 * 3.14 / 100, false);
 		circle.lineWidth = 20;
-		circle.strokeStyle = colors.endedColor;
+		circle.strokeStyle = _colors.endedColor;
 		circle.stroke();
 		circle.beginPath();
 	};
@@ -25,7 +25,7 @@ const DrawCircle = (addSize, height, width) => {
 	const DrawCircleActive = () => {
 		circle.arc(250 + addSize, 245 + addSize, 195 + addSize, quantityActive * 2 * 3.14 / 100, quantityActive * 2 * 3.14 / 100 + quantityEnded * 2 * 3.14 / 100, false);
 		circle.lineWidth = 20;
-		circle.strokeStyle = colors.activeColor;
+		circle.strokeStyle = _colors.activeColor;
 		circle.stroke();
 		circle.beginPath();
 	};
@@ -33,7 +33,7 @@ const DrawCircle = (addSize, height, width) => {
 	const DrawCircleCompleted = () => {
 		circle.arc(250 + addSize, 245 + addSize, 195 + addSize, quantityActive * 2 * 3.14 / 100 + quantityEnded * 2 * 3.14 / 100, 0, false);
 		circle.lineWidth = 20;
-		circle.strokeStyle = colors.completedColor;
+		circle.strokeStyle = _colors.completedColor;
 		circle.stroke();
 		circle.beginPath();
 	};
@@ -54,5 +54,5 @@ const DrawCircle = (addSize, height, width) => {
 
 DrawCircle(0, 0, 0);
 
-window.windowDrawCircle = DrawCircle(argumentCircle);
+window.windowDrawCircle = DrawCircle(_argumentCircle);
 

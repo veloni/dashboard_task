@@ -30,14 +30,14 @@ switchPeriodOne.onclick = function() {
 }
 
 const changeDataCircle = () => {
-	if (!firstLoadScript) { 
-		argumentCircle = 0;
-		canvasHeight = '20vw';
-		canvasWidth = '20vw';
+	if (!_firstLoadScript) { 
+		_argumentCircle = 0;
+		_canvasHeight = '20vw';
+		_canvasWidth = '20vw';
 	} else {
-		argumentCircle = 1;
-		canvasHeight = '21.5vw';
-		canvasWidth = '21.5vw';
+		_argumentCircle = 1;
+		_canvasHeight = '21.5vw';
+		_canvasWidth = '21.5vw';
 	}
 }
 
@@ -73,7 +73,7 @@ let WeekDataSearch = [];
 let WeekData = [];
 
 const giveWeekIndex = () => {
-	quantityDataMassive.forEach(function(item, index) {
+	_quantityDataMassive.forEach(function(item, index) {
 		if (index >= day && index < day + 7 && item !== 0) { 
 			indexWeek.push(index);
 			indexWeek.push(item);
@@ -96,7 +96,7 @@ const giveValueWeekSearch = () => {
 				giveMonth += 1;
 			}
 			
-			WeekDataSearch.push(giveDate + 0 + ' ' + monthMassive[giveMonth]);
+			WeekDataSearch.push(giveDate + 0 + ' ' + _monthMassive[giveMonth]);
 		}
 	});
 }
@@ -106,7 +106,7 @@ giveValueWeekSearch();
 let AllTaskWeek = 0;
 
 const DateLoadWeek = () => {
-	task.id.filter(function(item, index) {
+	_task.id.filter(function(item, index) {
 		WeekDataSearch.forEach(function(elem) {
 			if (item['dueDate'] == elem) {
 				WeekData.push(item['conditionTask']);
@@ -121,8 +121,8 @@ DateLoadWeek();
 let indexMonth = [];
 
 const giveMonthIndex = () => {
-	quantityDataMassive.forEach(function(item, index) {
-		nowDate = now.getDate();
+	_quantityDataMassive.forEach(function(item, index) {
+		nowDate = _now.getDate();
 
 		if (index > day - nowDate && index < day - nowDate + maxDateMonth && item != 0) {
 			indexMonth.push(index);
@@ -142,7 +142,7 @@ const giveValueMonthSearch = () => {
 			const giveMonth = dateNumberYears.getMonth();
 			const giveDate = dateNumberYears.getDate();
 
-			monthDataSearch.push(giveDate + 1 + ' ' + monthMassive[giveMonth]);
+			monthDataSearch.push(giveDate + 1 + ' ' + _monthMassive[giveMonth]);
 		}
 	});
 }
@@ -153,7 +153,7 @@ let MonthData = [];
 let allTaskMonth = 0;;
 
 const MonthLoadWeek = () => {
-	task.id.filter(function(item, index) {
+	_task.id.filter(function(item, index) {
 		monthDataSearch.forEach(function(elem) {
 			if (item['dueDate'] == elem) {
 				MonthData.push(item['conditionTask']);
@@ -169,14 +169,14 @@ MonthLoadWeek();
 let YearData = [];
 
 const loadDataYear = () => {
-	task.id.forEach(function(item) {YearData.push(item['conditionTask']);});
+	_task.id.forEach(function(item) {YearData.push(item['conditionTask']);});
 }
 loadDataYear();
 
 let YearsDataSearch = [];
 
 const loadDataSearchYear = () => {
-	task.id.forEach(function(item) {YearsDataSearch.push(item['dueDate']);});
+	_task.id.forEach(function(item) {YearsDataSearch.push(item['dueDate']);});
 }
 
 loadDataSearchYear();
@@ -225,7 +225,7 @@ const changePeriod = () => {
 			loadInterest(WeekData, WeekData.length);
 			break;
 		case 'This year'.trim():
-			loadInterest(YearData, lenghtJson);
+			loadInterest(YearData, _lenghtJson);
 			break;
 	}
 }
@@ -313,7 +313,7 @@ const changePeriodTaskCompleted = () => {
 			loadCompleteTask(WeekData, AllTaskWeek);
 			break;
 		case 'This year'.trim():
-			loadCompleteTask(YearData, lenghtJson);
+			loadCompleteTask(YearData, _lenghtJson);
 			break;
 	}
 }
@@ -366,7 +366,7 @@ const monthDataFromLinealGraph = (period) => {
 	let monthDataLinealGraph = [];
 	let calcDateX = [];
 
-	task.id.filter(function(item) {
+	_task.id.filter(function(item) {
 		period.forEach(function(elem) {
 			if (item['dueDate'] === elem && item['conditionTask'] === 'completed') {
 				monthDataLinealGraph.push(elem);
@@ -420,7 +420,7 @@ const monthDataFromLinealGraph = (period) => {
 	if (dateX.length === 12) {
 		maxNumberX = 12;
 		minNumberX = 0;
-		labelX = monthMassiveRecutionForLinealGraph;
+		labelX = _monthMassiveRecutionForLinealGraph;
 	} else {
 		maxNumberX = Math.max.apply(Math, dateX);
 		minNumberX = Math.min.apply(Math, dateX);
@@ -451,7 +451,7 @@ const yearDataFromLinealGraph = () => {
 	minNumberY = 0;
 	labelX = [];
 
-	task.id.forEach(function(item, index) {
+	_task.id.forEach(function(item) {
 		if (item['conditionTask'] === 'completed') {
 			yerLinealGraph.push(item['dueDate']);
 		}
@@ -462,7 +462,7 @@ const yearDataFromLinealGraph = () => {
 	yerLinealGraphTwo.filter(function(item, i) {
 		let saveCompletedTask = 0;
 
-		yerLinealGraph.forEach(function(elem, index) {
+		yerLinealGraph.forEach(function(elem) {
 			if (item === elem) {
 				saveCompletedTask = saveCompletedTask + 1;
 			}
@@ -474,17 +474,17 @@ const yearDataFromLinealGraph = () => {
 	let monthDataNumber = [];
 	let numberMonthDataNumber = [];
 
-	yerLinealGraphTwo.forEach(function(item, index) {
+	yerLinealGraphTwo.forEach(function(item) {
 		monthDataNumber.push(item.replace(/[0-9]/g, '').trim());
 		numberMonthDataNumber.push(item.match(/\d+/));
 	});
 
 	let monthDataNumberValue = [];
 
-	monthDataNumber.forEach(function(item, index) {
-		monthMassive.forEach(function(elem, i) {
+	monthDataNumber.forEach(function(item) {
+		_monthMassive.forEach(function(elem, i) {
 			if (item === elem) {
-				monthDataNumberValue.push(monthValue[i]);
+				monthDataNumberValue.push(_monthValue[i]);
 			}
 		});
 	});
@@ -492,8 +492,8 @@ const yearDataFromLinealGraph = () => {
 	const monthForDateX = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 	const monthForDateY = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-	monthDataNumber.forEach(function(item, index) {
-		monthMassive.forEach(function(elem, i) {
+	monthDataNumber.forEach(function(item) {
+		_monthMassive.forEach(function(elem, i) {
 			if (item === elem) {
 				monthForDateY[i] = monthForDateY[i] + 1;
 			}
@@ -506,7 +506,7 @@ const yearDataFromLinealGraph = () => {
 	if (dateX.length === 12) {
 		maxNumberX = 12;
 		minNumberX = 0;
-		labelX = monthMassiveRecutionForLinealGraph;
+		labelX = _monthMassiveRecutionForLinealGraph;
 	} else {
 		maxNumberX = Math.max.apply(Math, dateX);
 		minNumberX = Math.min.apply(Math, dateX);

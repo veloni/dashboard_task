@@ -5,33 +5,34 @@ const asideMove = () => {
   const asideItemText = document.querySelectorAll('.js-remove-aside');
   const asideBox = document.querySelectorAll('.js-aside-change-flex-remove');
   const toggleButton = document.querySelector('.js-toggle-sidebar');
-  
+  const search = document.querySelector('.js-search');
+
   toggleButton.onclick = function() {
     handleToggleButtonClick();
   };
 
   const handleToggleButtonClick = () => {
-    asideOpen = !asideOpen;
+    _asideOpen = !_asideOpen;
 
-    if (firstLoadScript) { 
+    if (_firstLoadScript) { 
       document.querySelector('.js-trigger-aside').click();
-      argumentCircle = 0;
-      canvasHeight = 0;
-      canvasWidth = 0;
+      _argumentCircle = 0;
+      _canvasHeight = 0;
+      _canvasWidth = 0;
       window.globalRerender();
      } 
 
-    if (!firstLoadScript) {
+    if (!_firstLoadScript) {
       document.querySelector('.js-trigger-aside').click();
-      argumentCircle = 2;
-      canvasHeight = 20;
-      canvasWidth = 20;
+      _argumentCircle = 2;
+      _canvasHeight = 20;
+      _canvasWidth = 20;
       window.globalRerender();
     } 
 
-    firstLoadScript = !firstLoadScript;
+    _firstLoadScript = !_firstLoadScript;
 
-    DrawCircle(argumentCircle, canvasHeight, canvasWidth);
+    DrawCircle(_argumentCircle, _canvasHeight, _canvasWidth);
     
     const sidebarClasses = sidebar.classList;
     const isOpened = sidebarClasses.contains('open');
@@ -63,6 +64,13 @@ const asideMove = () => {
   const asideStyleHandler = (isOpened) => {
     const titleTextAside = document.querySelector('.js-title-text-aside-box');
     const titleTextAsideBox = document.querySelector('.js-title-aside-box');
+    const allTextChoise = document.querySelectorAll('.text-choise-filter');
+
+    if (isOpened) {
+      _tasksFilterOpen && allTextChoise.forEach((item) => item.style.display = 'none');
+    } else {
+      _tasksFilterOpen && allTextChoise.forEach((item) => item.style.display = 'flex');
+    }
 
     search.style.marginLeft = isOpened ? '150px' : '22vw';
     titleTextAside.innerHTML = isOpened ? 'SaaS' : 'SaaS Kit';

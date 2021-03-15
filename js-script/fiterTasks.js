@@ -10,6 +10,8 @@ const filterTask = () => {
   buttonTextChoise.onclick = function raze(e) {
     e.preventDefault();
 
+    _tasksFilterOpen = !_tasksFilterOpen;
+
     if (allTextChoise[1].classList.contains('dn')) {
       allTextChoise.forEach((item) => {
         item.classList.remove('dn');
@@ -31,7 +33,9 @@ const filterTask = () => {
   activeTextChoise.onclick = function raze(e) {
     e.preventDefault();
 
-    const completedBox = document.querySelectorAll("div.completed");
+    _statusFilterTask = 'active';
+
+    const completedBox = document.querySelectorAll('div.completed');
     const endedBox = document.querySelectorAll('div.ended');
     const barTaskBox = document.querySelectorAll('.bar-task-box');
   
@@ -39,11 +43,13 @@ const filterTask = () => {
     completedBox.forEach((item) => item.classList.add('dn'));
     endedBox.forEach((item) => item.classList.add('dn'));
     
-    renderTasks();
+ 	  window.barRenderTask();  
   }
 
   completedTextChoise.onclick = function raze(e) {
     e.preventDefault();
+
+    _statusFilterTask = 'completed';
 
     const activeBox = document.querySelectorAll('div.active');
     const endedBox = document.querySelectorAll('div.ended');
@@ -52,10 +58,14 @@ const filterTask = () => {
     barTaskBox.forEach((item) => item.classList.remove('dn'));
     activeBox.forEach((item) => item.classList.add('dn'));
     endedBox.forEach((item) => item.classList.add('dn'));
+
+    window.barRenderTask();  
   }
 
   endedTextChoise.onclick = function raze(e) {
     e.preventDefault();
+
+    _statusFilterTask = 'ended';
 
     const activeBox = document.querySelectorAll('div.active');
     const completeddBox = document.querySelectorAll('div.completed');
@@ -64,13 +74,14 @@ const filterTask = () => {
     barTaskBox.forEach((item) => item.classList.remove('dn'));
     activeBox.forEach((item) => item.classList.add('dn'));
     completeddBox.forEach((item) => item.classList.add('dn'));
+
+    window.barRenderTask();  
   }
 
 }
 
 const AddDn = () => {
   const allTextChoise = document.querySelectorAll('.text-choise-filter');
-
   allTextChoise.forEach((item) => item.classList.add('dn'));
 };
 
