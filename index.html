@@ -8,7 +8,7 @@
 
 <header class="header">
   <input class="search js-search" type="search">
-  <div class="box-status-search"> </div>
+  <div class="box-status-search"></div>
   <div class="notifications">
     <svg width="3vw" height="3vw" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -41,7 +41,6 @@
                     fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M3.16595 3.61914L0.134866 0.619141L6.19704 0.619141L3.16595 3.61914Z" fill="#AEAEAE" />
                   </svg>
-
                   <svg class="button-switch-period js-switch-task-period-open" width="2vw" height="2vw"
                     viewBox="0 0 7 5" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M3.47594 1.00012L6.54291 3.96343L0.481174 4.03638L3.47594 1.00012Z" fill="#AEAEAE" />
@@ -54,8 +53,7 @@
                 </div>
               </div>
 
-              <span class="date js-now-date">
-              </span>
+              <span class="date js-now-date"></span>
               <div class="box-calendar">
                 <div class="date-calendar">
                   <div class="month-calendar js-calendar-now-month">
@@ -111,7 +109,6 @@
                 <div class="condition-task-header-text">
                   <span class="text-condition-one js-text-condition-one">
                   </span>
-
                   <span class="text-condition-two js-text-condition-two">
                   </span>
                 </div>
@@ -122,7 +119,70 @@
                 </span>
                 <div class="condition-task-bottom-text">
                   <div class="container-ava-name">
-                    <img class="img-profile" src="img/profile.png">
+                    <img class="img-profile" src="img/profile.png" alt="">
+                    <span class="name-task-text js-name-task-text">
+                    </span>
+                  </div>
+                  <div class="icon-button-box">
+                    <div class="two-circle">
+                      <div class="js-button-circle">
+                        <svg class="circle-icon js-one-circle-task" viewBox="0 0 12 12" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M11 6C11 8.76142 8.76142 11 6 11C3.23858 11 1 8.76142 1 6C1 3.23858 3.23858 1 6 1C8.76142 1 11 3.23858 11 6Z" />
+                        </svg>
+                      </div>
+                      <div class="js-button-circle">
+                        <svg class="circle-icon js-two-circle-task" viewBox="0 0 12 12" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <circle cx="6" cy="6" r="5"/>
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div class="edit-delete-icon">
+                      <div class="button-edit">
+                        <svg class="edit-delete-icon-value edit-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M2 11.5V14H4.5L11.8733 6.62662L9.37333 4.12662L2 11.5ZM13.8067 4.69329C14.0667 4.43329 14.0667 4.01329 13.8067 3.75329L12.2467 2.19329C11.9867 1.93329 11.5667 1.93329 11.3067 2.19329L10.0867 3.41329L12.5867 5.91329L13.8067 4.69329Z"
+                            fill="#C2CFE0" />
+                        </svg>
+                      </div>
+                      <div class="js-delete-button">
+                        <svg class="edit-delete-icon-value js-delete-task" viewBox="0 0 16 16" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M3.99998 12.6667C3.99998 13.4 4.59998 14 5.33331 14H10.6666C11.4 14 12 13.4 12 12.6667V4.66667H3.99998V12.6667ZM12.6666 2.66667H10.3333L9.66665 2H6.33331L5.66665 2.66667H3.33331V4H12.6666V2.66667Z"
+                            fill="#C2CFE0" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div class="button-task-box">
+                      <button class="button-task js-button-task"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bar-task-box js-box-task js-my-elem">
+            <div class="box-task">
+              <div class="container-box-task">
+                <div class="condition-task-header-text">
+                  <span class="text-condition-one js-text-condition-one">
+                  </span>
+                  <span class="text-condition-two js-text-condition-two">
+                  </span>
+                </div>
+                <span class="due-date">
+                  Due date:&nbsp
+                  <span class="js-due-date">
+                  </span>
+                </span>
+                <div class="condition-task-bottom-text">
+                  <div class="container-ava-name">
+                    <img class="img-profile" src="img/profile.png" alt="">
                     <span class="name-task-text js-name-task-text">
                     </span>
                   </div>
@@ -187,7 +247,7 @@
                 </span>
                 <div class="condition-task-bottom-text">
                   <div class="container-ava-name">
-                    <img class="img-profile" src="img/profile.png">
+                    <img class="img-profile" src="img/profile.png" alt="">
                     <span class="name-task-text js-name-task-text">
                     </span>
                   </div>
@@ -197,7 +257,7 @@
                         <svg class="circle-icon js-one-circle-task" viewBox="0 0 12 12" fill="none"
                           xmlns="http://www.w3.org/2000/svg">
                           <path
-                            d="M11 6C11 8.76142 8.76142 11 6 11C3.23858 11 1 8.76142 1 6C1 3.23858 3.23858 1 6 1C8.76142 1 11 3.23858 11 6Z" />
+                            d="M11 6C11 8.76142 8.76142 11 6 11C3.23858 11 1 8.76142 1 6C1 3.23858 3.23858 1 6 1C8.76142 1 11 3.23858 11 6Z"/>
                         </svg>
                       </div>
                       <div class="js-button-circle">
@@ -234,73 +294,6 @@
               </div>
             </div>
           </div>
-
-          <div class="bar-task-box js-box-task js-my-elem">
-            <div class="box-task">
-              <div class="container-box-task">
-                <div class="condition-task-header-text">
-                  <span class="text-condition-one js-text-condition-one">
-                  </span>
-
-                  <span class="text-condition-two js-text-condition-two">
-                  </span>
-                </div>
-                <span class="due-date">
-                  Due date:&nbsp
-                  <span class="js-due-date">
-                  </span>
-                </span>
-                <div class="condition-task-bottom-text">
-                  <div class="container-ava-name">
-                    <img class="img-profile" src="img/profile.png">
-                    <span class="name-task-text js-name-task-text">
-                    </span>
-                  </div>
-                  <div class="icon-button-box">
-                    <div class="two-circle">
-                      <div class="js-button-circle">
-                        <svg class="circle-icon js-one-circle-task" viewBox="0 0 12 12" fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <path
-                            d="M11 6C11 8.76142 8.76142 11 6 11C3.23858 11 1 8.76142 1 6C1 3.23858 3.23858 1 6 1C8.76142 1 11 3.23858 11 6Z" />
-                        </svg>
-                      </div>
-                      <div class="js-button-circle">
-                        <svg class="circle-icon js-two-circle-task" viewBox="0 0 12 12" fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <circle cx="6" cy="6" r="5" />
-                        </svg>
-                      </div>
-                    </div>
-
-                    <div class="edit-delete-icon">
-                      <div class="button-edit">
-                        <svg class="edit-delete-icon-value edit-icon" viewBox="0 0 16 16" fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <path
-                            d="M2 11.5V14H4.5L11.8733 6.62662L9.37333 4.12662L2 11.5ZM13.8067 4.69329C14.0667 4.43329 14.0667 4.01329 13.8067 3.75329L12.2467 2.19329C11.9867 1.93329 11.5667 1.93329 11.3067 2.19329L10.0867 3.41329L12.5867 5.91329L13.8067 4.69329Z"
-                            fill="#C2CFE0" />
-                        </svg>
-                      </div>
-                      <div class="js-delete-button">
-                        <svg class="edit-delete-icon-value js-delete-task" viewBox="0 0 16 16" fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <path
-                            d="M3.99998 12.6667C3.99998 13.4 4.59998 14 5.33331 14H10.6666C11.4 14 12 13.4 12 12.6667V4.66667H3.99998V12.6667ZM12.6666 2.66667H10.3333L9.66665 2H6.33331L5.66665 2.66667H3.33331V4H12.6666V2.66667Z"
-                            fill="#C2CFE0" />
-                        </svg>
-                      </div>
-
-                    </div>
-                    <div class="button-task-box">
-                      <button class="button-task js-button-task"></button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
         </div>
         
         <div class="wrapper-button">
@@ -322,7 +315,7 @@
 
               <div class="box-text-circle-graph-switch-menu">
                 <ul class="text-switch-menu">
-                  <li class="menu-change-week js-menu-change-week-lineal-graph">This week&nbsp </li>
+                  <li class="menu-change-week js-menu-change-week-lineal-graph"> This week&nbsp </li>
                   <li class="menu-change-month js-menu-change-month-lineal-graph"> This month&nbsp </li>
                   <li class="menu-change-year js-menu-change-year-lineal-graph"> This year&nbsp </li>
                 </ul>
@@ -353,7 +346,7 @@
 
               <div class="box-text-circle-graph-switch-menu">
                 <ul class="switch-menu-circle text-switch-menu">
-                  <li class="menu-change-week js-menu-switch-period-one">This week&nbsp </li>
+                  <li class="menu-change-week js-menu-switch-period-one"> This week&nbsp </li>
                   <li class="menu-change-month js-menu-switch-period-two"> This month&nbsp </li>
                   <li class="menu-change-year js-menu-switch-period-three"> This year&nbsp </li>
                 </ul>
@@ -374,13 +367,13 @@
               <div class="box-circle-percent">
                 <canvas class="canvas" id="js-graph-circle">
                 </canvas>
-                <span class="percent"> </span>
+                <span class="percent"></span>
               </div>
               <div class="circle-legend-box">
                 <ul class="circle-legend">
                   <div class="box-legend-text">
                     <li class="text-choise-filter-circle">
-                      <div class="circle-aside-bar">
+                   
                         <svg class="circle-icon" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <circle cx="4" cy="4" r="3" stroke="#FFB946" stroke-width="2" />
                         </svg>
@@ -412,14 +405,11 @@
         </div>
       </div>
     </div>
-    </div>
-    </div>
-
   </section>
 
 
   <aside class="left-sidebar js-left-sidebar open">
-    <div class="aside-main-bar-box ">
+    <div class="aside-main-bar-box">
       <div class="box-aside-column">
         <div class="title-text-aside-box js-title-aside-box">
           <span class="title-text-aside opened js-title-text-aside-box">
@@ -427,12 +417,11 @@
           </span>
         </div>
         <div class="line"></div>
-
-        <div class="aside-main-bar ">
+        <div class="aside-main-bar">
           <div class="aside-name-photo-email js-aside-change-flex-remove">
             <img class="img-profile" src="img/profile.png">
             <div class="aside-name-email js-aside-name-email js-remove-aside">
-              <span class="aside-name ">
+              <span class="aside-name">
                 Sierra Ferguson
               </span>
               <span class="aside-email">
@@ -441,7 +430,7 @@
             </div>
           </div>
 
-          <ul class="aside-list ">
+          <ul class="aside-list">
             <a class="aside-href off-pointer-events" href="">
               <li class="aside-list-text-box js-aside-change-flex-remove">
                 <svg class="aside-icon" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -491,11 +480,10 @@
                       <svg class="circle-icon" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="4" cy="4" r="3" stroke="#F7685B" stroke-width="2" />
                       </svg>
-
                     </div>
                     Ended
                   </li>
-                </ul>
+                </ul> 
               </li>
             </a>
 
@@ -545,6 +533,7 @@
                 <span class="aside-list-text js-remove-aside">Deals</span>
               </li>
             </a>
+          </ul>
         </div>
 
         <div class="line"></div>
@@ -558,7 +547,6 @@
                   fill="#C2CFE0" />
               </svg>
               <li class="aside-list-text js-remove-aside">Setting</li>
-
             </div>
           </a>
           <div class="aside-href" href="">
@@ -574,7 +562,6 @@
         </div>
       </div>
     </div>
-
   </aside>
 
   <script src="./js-script/react/build/assets-react.js"></script>
@@ -588,7 +575,6 @@
   <script src="./js-script/search.js"></script>
   <script src="./js-script/switchMenu.js"></script>
   <script src="./js-script/drawCircle.js"></script>
-
 
 </body>
 
