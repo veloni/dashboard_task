@@ -2,11 +2,11 @@ import React, { useState} from 'react';
 import { VictoryLine, VictoryChart, VictoryAxis } from 'victory';
 
 const Graph = () => {
-  const [victoryData, setVictoryData] = useState(data);
-  const [victoryMinNumberX, setVictoryMinNumberX] = useState(minNumberX);
-  const [victoryMaxNumberX, setVictoryMaxNumberX] = useState(maxNumberX);
-  const [victoryMinNumberY, setVictoryMinNumberY] = useState(minNumberY);
-  const [victoryMaxNumberY, setVictoryMaxNumberY] = useState(maxNumberY);
+  const [victoryData, setVictoryData] = useState(_dataForGraph);
+  const [victory_minNumberX, setVictory_minNumberX] = useState(_minNumberX);
+  const [victory_maxNumberX, setVictory_maxNumberX] = useState(_maxNumberX);
+  const [victory_minNumberY, setVictory_minNumberY] = useState(_minNumberY);
+  const [victory_maxNumberY, setVictory_maxNumberY] = useState(_maxNumberY);
   const [asideOpenState, setAsideOpenState] = useState(true);
 
   const [fontSize, setFontSize] = useState(40);
@@ -14,11 +14,11 @@ const Graph = () => {
   const [addHeightGraph, setAddHeightGraph] = useState(window.innerHeight);
 
   const getNewData = () =>{
-    setVictoryData(data);
-    setVictoryMinNumberX(minNumberX);
-    setVictoryMaxNumberX(maxNumberX);
-    setVictoryMinNumberY(minNumberY);
-    setVictoryMaxNumberY(maxNumberY);
+    setVictoryData(_dataForGraph);
+    setVictory_minNumberX(_minNumberX);
+    setVictory_maxNumberX(_maxNumberX);
+    setVictory_minNumberY(_minNumberY);
+    setVictory_maxNumberY(_maxNumberY);
   };
 
   window.addEventListener(`resize`, event => {
@@ -85,14 +85,14 @@ const Graph = () => {
         theme={chartTheme}
       >
         <VictoryAxis 
-          tickValues={labelX}
-          domain={[victoryMinNumberX - victoryMinNumberX / 100, victoryMaxNumberX + victoryMaxNumberX / 100]}
+          tickValues={_labelX}
+          domain={[victory_minNumberX - victory_minNumberX / 100, victory_maxNumberX + victory_maxNumberX / 100]}
         />
         <VictoryAxis
           dependentAxis 
           crossAxis
           tickValues={[]}
-          domain={[victoryMinNumberY - victoryMinNumberY, victoryMaxNumberY + victoryMaxNumberY / 4]}
+          domain={[victory_minNumberY - victory_minNumberY, victory_maxNumberY + victory_maxNumberY / 4]}
         />
         <VictoryLine 
           interpolation="natural"

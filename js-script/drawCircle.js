@@ -15,7 +15,7 @@ const DrawCircle = (addSize, height, width) => {
 	circleCanvas.style.marginBottom = "15%";
 
 	const DrawCircleEnded = () => {
-		circle.arc(250 + addSize, 245 + addSize, 195 + addSize, 0, quantityActive * 2 * 3.14 / 100, false);
+		circle.arc(250 + addSize, 245 + addSize, 195 + addSize, 0, _quantityActive * 2 * 3.14 / 100, false);
 		circle.lineWidth = 20;
 		circle.strokeStyle = _colors.endedColor;
 		circle.stroke();
@@ -23,7 +23,7 @@ const DrawCircle = (addSize, height, width) => {
 	};
 
 	const DrawCircleActive = () => {
-		circle.arc(250 + addSize, 245 + addSize, 195 + addSize, quantityActive * 2 * 3.14 / 100, quantityActive * 2 * 3.14 / 100 + quantityEnded * 2 * 3.14 / 100, false);
+		circle.arc(250 + addSize, 245 + addSize, 195 + addSize, _quantityActive * 2 * 3.14 / 100, _quantityActive * 2 * 3.14 / 100 + _quantityEnded * 2 * 3.14 / 100, false);
 		circle.lineWidth = 20;
 		circle.strokeStyle = _colors.activeColor;
 		circle.stroke();
@@ -31,7 +31,7 @@ const DrawCircle = (addSize, height, width) => {
 	};
 
 	const DrawCircleCompleted = () => {
-		circle.arc(250 + addSize, 245 + addSize, 195 + addSize, quantityActive * 2 * 3.14 / 100 + quantityEnded * 2 * 3.14 / 100, 0, false);
+		circle.arc(250 + addSize, 245 + addSize, 195 + addSize, _quantityActive * 2 * 3.14 / 100 + _quantityEnded * 2 * 3.14 / 100, 0, false);
 		circle.lineWidth = 20;
 		circle.strokeStyle = _colors.completedColor;
 		circle.stroke();
@@ -42,10 +42,10 @@ const DrawCircle = (addSize, height, width) => {
 		circle.beginPath();
 		circle.fillStyle = '#2ED47A';
 		circle.font = '4em Poppins';
-		circle.fillText(Math.ceil(quantityCompleted) + '%', 205, 270);
+		circle.fillText(Math.ceil(_quantityCompleted) + '%', 205, 270);
 	};
 
-	renderTask();
+	window.globalRenderTask();
 	DrawCircleEnded();
 	DrawCircleActive();
 	DrawCircleCompleted();

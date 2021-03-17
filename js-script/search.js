@@ -21,6 +21,7 @@ const findItems = () => {
 
 const searchItems= (searchValue) => {
 	const search = document.querySelector('.js-search');
+	
 	if (searchValue === ''){ return; } 
 	
 	let findOrNo = true;

@@ -2,7 +2,6 @@ let _task = window.taskList;
 let _lenghtJson;
 let _now = new Date();
 _lenghtJson = _task.id.length;
-/* const taskId = task.id; */
 let _quantityDataMassive = [];
 let _comparisonMassive = [];
 let _circleOneEdit = document.querySelectorAll('.js-one-circle-task');
@@ -15,8 +14,18 @@ let _asideOpen = false;
 let _tasksFilterOpen = false;
 let _statusFilterTask;
 
+let _dataForGraph = [];
+let _maxNumberX = 0;
+let _minNumberX = 0;
+let _maxNumberY = 0;
+let _minNumberY = 0;
+let _labelX = [];
+let _quantityActive = 0;
+let _quantityCompleted = 0;
+let _quantityEnded = 0;
+
 const _monthMassive = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
-const _monthMassiveRecution = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const _monthMassiveRecution = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const _monthMassiveRecutionForLinealGraph = ["Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 const _weekdayMassive = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];

@@ -4,8 +4,6 @@ const showMoreJs = () => {
   let newDiv = document.createElement("div");
   let div = loadDiv.cloneNode(true);
   let showMore = document.querySelector('.js-show-more');
-/*   let barTaskScroll = document.querySelector('.bar-task');
-  let barTaskBox = document.querySelectorAll('.bar-task-box'); */
   let taskBoxForScroll;
   let deleteButton = document.querySelectorAll('.js-delete-task');
   let editButton = document.querySelectorAll('.button-edit');
@@ -46,7 +44,6 @@ const showMoreJs = () => {
     allEditCircle  = document.querySelectorAll('.js-button-circle > .circle-icon'); 
     editIcon = document.querySelectorAll('.edit-delete-icon-value');
 
-
     if (_statusFilterTask === 'active') activeBarFitler(); 
     if (_statusFilterTask === 'completed') completedBarFitler();
     if (_statusFilterTask === 'ended') endedBarFitler();
@@ -75,8 +72,7 @@ const showMoreJs = () => {
     activeBox.forEach((item) => item.classList.add('dn'));
     endedBox.forEach((item) => item.classList.add('dn'));
   }
-
-
+  
   const endedBarFitler = () => {
     const activeBox = document.querySelectorAll('div.active');
     const completeddBox = document.querySelectorAll('div.completed');
@@ -102,16 +98,16 @@ const showMoreJs = () => {
 
   const editRender = () => {
     Array.from(editButton).forEach(function(item,index) {
-        item.addEventListener('click', function() {
-          stateButton = true;
+      item.addEventListener('click', function() {
+        stateButton = true;
 
-          _circleTwoEdit[index].style.strokeWidth = 5;
-          _circleOneEdit[index].style.strokeWidth = 5;
+        _circleTwoEdit[index].style.strokeWidth = 5;
+        _circleOneEdit[index].style.strokeWidth = 5;
 
-          editIcon[index+index].style.stroke = _colors.secondaryColor;
-          editIcon[index+index].style.strokeWidth = 2;
-          butonCircleEdit();
-        });
+        editIcon[index+index].style.stroke = _colors.secondaryColor;
+        editIcon[index+index].style.strokeWidth = 2;
+        butonCircleEdit();
+      });
     }); 
   }
 
@@ -150,7 +146,7 @@ const showMoreJs = () => {
             thisCircleTwo.classList.add(classTwo);
           }
           
-          if (item.classList.contains('ended')){
+          if (item.classList.contains('ended')) {
             reRenderCircle(_colors.endedColor, _colors.activeColor, _colors.completedColor, 'ended');
             removeClassCricle();
             addClass('active','completed');
@@ -158,7 +154,7 @@ const showMoreJs = () => {
             return;
           }
 
-          if (item.classList.contains('completed')){
+          if (item.classList.contains('completed')) {
             reRenderCircle(_colors.completedColor, _colors.endedColor, _colors.activeColor, 'completed');
             removeClassCricle();
             addClass('ended','active');
@@ -166,13 +162,14 @@ const showMoreJs = () => {
             return;
           }
 
-          if (item.classList.contains('active')){
+          if (item.classList.contains('active')) {
             reRenderCircle(_colors.activeColor, _colors.endedColor, _colors.completedColor, 'active');
             removeClassCricle();
             addClass('ended','completed');
             stateButton = false;
             return;
           } 
+
         }
       }); 
     });
