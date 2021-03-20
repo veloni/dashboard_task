@@ -14,13 +14,13 @@ const asideMove = () => {
   const handleToggleButtonClick = () => {
     _asideOpen = !_asideOpen;
 
-    if (_firstLoadScript) { 
+    if (_firstLoadScript) {
       document.querySelector('.js-trigger-aside').click();
       _argumentCircle = 0;
       _canvasHeight = 0;
       _canvasWidth = 0;
       window.globalRerender();
-     } 
+    }
 
     if (!_firstLoadScript) {
       document.querySelector('.js-trigger-aside').click();
@@ -28,12 +28,12 @@ const asideMove = () => {
       _canvasHeight = 20;
       _canvasWidth = 20;
       window.globalRerender();
-    } 
+    }
 
     _firstLoadScript = !_firstLoadScript;
 
     DrawCircle(_argumentCircle, _canvasHeight, _canvasWidth);
-    
+
     const sidebarClasses = sidebar.classList;
     const isOpened = sidebarClasses.contains('open');
 
@@ -78,9 +78,6 @@ const asideMove = () => {
     mainSection.style.width = isOpened ? '95%' : '98%';
     titleTextAsideBox.style.justifyContent = isOpened ? 'center' : 'space-between';
   };
-
 }
 
 asideMove();
-
-

@@ -4,7 +4,7 @@ const filterTask = () => {
   const completedTextChoise = document.querySelector('.js-text-choise-filter-completed');
   const endedTextChoise = document.querySelector('.js-text-choise-filter-ended');
   const allTextChoise = document.querySelectorAll('.text-choise-filter');
-  
+
   AddDn();
 
   buttonTextChoise.onclick = function raze(e) {
@@ -17,11 +17,10 @@ const filterTask = () => {
         item.classList.remove('dn');
         item.style.display = 'flex';
       });
-    }
-    else {
+    } else {
       const barTaskBox = document.querySelectorAll('.bar-task-box');
 
-      allTextChoise.forEach((item) => { 
+      allTextChoise.forEach((item) => {
         item.classList.add('dn')
         item.style.display = 'none';
       });
@@ -38,12 +37,12 @@ const filterTask = () => {
     const completedBox = document.querySelectorAll('div.completed');
     const endedBox = document.querySelectorAll('div.ended');
     const barTaskBox = document.querySelectorAll('.bar-task-box');
-  
+
     barTaskBox.forEach((item) => item.classList.remove('dn'));
     completedBox.forEach((item) => item.classList.add('dn'));
     endedBox.forEach((item) => item.classList.add('dn'));
-    
- 	  window.barRenderTask();  
+
+ 	  window.barRenderTask();
   }
 
   completedTextChoise.onclick = function raze(e) {
@@ -54,12 +53,12 @@ const filterTask = () => {
     const activeBox = document.querySelectorAll('div.active');
     const endedBox = document.querySelectorAll('div.ended');
     const barTaskBox = document.querySelectorAll('.bar-task-box');
-    
+
     barTaskBox.forEach((item) => item.classList.remove('dn'));
     activeBox.forEach((item) => item.classList.add('dn'));
     endedBox.forEach((item) => item.classList.add('dn'));
 
-    window.barRenderTask();  
+    window.barRenderTask();
   }
 
   endedTextChoise.onclick = function raze(e) {
@@ -75,7 +74,7 @@ const filterTask = () => {
     activeBox.forEach((item) => item.classList.add('dn'));
     completeddBox.forEach((item) => item.classList.add('dn'));
 
-    window.barRenderTask();  
+    window.barRenderTask();
   }
 
 }

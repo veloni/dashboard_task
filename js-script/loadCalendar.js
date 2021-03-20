@@ -22,7 +22,9 @@ const loadCalendar = () => {
 
 			calendarNowMonth.forEach((item, index) => {
 				if (index >= toggleMonth) {
-					if (_monthMassiveRecution[resultMonth] === undefined) {item.innerHTML = 'Jan';} 
+					if (_monthMassiveRecution[resultMonth] === undefined) {
+						item.innerHTML = 'Jan';
+					}
 					item.innerHTML = _monthMassiveRecution[resultMonth];
 				}
 			});
@@ -31,7 +33,6 @@ const loadCalendar = () => {
 		item.innerHTML = innerHTML = nowDate + i;
 		i++;
 	});
-	
 }
 
 loadCalendar();

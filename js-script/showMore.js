@@ -1,18 +1,17 @@
 const showMoreJs = () => {
-    
   let loadDiv = document.querySelector('.js-my-elem');
-  let newDiv = document.createElement("div");
+  let newDiv = document.createElement('div');
   let div = loadDiv.cloneNode(true);
   let showMore = document.querySelector('.js-show-more');
   let taskBoxForScroll;
   let deleteButton = document.querySelectorAll('.js-delete-task');
   let editButton = document.querySelectorAll('.button-edit');
-  let allEditCircle  = document.querySelectorAll('.js-button-circle > .circle-icon'); 
+  let allEditCircle = document.querySelectorAll('.js-button-circle > .circle-icon');
   let editIcon = document.querySelectorAll('.edit-delete-icon-value');
 
-  const addListenerShowMore = () => { 
+  const addListenerShowMore = () => {
     showMore.addEventListener('click', function() {
-      [...Array(10)].forEach(() => { 
+      [...Array(10)].forEach(() => {
         clickShowMore();
       });
 
@@ -34,20 +33,20 @@ const showMoreJs = () => {
 
     window.barRenderTask();
     window.barTaskFunction();
-    newDiv = document.createElement("div");
+    newDiv = document.createElement('div');
     div = loadDiv.cloneNode(true);
 
     deleteButton = document.querySelectorAll('.js-delete-task');
     editButton = document.querySelectorAll('.button-edit');
     _circleOneEdit = document.querySelectorAll('.js-one-circle-task');
     _circleTwoEdit = document.querySelectorAll('.js-two-circle-task');
-    allEditCircle  = document.querySelectorAll('.js-button-circle > .circle-icon'); 
+    allEditCircle = document.querySelectorAll('.js-button-circle > .circle-icon');
     editIcon = document.querySelectorAll('.edit-delete-icon-value');
 
-    if (_statusFilterTask === 'active') activeBarFitler(); 
-    if (_statusFilterTask === 'completed') completedBarFitler();
-    if (_statusFilterTask === 'ended') endedBarFitler();
-    
+    _statusFilterTask === 'active' && activeBarFitler();
+    _statusFilterTask === 'completed' && completedBarFitler();
+    _statusFilterTask === 'ended' && endedBarFitler();
+
     editRender();
     deleteRender();
     findItems();
@@ -56,8 +55,8 @@ const showMoreJs = () => {
   const activeBarFitler = () => {
     const completedBox = document.querySelectorAll('div.completed');
     const endedBox = document.querySelectorAll('div.ended');
-    const barTaskBox = document.querySelectorAll('.bar-task-box'); 
-  
+    const barTaskBox = document.querySelectorAll('.bar-task-box');
+
     barTaskBox.forEach((item) => item.classList.remove('dn'));
     completedBox.forEach((item) => item.classList.add('dn'));
     endedBox.forEach((item) => item.classList.add('dn'));
@@ -67,12 +66,12 @@ const showMoreJs = () => {
     const activeBox = document.querySelectorAll('div.active');
     const endedBox = document.querySelectorAll('div.ended');
     const barTaskBox = document.querySelectorAll('.bar-task-box');
-    
+
     barTaskBox.forEach((item) => item.classList.remove('dn'));
     activeBox.forEach((item) => item.classList.add('dn'));
     endedBox.forEach((item) => item.classList.add('dn'));
   }
-  
+
   const endedBarFitler = () => {
     const activeBox = document.querySelectorAll('div.active');
     const completeddBox = document.querySelectorAll('div.completed');
@@ -93,7 +92,7 @@ const showMoreJs = () => {
       };
     });
   }
-    
+
   let stateButton = true;
 
   const editRender = () => {
@@ -108,44 +107,44 @@ const showMoreJs = () => {
         editIcon[index+index].style.strokeWidth = 2;
         butonCircleEdit();
       });
-    }); 
+    });
   }
 
   const butonCircleEdit = () => {
     Array.from(allEditCircle).forEach(function(item) {
       item.addEventListener('click',  function() {
-        if (stateButton === true) {
+        if (stateButton) {
           const thisBox = this.closest('.icon-button-box');
           const thisButtonTaskBox = thisBox.querySelector('.button-task-box > .button-task');
           const thisCircleOne = thisBox.querySelector('.two-circle > .js-button-circle > .js-one-circle-task');
           const thisCircleTwo = thisBox.querySelector('.two-circle > .js-button-circle > .js-two-circle-task');
           const thisEdicIcon = thisBox.querySelector('.edit-delete-icon > .button-edit > .edit-icon');
 
-          const reRenderCircle = (colorOne, colorTwo, colorThree, text) =>{
+          const reRenderCircle = (colorOne, colorTwo, colorThree, text) => {
             thisButtonTaskBox.style.backgroundColor = colorOne;
             thisButtonTaskBox.style.borderColor = colorOne;
             thisButtonTaskBox.innerHTML = text;
             thisCircleOne.style.stroke = colorTwo;
             thisCircleTwo.style.stroke = colorThree;
-            thisEdicIcon.style.stroke = "none";
+            thisEdicIcon.style.stroke = 'none';
             thisCircleOne.style.strokeWidth = 2;
             thisCircleTwo.style.strokeWidth = 2;
           }
-    
+
           const removeClassCricle = () => {
             thisCircleOne.classList.remove('ended');
             thisCircleTwo.classList.remove('ended');
             thisCircleOne.classList.remove('active');
             thisCircleTwo.classList.remove('active');
             thisCircleOne.classList.remove('completed');
-            thisCircleTwo.classList.remove('completed');;
+            thisCircleTwo.classList.remove('completed');
           }
 
           const addClass = (classOne, classTwo) => {
             thisCircleOne.classList.add(classOne);
             thisCircleTwo.classList.add(classTwo);
           }
-          
+
           if (item.classList.contains('ended')) {
             reRenderCircle(_colors.endedColor, _colors.activeColor, _colors.completedColor, 'ended');
             removeClassCricle();
@@ -168,12 +167,12 @@ const showMoreJs = () => {
             addClass('ended','completed');
             stateButton = false;
             return;
-          } 
-
+          }
         }
-      }); 
+      });
     });
   }
+
   editRender();
   deleteRender();
 }

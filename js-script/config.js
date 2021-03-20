@@ -1,7 +1,6 @@
 let _task = window.taskList;
-let _lenghtJson;
+let _lenghtJson = _task.id.length;
 let _now = new Date();
-_lenghtJson = _task.id.length;
 let _quantityDataMassive = [];
 let _comparisonMassive = [];
 let _circleOneEdit = document.querySelectorAll('.js-one-circle-task');
@@ -26,7 +25,7 @@ let _quantityEnded = 0;
 
 const _monthMassive = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
 const _monthMassiveRecution = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-const _monthMassiveRecutionForLinealGraph = ["Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const _monthMassiveRecutionForLinealGraph = ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 const _weekdayMassive = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const _monthValue = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
@@ -37,4 +36,3 @@ const _colors = {
 	completedColor: '#2ED47A',
 	secondaryColor: '#109CF1',
 };
-

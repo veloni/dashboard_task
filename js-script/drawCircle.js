@@ -10,7 +10,7 @@ const DrawCircle = (addSize, height, width) => {
 	window.addEventListener(`resize`, event => {
 		circleCanvas.style.width = window.innerWidth / 6 + height;
 		circleCanvas.style.height = window.innerHeight / 3 + width;
-	}, false); 
+	}, false);
 
 	circleCanvas.style.marginBottom = "15%";
 
@@ -42,7 +42,7 @@ const DrawCircle = (addSize, height, width) => {
 		circle.beginPath();
 		circle.fillStyle = '#2ED47A';
 		circle.font = '4em Poppins';
-		circle.fillText(Math.ceil(_quantityCompleted) + '%', 205, 270);
+		circle.fillText(`${Math.ceil(_quantityCompleted)}%`, 205, 270);
 	};
 
 	window.globalRenderTask();
@@ -55,4 +55,3 @@ const DrawCircle = (addSize, height, width) => {
 DrawCircle(0, 0, 0);
 
 window.windowDrawCircle = DrawCircle(_argumentCircle);
-

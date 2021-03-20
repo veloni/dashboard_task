@@ -1,3 +1,4 @@
+
 const renderTaskJs = () => {
 
 	const renderTextTask = (massive, name) => {
@@ -19,7 +20,7 @@ const renderTaskJs = () => {
 					item.classList.add('active')
 					break;
 				default:
-				break;
+					break;
 			}
 		});
 	}
@@ -81,7 +82,7 @@ const renderTaskJs = () => {
 					addWidthCircle(index);
 					break;
 				default:
-				break;
+					break;
 			}
 		});
 	}
@@ -116,7 +117,7 @@ const renderTaskJs = () => {
 		let daysInYearMassive = [];
 		let daysDateMassive = [];
 
-		const daysInMonth = (month, year) => {return new Date(year, month, 0).getDate();}
+		const daysInMonth = (month, year) => new Date(year, month, 0).getDate();
 
 		let days = 0;
 
@@ -125,7 +126,7 @@ const renderTaskJs = () => {
 		});
 
 		let daysYears = days;
-		
+
 		[...Array(1 + daysYears * 2)].forEach(() => {
 			if (day <= daysInMonth(month, 2021)) {
 				daysInYearMassive.push(day);
@@ -139,9 +140,9 @@ const renderTaskJs = () => {
 		});
 
 		[...Array(daysYears * 2) + 1].forEach((item,index) => {
-			if (index % 2 ) {
+			if (index % 2) {
 				daysInYearMassive[index] = _monthMassive[daysInYearMassive[index]];
-				_comparisonMassive.push(daysInYearMassive[index - 1] + ' ' + daysInYearMassive[index]);
+				_comparisonMassive.push(`${daysInYearMassive[index - 1]} ${daysInYearMassive[index]}`);
 			}
 		});
 
@@ -151,10 +152,11 @@ const renderTaskJs = () => {
 
 		_comparisonMassive.filter(function(item, i) {
 			daysDateMassive.forEach(function(elem) {
-				if (elem === item) {_quantityDataMassive[i] += 1;}
+				if (elem === item) {
+					_quantityDataMassive[i] += 1;
+				}
 			});
 		});
-
 	}
 	loadTask();
 }

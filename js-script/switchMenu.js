@@ -1,6 +1,4 @@
-	
 const switchMenuJs = () => {
-	
 	const switchPeriodOne = document.querySelector('.js-menu-switch-period-one');
 	const switchPeriodTwo = document.querySelector('.js-menu-switch-period-two');
 	const switchPeriodThree = document.querySelector('.js-menu-switch-period-three');
@@ -32,7 +30,7 @@ const switchMenuJs = () => {
 	}
 
 	const changeDataCircle = () => {
-		if (!_firstLoadScript) { 
+		if (!_firstLoadScript) {
 			_argumentCircle = 0;
 			_canvasHeight = '20vw';
 			_canvasWidth = '20vw';
@@ -74,17 +72,17 @@ const switchMenuJs = () => {
 
 	const giveWeekIndex = () => {
 		_quantityDataMassive.forEach(function(item, index) {
-			if (index >= day && index < day + 7 && item !== 0) { 
+			if (index >= day && index < day + 7 && item !== 0) {
 				indexWeek.push(index);
 				indexWeek.push(item);
 			}
 		});
 	}
+
 	giveWeekIndex();
 
 	const giveValueWeekSearch = () => {
 		indexWeek.forEach(function(item, index) {
-
 			if (index % 2 === 0) {
 				const dateNumberYears = new Date(2021, 0, item);
 				const maxDateMonthTwo = new Date(dateNumberYears.getFullYear(), dateNumberYears.getMonth() + 1, 0).getDate();
@@ -95,7 +93,7 @@ const switchMenuJs = () => {
 					giveDate = 0;
 					giveMonth += 1;
 				}
-				
+
 				WeekDataSearch.push(giveDate + 0 + ' ' + _monthMassive[giveMonth]);
 			}
 		});
@@ -105,7 +103,7 @@ const switchMenuJs = () => {
 
 	let AllTaskWeek = 0;
 
-	const DateLoadWeek = () => {
+	const dateLoadWeek = () => {
 		_task.id.filter(function(item) {
 			WeekDataSearch.forEach(function(elem) {
 				if (item['dueDate'] === elem) {
@@ -116,7 +114,7 @@ const switchMenuJs = () => {
 		});
 	}
 
-	DateLoadWeek();
+	dateLoadWeek();
 
 	let indexMonth = [];
 
@@ -150,7 +148,7 @@ const switchMenuJs = () => {
 	giveValueMonthSearch();
 
 	let MonthData = [];
-	let allTaskMonth = 0;;
+	let allTaskMonth = 0;
 
 	const MonthLoadWeek = () => {
 		_task.id.filter(function(item, index) {
@@ -162,27 +160,32 @@ const switchMenuJs = () => {
 			});
 		});
 	}
+
 	MonthLoadWeek();
 
-	//load yearsDate
+	// load yearsDate
 
 	let YearData = [];
 
 	const loadDataYear = () => {
-		_task.id.forEach(function(item) {YearData.push(item['conditionTask']);});
+		_task.id.forEach(function(item) {
+			YearData.push(item['conditionTask']);
+		});
 	}
+
 	loadDataYear();
 
 	let YearsDataSearch = [];
 
 	const loadDataSearchYear = () => {
-		_task.id.forEach(function(item) {YearsDataSearch.push(item['dueDate']);});
+		_task.id.forEach(function(item) {
+			YearsDataSearch.push(item['dueDate']);
+		});
 	}
 
 	loadDataSearchYear();
 
 	const loadInterest = (period, length) => {
-
 		_quantityCompleted = 0;
 		_quantityEnded = 0;
 		_quantityActive = 0;
@@ -197,6 +200,8 @@ const switchMenuJs = () => {
 					break;
 				case ('ended'):
 					_quantityEnded += 1;
+					break;
+				default:
 					break;
 			}
 		});
@@ -223,6 +228,8 @@ const switchMenuJs = () => {
 			case 'This year'.trim():
 				loadInterest(YearData, _lenghtJson);
 				break;
+			default:
+				break;
 		}
 	}
 
@@ -234,7 +241,7 @@ const switchMenuJs = () => {
 	const switchPeriodTaskThree = document.querySelector('.js-task-menu-change-year');
 	const openTaskSwitch = document.querySelector('.js-switch-task-period');
 	const switchPeriodOpen = document.querySelector('.js-switch-task-period-open');
-	
+
 	const AdDn = () => {
 		switchPeriodTaskTwo.classList.add('dn');
 		switchPeriodTaskThree.classList.add('dn');
@@ -258,10 +265,12 @@ const switchMenuJs = () => {
 	}
 
 	switchPeriodTaskTwo.onclick = function() {
-		savePeriodTwo = switchPeriodTaskOne.textContent
+		savePeriodTwo = switchPeriodTaskOne.textContent;
 		switchPeriodTaskOne.innerHTML = switchPeriodTaskTwo.textContent;
 		switchPeriodTaskTwo.innerHTML = savePeriodTwo;
+
 		openTaskSwitch.classList.remove('dn');
+
 		changePeriodTaskCompleted();
 		renderTask();
 		AdDn();
@@ -271,7 +280,9 @@ const switchMenuJs = () => {
 		savePeriodTwo = switchPeriodTaskOne.textContent
 		switchPeriodTaskOne.innerHTML = switchPeriodTaskThree.textContent;
 		switchPeriodTaskThree.innerHTML = savePeriodTwo;
+
 		openTaskSwitch.classList.remove('dn');
+
 		changePeriodTaskCompleted();
 		renderTask();
 		AdDn();
@@ -300,7 +311,6 @@ const switchMenuJs = () => {
 	}
 
 	const changePeriodTaskCompleted = () => {
-
 		switch (switchPeriodTaskOne.textContent.trim()) {
 			case 'This month'.trim():
 				loadCompleteTask(MonthData, allTaskMonth);
@@ -311,12 +321,14 @@ const switchMenuJs = () => {
 			case 'This year'.trim():
 				loadCompleteTask(YearData, _lenghtJson);
 				break;
+			default:
+				break;
 		}
 	}
 
 	loadCompleteTask(WeekData, AllTaskWeek);
 
-	//lineal graph
+	// lineal graph
 
 	const switchPeriodLinealGraphOne = document.querySelector('.js-menu-change-week-lineal-graph');
 	const switchPeriodLinealGraphTwo = document.querySelector('.js-menu-change-month-lineal-graph');
@@ -374,7 +386,7 @@ const switchMenuJs = () => {
 					delete monthDataLinealGraph[index];
 				}
 			});
-			
+
 			dateY.push(quanityCompleted);
 		});
 
@@ -391,10 +403,12 @@ const switchMenuJs = () => {
 		let calcOne = dateY;
 		let calcTwo = dateX;
 
-		calcTwo.forEach(function(el, i, item) {item[i] = [item[i], calcOne[i]];})
+		calcTwo.forEach(function(el, i, item) {
+			item[i] = [item[i], calcOne[i]];
+		});
 
-		calcTwo.sort(function(a, b) {return a[0] - b[0]});
-		
+		calcTwo.sort(function(a, b) { return a[0] - b[0]; });
+
 		let calcThree = calcTwo.map(function(el, i, item) {
 			item[i] = el[0];
 			return el[1];
@@ -405,7 +419,7 @@ const switchMenuJs = () => {
 
 		dateX.forEach(function(item, index) {
 			dateX[index] = parseFloat(dateX[index]);
-		})
+		});
 
 		if (dateX.length === 12) {
 			_maxNumberX = 12;
@@ -415,17 +429,16 @@ const switchMenuJs = () => {
 			_maxNumberX = Math.max.apply(Math, dateX);
 			_minNumberX = Math.min.apply(Math, dateX);
 		}
-		
+
 		_maxNumberY = Math.max.apply(Math, dateY);
 		_minNumberY = Math.min.apply(Math, dateY);
 
 		dateX.forEach(function(item, index) {
 			_dataForGraph[index] = {
 				x: dateX[index],
-				y: dateY[index]
+				y: dateY[index],
 			}
 		});
-		
 	};
 
 	const yearDataFromLinealGraph = () => {
@@ -491,7 +504,7 @@ const switchMenuJs = () => {
 
 		dateY = monthForDateY;
 		dateX = monthForDateX;
-		
+
 		if (dateX.length === 12) {
 			_maxNumberX = 12;
 			_minNumberX = 0;
@@ -500,23 +513,23 @@ const switchMenuJs = () => {
 			_maxNumberX = Math.max.apply(Math, dateX);
 			_minNumberX = Math.min.apply(Math, dateX);
 		}
-		
+
 		_maxNumberY = Math.max.apply(Math, dateY);
 		_minNumberY = Math.min.apply(Math, dateY);
 
 		dateX.forEach(function(item, index) {
 			_dataForGraph[index] = {
 				x: dateX[index],
-				y: dateY[index]
+				y: dateY[index],
 			}
 		});
 	}
 
 	monthDataFromLinealGraph(WeekDataSearch);
 
-	window.globalRerender(); 
+	window.globalRerender();
 
-	const changePeriodLinealGraph = (period) =>{
+	const changePeriodLinealGraph = (period) => {
 		switch (period.trim()) {
 			case 'This month'.trim():
 				monthDataFromLinealGraph(monthDataSearch);
@@ -530,8 +543,10 @@ const switchMenuJs = () => {
 				yearDataFromLinealGraph();
 				document.querySelector('.js-trigger-charts').click();
 				break;
+			default:
+				break;
 		}
-	} 
+	}
 
 	switchPeriodLinealGraphTwo.onclick = function () {
 		changePeriodLinealGraph(switchPeriodLinealGraphTwo.textContent);
@@ -540,7 +555,7 @@ const switchMenuJs = () => {
 		switchPeriodLinealGraphTwo.innerHTML = savePeriodLinealGraph;
 		closeLinealGraphSwitch.classList.remove('dn');
 		addDnLinealGraph();
-	} 
+	}
 
 	switchPeriodLinealGraphThree.onclick = function () {
 		changePeriodLinealGraph(switchPeriodLinealGraphThree.textContent);
@@ -549,11 +564,9 @@ const switchMenuJs = () => {
 		switchPeriodLinealGraphThree.innerHTML = savePeriodLinealGraph;
 		addDnLinealGraph();
 		closeLinealGraphSwitch.classList.remove('dn');
-	}  
+	}
 
-	//yearDataFromLinealGraph(); 
-	//monthDataFromLinealGraph(monthDataSearch);
 	monthDataFromLinealGraph(WeekDataSearch);
-}	
+}
 
 switchMenuJs();
