@@ -57,9 +57,7 @@ const showMoreJs = () => {
     const endedBox = document.querySelectorAll('div.ended');
     const barTaskBox = document.querySelectorAll('.bar-task-box');
 
-    barTaskBox.forEach((item) => item.classList.remove('dn'));
-    completedBox.forEach((item) => item.classList.add('dn'));
-    endedBox.forEach((item) => item.classList.add('dn'));
+    removeOrAddDnInShowMore(barTaskBox, completedBox, endedBox);
   }
 
   const completedBarFitler = () => {
@@ -67,9 +65,7 @@ const showMoreJs = () => {
     const endedBox = document.querySelectorAll('div.ended');
     const barTaskBox = document.querySelectorAll('.bar-task-box');
 
-    barTaskBox.forEach((item) => item.classList.remove('dn'));
-    activeBox.forEach((item) => item.classList.add('dn'));
-    endedBox.forEach((item) => item.classList.add('dn'));
+    removeOrAddDnInShowMore(barTaskBox, activeBox, endedBox)
   }
 
   const endedBarFitler = () => {
@@ -77,9 +73,13 @@ const showMoreJs = () => {
     const completeddBox = document.querySelectorAll('div.completed');
     const barTaskBox = document.querySelectorAll('.bar-task-box');
 
-    barTaskBox.forEach((item) => item.classList.remove('dn'));
-    activeBox.forEach((item) => item.classList.add('dn'));
-    completeddBox.forEach((item) => item.classList.add('dn'));
+    removeOrAddDnInShowMore(barTaskBox, activeBox, completeddBox);
+  }
+  
+  const removeOrAddDnInShowMore = (firstTaskBox, twoTaskBox, ThreeTaskBox) => {
+    firstTaskBox.forEach((item) => item.classList.remove('dn'));
+    twoTaskBox.forEach((item) => item.classList.add('dn'));
+    ThreeTaskBox.forEach((item) => item.classList.add('dn'));
   }
 
   const deleteRender = () => {

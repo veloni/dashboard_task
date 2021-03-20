@@ -14,28 +14,22 @@ const DrawCircle = (addSize, height, width) => {
 
 	circleCanvas.style.marginBottom = "15%";
 
-	const DrawCircleEnded = () => {
+	const DrawCircleEnded = (color) => {
 		circle.arc(250 + addSize, 245 + addSize, 195 + addSize, 0, _quantityActive * 2 * 3.14 / 100, false);
-		circle.lineWidth = 20;
-		circle.strokeStyle = _colors.endedColor;
-		circle.stroke();
-		circle.beginPath();
+
+		functionDrawforAllCircle(color);
 	};
 
-	const DrawCircleActive = () => {
+	const DrawCircleActive = (color) => {
 		circle.arc(250 + addSize, 245 + addSize, 195 + addSize, _quantityActive * 2 * 3.14 / 100, _quantityActive * 2 * 3.14 / 100 + _quantityEnded * 2 * 3.14 / 100, false);
-		circle.lineWidth = 20;
-		circle.strokeStyle = _colors.activeColor;
-		circle.stroke();
-		circle.beginPath();
+	
+		functionDrawforAllCircle(color);
 	};
 
-	const DrawCircleCompleted = () => {
+	const DrawCircleCompleted = (color) => {
 		circle.arc(250 + addSize, 245 + addSize, 195 + addSize, _quantityActive * 2 * 3.14 / 100 + _quantityEnded * 2 * 3.14 / 100, 0, false);
-		circle.lineWidth = 20;
-		circle.strokeStyle = _colors.completedColor;
-		circle.stroke();
-		circle.beginPath();
+
+		functionDrawforAllCircle(color);
 	};
 
 	const DrawTextPercent = () => {
@@ -45,10 +39,17 @@ const DrawCircle = (addSize, height, width) => {
 		circle.fillText(`${Math.ceil(_quantityCompleted)}%`, 205, 270);
 	};
 
+	const functionDrawforAllCircle = (color) =>{
+		circle.lineWidth = 20;
+		circle.strokeStyle = color;
+		circle.stroke();
+		circle.beginPath();
+	}
+
 	window.globalRenderTask();
-	DrawCircleEnded();
-	DrawCircleActive();
-	DrawCircleCompleted();
+	DrawCircleEnded(_colors.endedColor);
+	DrawCircleActive(_colors.activeColor);
+	DrawCircleCompleted(_colors.completedColor);
 	DrawTextPercent();
 }
 

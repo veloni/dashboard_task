@@ -1,4 +1,3 @@
-
 const renderTaskJs = () => {
 
 	const renderTextTask = (massive, name) => {

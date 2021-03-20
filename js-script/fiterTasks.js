@@ -38,11 +38,7 @@ const filterTask = () => {
     const endedBox = document.querySelectorAll('div.ended');
     const barTaskBox = document.querySelectorAll('.bar-task-box');
 
-    barTaskBox.forEach((item) => item.classList.remove('dn'));
-    completedBox.forEach((item) => item.classList.add('dn'));
-    endedBox.forEach((item) => item.classList.add('dn'));
-
- 	  window.barRenderTask();
+    removeOrAddDn(barTaskBox, completedBox, endedBox);
   }
 
   completedTextChoise.onclick = function raze(e) {
@@ -54,11 +50,7 @@ const filterTask = () => {
     const endedBox = document.querySelectorAll('div.ended');
     const barTaskBox = document.querySelectorAll('.bar-task-box');
 
-    barTaskBox.forEach((item) => item.classList.remove('dn'));
-    activeBox.forEach((item) => item.classList.add('dn'));
-    endedBox.forEach((item) => item.classList.add('dn'));
-
-    window.barRenderTask();
+    removeOrAddDn(barTaskBox, activeBox, endedBox);
   }
 
   endedTextChoise.onclick = function raze(e) {
@@ -70,13 +62,16 @@ const filterTask = () => {
     const completeddBox = document.querySelectorAll('div.completed');
     const barTaskBox = document.querySelectorAll('.bar-task-box');
 
-    barTaskBox.forEach((item) => item.classList.remove('dn'));
-    activeBox.forEach((item) => item.classList.add('dn'));
-    completeddBox.forEach((item) => item.classList.add('dn'));
+    removeOrAddDn(barTaskBox, activeBox, completeddBox);
+  }
+
+  const removeOrAddDn = (firstTaskBox, twoTaskBox, ThreeTaskBox) => {
+    firstTaskBox.forEach((item) => item.classList.remove('dn'));
+    twoTaskBox.forEach((item) => item.classList.add('dn'));
+    ThreeTaskBox.forEach((item) => item.classList.add('dn'));
 
     window.barRenderTask();
   }
-
 }
 
 const AddDn = () => {
