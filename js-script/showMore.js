@@ -42,11 +42,12 @@ const showMoreJs = () => {
     _circleTwoEdit = document.querySelectorAll('.js-two-circle-task');
     allEditCircle = document.querySelectorAll('.js-button-circle > .circle-icon');
     editIcon = document.querySelectorAll('.edit-delete-icon-value');
-
+        
+    _statusFilterTask === null && seeAllTask();
     _statusFilterTask === 'active' && activeBarFitler();
     _statusFilterTask === 'completed' && completedBarFitler();
     _statusFilterTask === 'ended' && endedBarFitler();
-
+  
     editRender();
     deleteRender();
     findItems();
@@ -76,10 +77,20 @@ const showMoreJs = () => {
     removeOrAddDnInShowMore(barTaskBox, activeBox, completeddBox);
   }
   
-  const removeOrAddDnInShowMore = (firstTaskBox, twoTaskBox, ThreeTaskBox) => {
+  const removeOrAddDnInShowMore = (firstTaskBox, twoTaskBox, threeTaskBox) => {
     firstTaskBox.forEach((item) => item.classList.remove('dn'));
     twoTaskBox.forEach((item) => item.classList.add('dn'));
-    ThreeTaskBox.forEach((item) => item.classList.add('dn'));
+    threeTaskBox.forEach((item) => item.classList.add('dn'));
+  }
+
+  const seeAllTask = () =>{
+    const completedBox = document.querySelectorAll('div.completed');
+    const endedBox = document.querySelectorAll('div.ended');
+    const activeBox = document.querySelectorAll('div.active');
+
+    completedBox.forEach((item) => item.classList.remove('dn'));
+    endedBox.forEach((item) => item.classList.remove('dn'));
+    activeBox.forEach((item) => item.classList.remove('dn'));
   }
 
   const deleteRender = () => {

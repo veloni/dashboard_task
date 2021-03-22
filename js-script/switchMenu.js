@@ -73,15 +73,15 @@ const switchMenuJs = () => {
 	const diff = date - start;
 	const oneDay = 1000 * 60 * 60 * 24;
 	const day = Math.floor(diff / oneDay);
-	const indexWeek = [];
-	const WeekDataSearch = [];
-	const WeekData = [];
+	let indexWeek = [];
+	let WeekDataSearch = [];
+	let WeekData = [];
 
 	const giveWeekIndex = () => {
 		_quantityDataMassive.forEach(function(item, index) {
-			if (index >= day && index < day + 7 && item !== 0) {
+			if (day >= index && day < index + 7) {
 				indexWeek.push(index);
-				indexWeek.push(item);
+				indexWeek.push(item)
 			}
 		});
 	}
@@ -93,8 +93,8 @@ const switchMenuJs = () => {
 			if (index % 2 === 0) {
 				const dateNumberYears = new Date(2021, 0, item);
 				const maxDateMonthTwo = new Date(dateNumberYears.getFullYear(), dateNumberYears.getMonth() + 1, 0).getDate();
-				const giveMonth = dateNumberYears.getMonth();
-				const giveDate = dateNumberYears.getDate();
+				let giveMonth = dateNumberYears.getMonth();
+				let giveDate = dateNumberYears.getDate();
 
 				if (giveDate >= maxDateMonthTwo) {
 					giveDate = 0;
@@ -105,7 +105,6 @@ const switchMenuJs = () => {
 			}
 		});
 	}
-
 	giveValueWeekSearch();
 
 	let AllTaskWeek = 0;

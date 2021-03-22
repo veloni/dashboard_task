@@ -23,7 +23,6 @@ const Graph = () => {
 
   useEffect(() => {
     window.addEventListener('resize', handleResize);
-
     handleResize();
   }, []);
 
@@ -39,7 +38,7 @@ const Graph = () => {
     setAddHeightGraph(window.innerHeight);
   }
 
-  const reRenderForAsideMove = () =>{
+  const reRenderForAsideMove = () => {
     handleResize();
     setAsideOpenState(!asideOpenState);
   }

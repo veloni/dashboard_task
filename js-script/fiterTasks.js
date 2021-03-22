@@ -20,6 +20,8 @@ const filterTask = () => {
     } else {
       const barTaskBox = document.querySelectorAll('.bar-task-box');
 
+      _statusFilterTask = null;
+
       allTextChoise.forEach((item) => {
         item.classList.add('dn')
         item.style.display = 'none';
