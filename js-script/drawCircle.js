@@ -12,7 +12,7 @@ const DrawCircle = (addSize, height, width) => {
 		circleCanvas.style.height = window.innerHeight / 3 + width;
 	}, false);
 
-	circleCanvas.style.marginBottom = '15%';
+	circleCanvas.style.paddingBottom = '5%';
 
 	const DrawCircleEnded = (color) => {
 		circle.arc(250 + addSize, 245 + addSize, 195 + addSize, 0, _quantityActive * 2 * 3.14 / 100, false);

@@ -29,7 +29,7 @@ const Graph = () => {
   const handleResize = () => {
     if (_asideOpen) {
       setAddWidthGraph(window.innerWidth + 150);
-      setFontSize(45);
+      setFontSize(41);
       setAddHeightGraph(window.innerHeight + 50);
       return;
     }
