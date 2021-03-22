@@ -8,7 +8,7 @@ let _circleTwoEdit = document.querySelectorAll('.js-two-circle-task');
 let _argumentCircle = 0;
 let _canvasHeight = 0;
 let _canvasWidth = 0;
-let _firstLoadScript = false;
+let _adideOpenForDraw = false;
 let _asideOpen = false;
 let _tasksFilterOpen = false;
 let _statusFilterTask;

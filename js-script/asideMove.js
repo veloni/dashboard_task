@@ -14,7 +14,7 @@ const asideMove = () => {
   const handleToggleButtonClick = () => {
     _asideOpen = !_asideOpen;
 
-    if (_firstLoadScript) {
+    if (_adideOpenForDraw) {
       document.querySelector('.js-trigger-aside').click();
       _argumentCircle = 0;
       _canvasHeight = 0;
@@ -22,7 +22,7 @@ const asideMove = () => {
       window.globalRerender();
     }
 
-    if (!_firstLoadScript) {
+    if (!_adideOpenForDraw) {
       document.querySelector('.js-trigger-aside').click();
       _argumentCircle = 2;
       _canvasHeight = 20;
@@ -30,7 +30,7 @@ const asideMove = () => {
       window.globalRerender();
     }
 
-    _firstLoadScript = !_firstLoadScript;
+    _adideOpenForDraw = !_adideOpenForDraw;
 
     DrawCircle(_argumentCircle, _canvasHeight, _canvasWidth);
 

@@ -37,24 +37,25 @@ const switchMenuJs = () => {
 	}
 
 	const changeDataCircle = () => {
-		if (!_firstLoadScript) {
+		if (!_adideOpenForDraw) {
 			_argumentCircle = 0;
-			_canvasHeight = '20vw';
-			_canvasWidth = '20vw';
+      _canvasHeight = 0;
+      _canvasWidth = 0;
 			return;
 		}
-		_argumentCircle = 1;
-		_canvasHeight = '21.5vw';
-		_canvasWidth = '21.5vw';
+		_argumentCircle = 2;
+		_canvasHeight = 20;
+		_canvasWidth = 20;
 	}
 
 	switchPeriodTwo.onclick = function() {
 		savePeriodTwo = switchPeriodOne.textContent
 		switchPeriodOne.innerHTML = switchPeriodTwo.textContent;
 		switchPeriodTwo.innerHTML = savePeriodTwo;
+
 		changePeriod();
 		changeDataCircle();
-		DrawCircle(0, 0, 0);
+		DrawCircle(_argumentCircle, _canvasHeight, _canvasWidth);
 		AddDnTwo();
 	}
 
@@ -62,9 +63,10 @@ const switchMenuJs = () => {
 		savePeriodTwo = switchPeriodOne.textContent
 		switchPeriodOne.innerHTML = switchPeriodThree.textContent;
 		switchPeriodThree.innerHTML = savePeriodTwo;
+		
 		changePeriod();
 		changeDataCircle();
-		DrawCircle(0, 0, 0);
+		DrawCircle(_argumentCircle, _canvasHeight, _canvasWidth);
 		AddDnTwo();
 	}
 
