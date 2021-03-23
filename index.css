@@ -52,6 +52,7 @@ body {
   text-decoration: none;
   color: grey;
   font-size: 1vw;
+  cursor: pointer;
 }
 
 .icon-text {
@@ -67,8 +68,17 @@ body {
   margin-left: 8vw;
 }
 
-.lineal-grah-button {
+.lineal-graph-button {
   padding-right: 1vw;
+  cursor: pointer;
+}
+
+.menu-change-month{
+  cursor: pointer;
+}
+
+.menu-change-year{
+  cursor: pointer;
 }
 
 .switch-menu {
@@ -110,6 +120,23 @@ body {
 .button-switch-period-circle {
   padding-right: 1vw;
   align-items: center;
+  cursor: pointer;
+}
+
+.button-switch-period-circle:hover {
+  stroke: #109CF1;
+}
+
+.lineal-graph-button:hover {
+  stroke: #109CF1;
+}
+
+.button-switch-period:hover {
+  stroke: #109CF1;
+}
+
+.edit-delete-icon-value:hover {
+  stroke: #109CF1;
 }
 
 .box-text-switch-menu {
@@ -129,6 +156,7 @@ body {
 
 .menu-change-week {
   align-items: center;
+  cursor: pointer;
 }
 
 .button-switch-box {
@@ -137,6 +165,7 @@ body {
   height: 2vw;
   width: 2vw;
   padding-bottom: 1vw;
+  cursor: pointer;
 }
 
 .canvas {
@@ -190,6 +219,7 @@ body {
 .task-text-aside-bar {
   margin-top: 12px;
   padding-left: 33%;
+  cursor: pointer;
 }
 
 .text-choise-filter {
@@ -220,6 +250,7 @@ body {
 .edit-delete-icon-value {
   width: 1.2vw;
   height: 1.2vw;
+  cursor: pointer;
 }
 
 .text-choise-filter-circle {
@@ -303,6 +334,7 @@ body {
   padding-left: 3vw;
   transition: margin-left 1s ease-in-out;
   outline-color: rgba(0,0,0,0.3);
+  cursor: pointer;
 }
 
 .search:focus {
@@ -426,7 +458,7 @@ body {
 .aside-list-text-box {
   display: flex;
   align-items: center;
-  margin-top:2vw;
+  margin-top: 2vw;
 }
 
 .aside-setting-icon {
@@ -500,6 +532,10 @@ body {
 
 .aside-href{
   text-decoration: none;
+}
+
+.cursor-pointer{
+  cursor: pointer;
 }
 
 .off-pointer-events{
@@ -961,6 +997,12 @@ body {
   line-height: 20px;
   letter-spacing: 0.01em;
   text-align: center;
+  cursor: pointer;
+}
+
+.button-show-more:hover {
+  border-radius: 10px;
+  box-shadow: 0 0 15px #109CF1;
 }
 
 .wrapper-button {

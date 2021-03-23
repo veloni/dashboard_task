@@ -360,6 +360,13 @@ const switchMenuJs = () => {
 
 	addDnLinealGraph();
 
+	switchPeriodLinealGraphOne.onclick = function() {
+		openLinealGraphSwitch.classList.add('dn');
+		switchPeriodLinealGraphTwo.classList.add('dn');
+		switchPeriodLinealGraphThree.classList.add('dn');
+		closeLinealGraphSwitch.classList.remove('dn');
+	}
+
 	closeLinealGraphSwitch.onclick = function() {
 		openLinealGraphSwitch.classList.remove('dn');
 		switchPeriodLinealGraphTwo.classList.remove('dn');
