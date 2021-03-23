@@ -124,14 +124,17 @@ body {
 }
 
 .button-switch-period-circle:hover {
+  stroke-width: 0.5px;
   stroke: #109CF1;
 }
 
 .lineal-graph-button:hover {
+  stroke-width: 0.5px;
   stroke: #109CF1;
 }
 
 .button-switch-period:hover {
+  stroke-width: 0.5px;
   stroke: #109CF1;
 }
 
