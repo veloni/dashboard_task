@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { VictoryLine, VictoryChart, VictoryAxis } from 'victory';
+import { VictoryLine, VictoryChart, VictoryAxis, VictoryScatter } from 'victory';
 
 const Graph = () => {
   const [victoryData, setVictoryData] = useState(_dataForGraph);
@@ -7,13 +7,16 @@ const Graph = () => {
   const [victoryMaxNumberX, setVictoryMaxNumberX] = useState(_maxNumberX);
   const [victoryMinNumberY, setVictoryMinNumberY] = useState(_minNumberY);
   const [victoryMaxNumberY, setVictoryMaxNumberY] = useState(_maxNumberY);
+  const [inDataOneValue, setInDataOneValue] = useState(false);
   const [asideOpenState, setAsideOpenState] = useState(true);
 
   const [fontSize, setFontSize] = useState(40);
   const [addWidthGraph, setAddWidthGraph] = useState(window.innerWidth);
   const [addHeightGraph, setAddHeightGraph] = useState(window.innerHeight);
 
-  const getNewData = () =>{
+  const getNewData = () => {
+    checkDataLenght();
+
     setVictoryData(_dataForGraph);
     setVictoryMinNumberX(_minNumberX);
     setVictoryMaxNumberX(_maxNumberX);
@@ -22,10 +25,22 @@ const Graph = () => {
   };
 
   useEffect(() => {
+    checkDataLenght();
+  });
+
+  useEffect(() => {
     window.addEventListener('resize', handleResize);
     handleResize();
   }, []);
 
+  const checkDataLenght = () => {
+    if (_dataForGraph.length !== 1) { 
+      setInDataOneValue(false)
+      return;
+    } 
+    setInDataOneValue(true);
+  }
+  
   const handleResize = () => {
     if (_asideOpen) {
       setAddWidthGraph(window.innerWidth + 150);
@@ -95,6 +110,14 @@ const Graph = () => {
           style={{data: { stroke: "#109CF1", strokeWidth: 5}}}
           data={victoryData}
         />
+        {
+          inDataOneValue &&
+          <VictoryScatter
+            style={{ data: { fill: "#109CF1" } }}
+            size={15}
+            data={victoryData}
+          />
+        }
       </VictoryChart>
     </div>
   );

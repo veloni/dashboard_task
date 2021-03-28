@@ -39,7 +39,7 @@ const DrawCircle = (addSize, height, width) => {
 		circle.fillText(`${Math.ceil(_quantityCompleted)}%`, 205, 270);
 	};
 
-	const functionDrawforAllCircle = (color) =>{
+	const functionDrawforAllCircle = (color) => {
 		circle.lineWidth = 20;
 		circle.strokeStyle = color;
 		circle.stroke();

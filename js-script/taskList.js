@@ -17,7 +17,7 @@ window.taskList = {
         },
         {
             nameUser: "Alex",
-            dueDate: "10 april",
+            dueDate: "24 april",
             nameTask: "Fix bug",
             conditionTask: "completed",
             typeTask: "fix task",
